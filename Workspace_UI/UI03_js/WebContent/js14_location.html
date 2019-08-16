@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+
+<script type="text/javascript">
+    function locTest(){
+        // location.reload(); //새로 고침
+        // location.href = "https://www.naver.com"; //href : 페이지 이동 역할
+        // location.assign("https://www.google.com"); // assign : href랑 똑같이 페이지 이동 역할
+        location.replace("https://www.naver.com"); // replace : 전 단계 이력 삭제
+                            // index.html 파일에서 실행해서 이동 버튼 누르고 네이버 갔다가 뒤로가기 누르면
+                            // 전 단계가 삭제되서 index.html로 이동 됨.
+    }
+
+</script>
+
+</head>
+<body>
+
+    <a href="https://www.google.com/search?q=kh%EC%A0%95%EB%B3%B4%EA%B5%90%EC%9C%A1%EC%9B%90&oq=kh%EC%A0%95%EB%B3%B4%EA%B5%90%EC%9C%A1%EC%9B%90&aqs=chrome..69i57j69i61l3j0l2.3747j0j7&sourceid=chrome&ie=UTF-8">페이지 이동</a>
+
+    <button onclick="locTest();">이동</button>
+</body>
+</html>

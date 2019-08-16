@@ -1,0 +1,9 @@
+package io.data.model.dao;
+
+public class DataIoTest {
+
+	public DataIoTest() {}
+	
+	// DataInput/OutputStream -> 바이트, 보조 스트림이다.
+	// 데이터를 읽는데 1byte 단위가 아닌, 기본 자료형(byte,int,float,long,double,char..), String 단위로 읽고 쓴다.
+}

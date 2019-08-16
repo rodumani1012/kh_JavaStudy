@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function viewInfo() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition);
+	} else {
+		document.getElementById("mydiv").innerHTML = "위치 서비스를 제공하지않는 브라우저 입니다."
+	}	
+}
+function showPosition(position) {
+	document.getElementById("mydiv").innerHTML = 
+	"위도(Latitued) : " + position.coords.latitude
+	+ "<br>경도(Longitude) : " + position.coords.longitude;
+}
+</script>
+
+</head>
+<body>
+	<input type="button" value="viewInfo" onclick="viewInfo()">
+	<br>
+	<br>
+	<br>
+	<div id="mydiv">위치 정보</div>
+</body>
+</html>

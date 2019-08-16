@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="page.mapper">
+
+	<select id="selectList" parameterType="map"
+		resultType="PagingDto">
+		
+		SELECT *
+		FROM (SELECT ROWNUM AS RNUM, P.*
+			 FROM ( SELECT * 
+			 		FROM PAGEBOARD 
+			 		WHERE CATEGORY = #{category}
+					 <if test="txt_search != null">
+							AND
+						(
+							(upper(CONTENT) like '%' || upper(#{txt_search}) || '%') or
+							(upper(TITLE) like '%' || upper(#{txt_search}) || '%')
+						)
+					</if>
+						ORDER BY SEQ DESC
+						) P
+			 )
+		WHERE RNUM BETWEEN #{firstIndex} +1 AND #{firstIndex} +	#{recordCountPerPage}
+	</select>
+	
+	<select id="selectTotalCount" parameterType="map"
+		resultType="Integer">
+		SELECT count(*)
+		FROM PAGEBOARD
+		WHERE CATEGORY = #{category}
+		<if test="txt_search != null">
+			AND 
+			(
+				(upper(CONTENT) like '%' || upper(#{txt_search}) || '%') or
+				(upper(TITLE) like '%' || upper(#{txt_search}) || '%')
+			)
+		</if>
+	</select>
+	
+	<insert id="insert" parameterType="map">
+		INSERT INTO PAGEBOARD VALUES(PAGESEQ.NEXTVAL, 'title'||PAGESEQ.CURRVAL, 'content'||PAGESEQ.CURRVAL, #{category})
+	</insert>
+	
+	<delete id="delete" parameterType="map">
+		DELETE FROM PAGEBOARD WHERE ROWNUM BETWEEN 1 AND 5
+	</delete>
+	
+</mapper>

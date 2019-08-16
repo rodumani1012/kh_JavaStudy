@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+}
+</style>
+<script src="//code.jquery.com/jquery-3.3.1.min.js">
+</script>
+<script>
+	$(document).ready(function(){
+		// 이전 추가
+		$("#btn01").click(function() {
+			$("#img01").before("<img src='../../image/ma.jpg'>");
+		});
+		// 이후 추가
+		$("#btn02").click(function() {
+			$("#img01").after("<img src='../../image/beer.jpg'>");
+		});		
+		// 제거
+		$("#btn03").click(function(){
+			$("img:not([id=img01])").remove();
+		});
+	});
+</script>
+</head>
+<body>
+	<img src="../../image/santa.jpg" id="img01">
+	<br>
+	<br>
+	<input type="button" id="btn01" value="Before">
+	<input type="button" id="btn02" value="After">
+	<br>
+	<input type="button" id="btn03" value="재시도">
+	
+</body>
+</html>

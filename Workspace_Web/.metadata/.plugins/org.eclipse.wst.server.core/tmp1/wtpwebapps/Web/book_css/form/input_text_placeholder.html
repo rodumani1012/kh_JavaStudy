@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	font-family: "나눔명조";
+	font-size: 30px;
+	font-weight: bold;
+}
+input[type="text"], [type=password] {
+	/* size */
+	width : 300px; /* width: 100% */
+	
+	/* border */
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	padding : 10px 20px; /* 첫번째 숫자는 위 아래, 두번째는 좌우 */
+	
+	/* font */
+	font-family: "나눔명조";
+	font-size: 30px;
+	font-weight: bold;
+	
+	/* Animation */
+	transition : width 0.8s ease-in-out;
+	
+}
+input[type="text"]:focus, [type=password]:focus {
+	width: 500px;
+}
+</style>
+</head>
+<body>
+	Id : 
+	<input type="text" maxlength="10" placeholder="아이디 입력"> <br> <br>
+	Password : 
+	<input type="password" maxlength="10" placeholder="패스워드 입력">
+</body>
+</html>

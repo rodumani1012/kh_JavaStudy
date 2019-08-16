@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 짝꿍 1명은 setter 주입으로, 다른 한명은 생성자 주입으로 -->
+	<bean id="park" class="com.test02.BirthDto">
+		<property name="name" value="임꺽정"></property>
+		<property name="birth" value="2019-05-08"></property>
+	</bean>
+	
+	<bean id="one" class="com.test02.BirthDto">
+		<constructor-arg value="홍길동"></constructor-arg>
+		<constructor-arg value="2019-11-15"></constructor-arg>
+	</bean>
+	
+	<bean id="choi" class="com.test02.BirthDto">
+		<constructor-arg index="0" value="최준연"></constructor-arg>
+		<constructor-arg index="1" value="2019-10-12"></constructor-arg>
+	</bean>
+
+</beans>

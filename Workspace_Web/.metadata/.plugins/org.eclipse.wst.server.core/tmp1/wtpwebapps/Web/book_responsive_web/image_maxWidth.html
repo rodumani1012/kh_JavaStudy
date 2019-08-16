@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#wrap img {
+	width : 100% /* width는 이미지가 깨지든 말든 원본의 최대를 넘어서도 100%를 유지한다. */
+}
+
+#container img{
+	max-width: 100% /* max-width는 원본 이미지의 최대 크기를 초과하지 않는다. */
+}
+</style>
+</head>
+<body>
+	<img src="/image/potato.png">
+	<img src="/image/potato.png" width="800px">
+	
+	<div id="wrap">
+		<img src="/image/potato.png">
+	</div>
+	
+	<div id="container">
+		<img src="/image/potato.png">
+	</div>
+</body>
+</html>

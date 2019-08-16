@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bar" class="com.test01.Bar"></bean>
+
+	<bean id="date" class="java.util.Date"></bean>
+	
+	<bean id="foo" class="com.test01.Foo" lazy-init="true">
+		<constructor-arg ref="date"></constructor-arg>
+		
+		<!-- setBar(bar), setDate(d) 호출하기 -->		
+		<property name="bar" ref="bar"></property>
+		<property name="date" ref="date"></property>
+		
+		<!-- setNumber(int num) 호출! -->
+<!-- 		<property name="number" value="100"></property>
+			또는 아래와 같이 value의 타입을 정해서 넣어줄 수도 있다. -->
+		<property name="number">
+			<value type="int">100</value>
+		</property>
+		
+		<!-- setStudent() 호출! -->
+<!-- 		<property name="student" value="최준연, 신희수, 문희수"></property> -->
+		<property name="student" >
+			<array>
+				<value type="java.lang.String">홍길동</value>
+				<value>장길산</value>
+				<value>임꺽정</value>
+			</array>
+ 		</property>
+ 		
+ 		<!-- setInfo() 호출! -->
+ 		<property name="info">
+ 			<list>
+ 				<value>봄</value>
+				<value>여름</value>
+				<value>가을</value>
+				<value>겨울</value>
+ 			</list>
+ 		</property>
+ 		
+ 		<!-- setEvent() 호출! -->
+ 		<property name="event">
+ 			<set>
+ 				<value>aa</value>
+ 				<value>bb</value>
+ 			</set>
+ 		</property>
+ 		
+ 		<!-- setSeason() 호출! -->
+ 		<property name="season">
+ 			<map>
+<!--  				<entry key="1" value="봄"></entry> -->
+				<entry>
+					<key><value>1</value></key>
+					<value>봄</value>
+				</entry>
+ 				<entry key="2" value="여름"></entry>
+ 				<entry key="3" value="가을"></entry>
+ 				<entry key="4" value="겨울"></entry>
+ 			</map>
+ 		</property>
+ 		
+ 		<!-- 한명은 inner Bean으로, 다른 한명은 ref로 bean 생성 -->
+ 		<!-- setScore() 호출! -->
+		 		
+ 		<property name="score">
+ 			<list>
+ 				<!-- inner bean -->
+	 			<bean id="moon" class="com.test01.Score">
+	 				<constructor-arg value="문희수"></constructor-arg>
+	 				<constructor-arg value="89"></constructor-arg>
+	 				<constructor-arg value="45"></constructor-arg>
+	 				<constructor-arg value="71"></constructor-arg>
+	 			</bean>
+	 			<!-- ref -->
+	 			<ref bean="shin"/>
+ 			</list>
+ 		</property>
+	</bean>
+	
+	<bean id="shin" class="com.test01.Score">
+		<constructor-arg value="신희수"></constructor-arg>
+		<constructor-arg value="30"></constructor-arg>
+		<constructor-arg value="60"></constructor-arg>
+		<constructor-arg value="87"></constructor-arg>
+	</bean>
+</beans>

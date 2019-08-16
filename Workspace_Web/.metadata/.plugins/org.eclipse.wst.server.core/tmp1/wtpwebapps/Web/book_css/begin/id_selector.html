@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#redtext{ /* id=redtext 속성이 들어간 모든 element에 적용 */
+	/* color */
+	background-color: yellow;
+	color: red;
+	/* font */
+	font-size: 50px;
+	font-weight: bold;
+}
+#greentext{ 
+	/* color */
+	background-color: yellow;
+	color: green;
+	/* font */
+	font-size: 50px;
+	font-weight: bold;
+}
+#bluetext{ 
+	/* color */
+	background-color: yellow;
+	color: blue;
+	/* font */
+	font-size: 50px;
+	font-weight: bold;
+}
+
+h1#blue{
+	/* id=blue 속성이 들어간 h1 element에 적용 */
+	color: blue;
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<!-- id 사용.  span, p, div -->
+	<span id="redtext">Welcome</span>
+	<hr>
+	<p id="greentext">Welcome</p>
+	<hr>
+	<div id="bluetext">Welcome</div>
+	<hr>
+	
+	<!-- H1#blue 사용 -->
+	<h1>World</h1>
+	<hr>
+	<h1 id="blue">World</h1>
+	<hr>
+</body>
+</html>

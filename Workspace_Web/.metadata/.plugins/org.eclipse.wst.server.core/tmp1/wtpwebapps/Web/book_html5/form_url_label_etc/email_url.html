@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body{
+	text-align : center;
+	margin: 0 auto;
+}
+fieldset {
+	text-align :center;
+	width: 60%;
+	margin: 0 auto;
+}
+input[type=submit], [type=reset] {
+	width: 50px;
+}
+</style>
+</head>
+<body>
+<form>
+	<fieldset>
+		<legend>개인정보</legend>
+		<label for="userName">이름</label>
+		<input type="text" size="20" id="userName" maxlength="20">
+		<br>
+		<label for="userMail">메일</label>
+		<input type="email" size="20" id="useMail">
+		<br>
+		<label for="userHomepage">홈페이지</label>
+		<input type="url" id="userHomepage" size="20">
+	</fieldset>
+	<br>
+	<input type="submit" value="제출">
+	<input type="reset" value="Clear">
+</form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+package io.conversion.controller;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+public class ByteToCharTest {
+
+	// 매개변수로 외부자원을 선택한다면 기반 스트림.
+	// 매개변수로 다른스트림을 선택한다면 보조 스트림.
+	// -> 보조는 단독사용 안됨.
+	
+	public ByteToCharTest() {}
+	
+	public void input() {
+		// 키보드로 입력 방식 2가지 => Scanner, BufferedReader
+		
+		// 1. Scanner -> sc.nextInt(), sc.nextDouble(), ... 등
+		// 자료형에 맞춰서 다른 메소드를 실행해야 한다.
+		Scanner sc = new Scanner(System.in);
+		
+		// 2. BufferedReader -> br.readLine()
+		// 어떠한 값이든 하나로 입력한다. (String 으로)
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
+		// 기반스트림인 System.in을 보조스트림으로 변환. new 보조(new 보조(new 기반)) 
+								
+		
+		System.out.println("값을 입력하세요: ");
+		try {
+			String value = br.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

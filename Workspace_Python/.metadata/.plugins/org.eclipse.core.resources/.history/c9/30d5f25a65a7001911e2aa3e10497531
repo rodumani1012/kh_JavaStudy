@@ -1,0 +1,22 @@
+
+i = 1
+while i <= 10:
+    print(i)
+    i += 1 # i++이 없다.
+
+# 1부터 10까지 합
+sum = 0
+count = 1
+while count <= 10:
+    sum += count
+    count += 1
+    if count == 5:
+        break
+else: # while문이 정상적으로 다 돌아야 안에 내용이 실행된다.
+    print('sum = ' + str(sum))
+    print('count = ' + str(count))
+    
+print('sum = ' + str(sum))
+print('count = ' + str(count))
+
+    

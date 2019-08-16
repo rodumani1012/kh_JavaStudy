@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+}
+#box {
+	position: relative;
+	width: 600px;
+	height: 500px;
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid silver;
+	overflow: hidden; /* div 안에서 doverflow(영역을 벗어나면)하면 hidden(숨김)함 */
+}
+#object{
+	position: relative;
+	top: -400px;
+}
+</style>
+<script src="//code.jquery.com/jquery-3.3.1.min.js">
+</script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js">
+</script>
+
+<script>
+	$(document).ready(function(){
+		
+		$("#btn01").click(function(){
+		/* 한번에 쭉 내려오는 애니메이션
+			$("[name=burger]").stop().animate({
+				top: 100
+			}, 500); //500(0.5초) 동안 움직인다.
+		});
+		*/
+		// 통통 튀는 애니메이션 'easeOutBounce'
+			$("[name=burger]").stop().animate({
+				top: 100
+			}, 1500, 'easeOutBounce'); //500(0.5초) 동안 움직인다.
+		});
+		$("#btn02").click(function(){
+			$("[name=burger]").stop().animate({
+				top: -400
+			}, 500);
+		});
+	});
+</script>
+
+</head>
+<body>
+	<div id="box">
+		<img id = "object" name="burger" src="/image/03_burger.JPG">
+	</div>
+	<br>
+	<br>
+	<input type="button" id="btn01" value="내리기">
+	<input type="button" id="btn02" value="올리기">
+</body>
+</html>

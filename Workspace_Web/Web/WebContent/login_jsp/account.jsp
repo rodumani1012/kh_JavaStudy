@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/css/datacss.css">
+</head>
+<body>
+	<a href="index.jsp">Index</a> |
+	<a href="login.jsp">로그인</a> | 
+	{회원가입}
+	<hr width="80%">
+	
+<form action="account_result.jsp" method="post">
+	<label for="userId">아이디 : </label>
+	<input type="text" size="20" name="id" id="userId" maxlength="20" required>
+	<br>	
+	<label for="userPassword">패스워드 : </label>
+	<input type="password" size="20" name="password" id="userPassword" maxlength="15" required>
+	<br>	
+	<label for="userName">이름 : </label>
+	<input type="text" size="20" name="name" id="userName" maxlength="20" required>
+	<br>
+	<label for="userEmail">이메일 : </label>
+	<input type="email" size="20" name="email" id="userEmail" required>
+	<br><br>
+	<input type="submit" value="가입">
+	<input type="reset" value="취소">
+</form>
+</body>
+</html>

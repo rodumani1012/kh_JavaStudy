@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace = "pagingmapper">
+	
+	<resultMap type="pagingDto.pagingBoardDto" id="dtoMap">
+		<result column = "BOARD_SEQ" property = "board_seq" />
+		<result column = "BOARD_ID" property = "board_id" />
+		<result column = "BOARD_TITLE" property = "board_title" />
+		<result column = "BOARD_CONTENT" property = "board_content" />
+		<result column = "BOARD_REGDATE" property = "regdate" />
+	</resultMap>
+	
+	<resultMap type="pagingDto.pagingMemberDto" id="memberMap">
+		<result column = "PAGING_ID" property = "paging_id" />
+		<result column = "PAGING_PW" property = "paging_pw" />
+	</resultMap>
+	
+	<select id="login" resultMap="memberMap" parameterType="map">
+		SELECT * FROM PAGING WHERE PAGING_ID = #{paging_id} AND PAGING_PW = #{paging_pw}
+	</select>
+	
+	
+	<!-- 리스트 출력 -->
+	<select id="boardlist" resultMap="dtoMap" parameterType = "map">
+		SELECT * 
+		FROM (SELECT * 
+			FROM ( SELECT ROWNUM as row_num, PAGINGBOARD.* 
+				FROM (SELECT * FROM PAGINGBOARD ORDER BY BOARD_SEQ ) PAGINGBOARD )
+		<![CDATA[
+			WHERE row_num >= #{startNum} ) 
+		WHERE row_num <= #{endNum}]]> 
+	</select>
+	
+	<!-- 카운트 -->
+	
+	<select id="pagecount" resultType = "int">
+		SELECT COUNT(*) AS COUNT FROM PAGINGBOARD
+	</select>
+	
+	
+	<!-- 글 추가 -->
+	<insert id="insertpage1" parameterType = "map">
+		INSERT INTO PAGINGBOARD VALUES( PAGINGBOARDSEQ.NEXTVAL ,'user1', #{board_title1}, #{board_content1}, SYSDATE )
+	</insert>
+	
+	<insert id="insertpage2" parameterType = "map">
+		INSERT INTO PAGINGBOARD VALUES( PAGINGBOARDSEQ.NEXTVAL ,'user2', #{board_title2}, #{board_content2}, SYSDATE )
+	</insert>
+	
+	<insert id="insertpage3" parameterType = "map">
+		INSERT INTO PAGINGBOARD VALUES( PAGINGBOARDSEQ.NEXTVAL ,'user3', #{board_title3}, #{board_content3}, SYSDATE )
+	</insert>
+	
+	<insert id="insertpage4" parameterType = "map">
+		INSERT INTO PAGINGBOARD VALUES( PAGINGBOARDSEQ.NEXTVAL ,'user4', #{board_title4}, #{board_content4}, SYSDATE )
+	</insert>
+	
+
+</mapper>

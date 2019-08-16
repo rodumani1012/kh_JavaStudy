@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function work() {
+	var inputObj = document.getElementById("myId");
+	var inputValue = inputObj.value;
+	var inputLength = inputValue.length;
+	if (inputLength < 6) {
+		alert("입력완료")
+		alert("입력=" + inputValue + ", 길이=" + inputLength);
+	} else {
+		alert("5글자 이하로 입력하세요.")
+		inputObj.focus();
+	}
+}
+</script>
+</head>
+<body>
+<input type="text" id="myId" size="10" maxlength="10">
+<br>
+<input type="button" value="데이터 길이확인" onclick="work()">
+</body>
+</html>

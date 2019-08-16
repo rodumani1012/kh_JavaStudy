@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- 특정 servlet에 대한 설정 -->
+	
+	<context:component-scan base-package="com.hello.mvc"/>
+	<mvc:annotation-driven/>
+	
+</beans>
+
+<!-- 
+	bean post processor(어노테이션 받아서 자동으로 bean객체를 만들어주겠다.)
+	
+	1. annotation-config : bean
+	<context:annotation-config/>
+	@Autowired, @Require, @Resource ... 같은 어노테이션을 읽음
+	
+	2. component-scan
+	<context:component-scan base-package="${package path}"/>
+	${package path}로 부터 그 안에 있는 하위 class들을 읽어서 
+	해당 클래스의 annotation들을 가지고 객체 생성해줌.
+	@Component, @Controller, @Service, @Repository, ... 같은 어노테이션을 읽음
+	(component-scan은 annotation-config를 상속받아 확장된 것이다.)
+	
+	3. annotation-driven
+	<mvc:annotation-driven/>
+	url맵핑을 도와주는 역할을 한다.
+	@RequestMapping, @Valid, ... 같은 어노테이션을 읽음
+ -->

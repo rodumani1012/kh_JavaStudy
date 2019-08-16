@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function imageChange(choice) {
+		switch (choice) {
+		case 1:
+			var imageObj1 = document.getElementById("myImage1");
+			var changePath = "../../../image/burger1.png";
+			imageObj1.src = changePath;
+			
+			break;
+		case 2:
+			var imageObj2 = document.getElementById("myImage2");
+			imageObj2.src = "../../../image/burger2.png";
+			
+			break;
+		case 3:
+			document.getElementById("myImage3").src = "../../../image/potato.png";
+			
+			break;
+		case 4:
+			document.getElementById("myImage4").src = "../../../image/side1.png";
+			break;
+		}
+
+	}
+	function imageReturn(choice) {
+		switch (choice) {
+		case 1:
+			document.getElementById("myImage1").src="../../../image/beer.jpg"; 
+			break;
+		case 2:
+			document.getElementById("myImage2").src="../../../image/coffee.jpg"; 
+			break;
+		case 3:
+			document.getElementById("myImage3").src="../../../image/milk.jpg"; 
+			break;
+		case 4:
+			document.getElementById("myImage4").src="../../../image/spark.jpg"; 
+			break;
+		}
+	}
+</script>
+</head>
+<body>
+	<img src="../../../image/beer.jpg" id="myImage1" height="15%"
+		onmouseover="imageChange(1)" onmouseout="imageReturn(1)">
+	<img src="../../../image/coffee.jpg" id="myImage2" height="15%"
+		onmouseover="imageChange(2)" onmouseout="imageReturn(2)">
+	<img src="../../../image/milk.jpg" id="myImage3" height="15%"
+		onmouseover="imageChange(3)" onmouseout="imageReturn(3)">
+	<img src="../../../image/spark.jpg" id="myImage4" height="15%"
+		onmouseover="imageChange(4)" onmouseout="imageReturn(4)">
+</body>
+</html>

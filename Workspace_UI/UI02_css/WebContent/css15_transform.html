@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+	#tlate{
+		width: 200px;
+		height: 200px;
+		background: red;
+		color: white;
+		font-size: 30pt;
+		word-wrap: break-word;
+		transform: translate(50px, 50px);
+	}
+
+	#trotate{
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		color: white;
+		font-size: 30pt;
+		word-wrap: break-word;
+		/* transform: rotate(30deg); */
+		-webkit-transform: rotate(30deg);		
+		-moz-transform: rotate(30deg);		
+		-ms-transform: rotate(30deg);
+		-o-transform: rotate(30deg);
+	}
+	
+	#tscale{
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		color: white;
+		font-size: 30pt;
+		word-wrap: break-word;
+		transform: scale(0.6,0.6);
+					/* 각각 60% 크기 만큼. */
+	}
+	
+	#tskew{
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		color: white;
+		font-size: 30pt;
+		word-wrap: break-word;
+		transform: skew(20deg, 20deg);
+	}
+	
+	#tran{
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		color: white;
+		font-size: 30pt;
+		word-wrap: break-word;
+		transition: width 3s, background 1.5s ease-out, transform 4s;
+	}
+	
+	#tran:hover{
+		width: 800px;
+		background: blue;
+		transform: translate(300px, -100px);
+	}
+	
+	li{
+		width: 500px;
+		background: gray;
+		margin-bottom: 3px;
+		font-size: 30pt;
+		font-weight: bold;
+		list-style-type: none;
+		transition: width 1s linear, color 1s linear, letter-spacing 1s;
+		cursor: pointer;
+	}
+	
+	li:hover{
+		width: 800px;
+		color: red;
+		letter-spacing: 5px;
+	}
+</style>
+
+</head>
+<body>
+
+	<h1>Transform - translate</h1>
+	<div id="tlate">translate(x,y) : 위치 이동</div>
+
+	<h1>Transform - rotate</h1>
+	<div id="trotate">rotate(deg) : 회전</div>
+
+	<h1>Transform - scale</h1>
+	<div id="tscale">scale(x,y) : 크기</div>
+
+	<h1>Transform - skew</h1>
+	<div id="tskew">skew(deg,deg) : 변형</div>
+
+	<h1>Transition</h1>
+	<div id="tran">transition : 속성 전환</div>
+	
+	<div>
+		<h1>Moving MainMenu</h1>
+		<ul>
+			<li>COMPANY</li>
+			<li>PRODUCT</li>
+			<li>SERVICE</li>
+			<li>COMMUNITY</li>
+			<li>CUSTOMER SUPPORT</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function imageChange() {
+	var imageObj = document.getElementById("myImage");
+	var changePath = "../../../image/ma.jpg";
+	imageObj.src = changePath;
+}
+function imageReturn() {
+	var imageObj = document.getElementById("myImage");
+	imageObj.src = "../../../image/222.jpg";
+}
+</script>
+</head>
+<body>
+	<img src="../../../image/222.jpg" id="myImage" height="400" onmouseover="imageChange()"
+	onmouseout="imageReturn()">
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- bxSlider -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	  $('.bxslider').bxSlider({
+		  mode : 'fade', //화면 전환 효과
+		  captions : true, // title 텍스트 글씨 출력여부
+		  slideWidth : 600, // 슬라이드 가로 길이
+		  adaptiveHeight : true, //자동 세로 맞춤
+		  auto : true, //이미지 자동슬라이드 실행여부
+		  autoControls : true, //자동슬라이드 시작, 일시정지 버튼 노출여부
+		  pause : 500, // 다음 슬라이드로 넘기기 전까지 보여지는 시간
+		  speed : 1000 // 넘어가는 동안 걸리는 속도
+	  });
+	});
+</script>
+
+</head>
+<body>
+	<div class="bxslider">
+		<div><img src="/image/beer.jpg" title="beer" width="600"></div>
+		<div><img src="/image/coffee.jpg" title="coffee" width="600"></div>
+		<div><img src="/image/milk.jpg" title="milk" width="600"></div>
+		<div><img src="/image/spark.jpg" title="spark" width="600"></div>
+	</div>
+</body>
+</html>

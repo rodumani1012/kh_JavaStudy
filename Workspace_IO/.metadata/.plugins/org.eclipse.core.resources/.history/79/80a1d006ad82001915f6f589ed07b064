@@ -1,0 +1,34 @@
+package io.buffered.run;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+import javax.sound.midi.SysexMessage;
+
+public class BufferedPractice {
+	
+	public static void main(String[] args) {
+		byte[] bt = new byte[1024];
+		
+		
+		BufferedInputStream bis = new BufferedInputStream(System.in);
+		
+		System.out.println("값을 입력하세요 : ");
+		
+		try (BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("input.txt"));) {
+			int value = bis.read();
+			System.out.println("value : " + value);
+			bos.write(value);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		
+	}
+}

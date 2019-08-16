@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 강호동 2000000 기술1팀 -->
+	<bean id="kang" class="com.test03.Engineer">
+		<constructor-arg index="0" value="강호동"></constructor-arg>
+		<constructor-arg index="1" value="2000000"></constructor-arg>
+		<property name="dept" value="기술1팀"></property>
+	</bean>
+
+	<!-- 유재석 2500000 개발1팀 -->
+	<bean id="yu" class="com.test03.Developer">
+		<constructor-arg index="0" value="유재석"></constructor-arg>
+		<constructor-arg index="1" value="2500000"></constructor-arg>
+		<property name="dept" value="개발1팀"></property>
+	</bean>
+</beans>

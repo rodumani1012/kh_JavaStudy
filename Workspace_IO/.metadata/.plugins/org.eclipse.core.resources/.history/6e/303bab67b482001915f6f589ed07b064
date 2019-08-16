@@ -1,0 +1,91 @@
+package io.data.model.dao;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class DataIoTest {
+
+	public DataIoTest() {
+	}
+	// 기능추가와 관련된 스트림.
+	// 타입별로 데이터가 이동하도록 도와주는 스트림 : DataInputStream, DataOutputStream
+	// DataInput/OutputStream -> 바이트, 보조 스트림이다.
+	// 데이터를 읽는데 1byte 단위가 아닌,
+	// 기본 자료형(byte,short,int,long,float,double,char,boolean), String 단위로 읽고 쓴다.
+
+	public void addData() {
+
+		try (DataOutputStream dout = new DataOutputStream(new FileOutputStream("member.txt"));) {
+
+			// write 엄청 많다!!! 자료형별로 존재함.
+			// 각각 형태가 무엇인지까지 알 수 있도록
+			// 자료형까지 저장되기 때문에 텍스트파일을 열면 알아볼 수 없게 써있다.
+			dout.writeUTF("홍길동"); // 이름(String)
+			dout.writeInt(20); // 나이(int)
+			dout.writeChar('M'); // 성별(char)
+			dout.writeDouble(188.5); // 키(double)
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+
+	public void readData() {
+		try (DataInputStream din = new DataInputStream(new FileInputStream("member.txt"));) {
+			// 불러올때 저장한 순서대로 불러오지 않으면 이상하게 될 수 있다.
+			String name = din.readUTF();
+			int age = din.readInt();
+			char gender = din.readChar();
+			double height = din.readDouble();
+
+			System.out.println("이름 : " + name + " 나이 : " + age + " 성별 : " + gender + " 키 : " + height);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+
+	public void addDate2() {
+		Scanner sc = new Scanner(System.in);
+
+		while (true) {
+
+			try (DataOutputStream dout = new DataOutputStream(new FileOutputStream("member.txt"));) {
+				System.out.println("이름 입력 : ");
+				dout.writeUTF(sc.next());
+				System.out.println("나이 입력 : ");
+				dout.writeInt(sc.nextInt());
+				System.out.println("성별 입력 : ");
+				dout.writeChars(sc.next());;
+				System.out.println("키 입력 : ");
+				dout.writeDouble(sc.nextDouble());
+				
+				System.out.println("계속(y), 종료(n)");
+				String a = sc.next();
+				if(a.equals("y")) {
+					continue;
+				} else if(a.equals("n")) {
+					break;
+				} else {
+					continue;
+				}
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		}
+	}
+
+	public void readData2() {
+
+	}
+}

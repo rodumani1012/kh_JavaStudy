@@ -1,0 +1,5 @@
+package io.buffered.model.dao;
+
+public class BufferedTest {
+
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+
+<script type="text/javascript">
+    function strTest01() {
+        var str01 = "String";
+        var str02 = "Test";
+
+        var str03 = str01 + str02;
+        alert(str03);
+
+        var newStr = str03.concat("Java","Script");
+        alert(newStr);
+
+        var joinTest = ['5','10','15','20'].join("+"); //배열 사이사이에 문구를 넣어줌
+        alert(joinTest);
+    }
+
+    function strTest02(){
+        var numVal = 12.5;
+        var boolVal = true;
+        var result = "String" + numVal + boolVal;
+
+        alert(result + " : " + typeof result);
+    }
+
+    function strTest03(){
+        var str = prompt("이름을 입력하세요");
+        var span = document.getElementById("res");
+
+        // 동등 연산자 ==
+        if(str == "kh") {
+            span.textContent = str + "님 환영합니다."
+        } else if(str == "kh정보교육원") {
+            span.textContent = str + "님 환영합니다."
+        } else {
+            span.textContent = "이름을 다시 한 번 확인해 주세요."
+        }
+        
+        // 동등 연산자(==)를 사용하면 비교하는 자료형도 자동 형 변환 된다.
+        var numVal = 10; //숫자 10
+        if(numVal == "10") { //문자 10
+            alert("== 연산자 사용 : 숫자 10이 맞습니다!"); // 형변환 되서 같다.
+        } else {
+            alert("== 연산자 사용 : 숫자 10이 아닙니다!");
+        }
+
+        // === : 엄격한 비교
+        // 자료형의 자동 형 변환을 사용하고 싶지 않으면 
+        // ===을 사용한다.
+        if(numVal === "10"){
+            alert("=== 연산자 사용 : 10이 맞습니다.");
+        } else {
+            alert("=== 연산자 사용 : 10이 아닙니다.");
+        }
+        
+        var strObj = new String("kh"); //객체
+        var strStr = "kh"; //String
+
+        if(strObj == strStr) {
+            alert("같다");
+        } else {
+            alert("다르다");
+        }
+
+        if(strObj === strStr) {
+            alert("같다2 " + typeof(strObj) + "/" + typeof(strStr));
+        } else {
+            alert("다르다2 " + typeof(strObj) + "/" + typeof(strStr));
+        } 
+    }
+
+    function strTest04() {
+        // indexOf : 왼쪽 -> 오른쪽으로 검색(첫번째 인덱스 반환)
+        // lastIndexOf : 오른쪽 -> 왼쪽으로 검색 (첫번째 인덱스 반환)
+        var str = "홍길동 이순신 유재석 강호동 김선달 조세호 홍길동";
+                // 0 1 2 .......                          24
+        var prop = prompt("검색할 이름을 입력해 주세요");
+        alert(str.indexOf(prop));
+        alert(str.lastIndexOf(prop));
+    }
+
+    function strTest05(){
+        var strVal = "문자열 추출하기. 관련 메소드:indexOf,substring.";
+        // substring(startIndex, endIndex) : 
+            //시작 인덱스부터 종료 인덱스까지 문자열 추출
+        var startIndex = strVal.indexOf(":");
+        var endIndex = strVal.lastIndexOf(".");
+        var res = strVal.substring(startIndex+1, endIndex);
+        alert(res);
+        // alert(strVal.substring(strVal.indexOf("i"),strVal.lastIndexOf(".")));
+
+        var splitVal = res.split(",");
+        // res = "indexOf,substring"
+        alert(splitVal[0]);
+        alert(splitVal[1]);
+        // split(기준) :
+        // 기준이 되는 요소로 문자열을 나누어, 배열로 반환
+    }
+
+    function strTest06() {
+        var prop = prompt("쉼표로 구분하여 키워드를 입력하세요",
+            "예) 사과,바나나,키위,수박,딸기");
+        var propResult = "";
+        // 키워드 : 사과
+        // 키워드 : 바나나 ....
+        var splitVal = prop.split(",");
+        
+        for(var i = 0; i<splitVal.length; i++){
+            propResult += "키워드 : " + splitVal[i] + "<br/>";
+        }
+
+
+        document.getElementById("keyword").innerHTML = propResult;
+    }
+</script>
+
+</head>
+<body>
+
+    <p>
+        문자열 합치기
+        <button onclick="strTest01()">클릭</button>
+    </p>
+
+    <p>다른 자료형 합치기
+        <button onclick="strTest02()">클릭</button>        
+    </p>
+
+    <p>문자열 비교하기
+        <button onclick="strTest03()">클릭</button>
+        <span id="res"></span>
+    </p>
+
+    <p>문자열 검색하기
+        <button onclick="strTest04()">클릭</button>
+    </p>
+
+    <p>문자열 추출하기
+        <button onclick="strTest05()">클릭</button>
+    </p>
+
+    <p>키워드 나누기
+        <button onclick="strTest06()">클릭</button>
+        <span id="keyword"></span>
+    </p>
+</body>
+</html>

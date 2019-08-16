@@ -1,0 +1,8 @@
+package io.object.model.dao;
+
+public class ObjectIoTest {
+	public ObjectIoTest() {}
+	
+	// ObjectInput/OutputStream
+	
+}

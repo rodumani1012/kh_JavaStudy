@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="//code.jquery.com/jquery-3.3.1.min.js">
+</script>
+<script>
+	$(document).ready(function(){
+		// 이전 추가
+		$("#btn01").click(function() {
+			$("img").before("산타님, ");
+		});
+		// 이후 추가
+		$("#btn02").click(function() {
+			$("img").after("선물 주세요.");
+		});		
+	});
+</script>
+</head>
+<body>
+	<img src="../../image/santa.jpg" id="img01">
+	<img src="../../image/beer.jpg" id="img02">
+	<br>
+	<br>
+	<input type="button" id="btn01" value="이전 추가">
+	<input type="button" id="btn02" value="이후 추가">
+</body>
+</html>

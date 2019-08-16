@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>Jsp05_Hello</display-name>
+  <welcome-file-list>  
+    <welcome-file>home.html</welcome-file>
+  </welcome-file-list>
+  
+  <!-- project 전체에 적용되는 변수 -->
+  <!-- context 전체에 적용되는 파라미터(Jsp05_Hello 프로젝트(해당프로젝트)에서 다 쓸 수 있게된다.) -->
+  <context-param> 
+  	<param-name>url</param-name>
+  	<param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+  
+  <servlet>
+  	<!-- 해당 서블렛클래스를 해당 서블렛 네임으로 만들어 줄 것이다 -->
+  	<servlet-name>HelloServlet</servlet-name>
+  	<servlet-class>com.hello.controller.HelloController</servlet-class>
+  	<!-- 초기화 될때 해당 서블렛이 종료될때까지 사용할 파라미터 -->
+  	<init-param>
+  	<!-- 드라이버값을 driver라는 이름으로 부를거야 -->
+  		<param-name>driver</param-name>
+  		<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  	</init-param>
+  	<!-- 서블렛이 여러개 있을때 해당 서블렛을 1등으로 만들어라(순서 정해줄 수 있음) -->
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+  	<!-- url요청이 들어오면 servlet-name을 호출해주자 -->
+  	<servlet-name>HelloServlet</servlet-name>
+  	<!-- url-pattern에 / 없으면 에러남!! -->
+  	<url-pattern>/controller.do</url-pattern>
+  </servlet-mapping>
+	  
+</web-app>
+
+
+
+

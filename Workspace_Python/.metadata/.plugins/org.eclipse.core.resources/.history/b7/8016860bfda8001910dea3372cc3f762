@@ -1,0 +1,11 @@
+# -*- coding:UTF-8 -*-
+
+from selenium import webdriver
+from bs4 import BeautifulSoup
+from com.insta.instagramTest02 import options
+
+keyword = input('검색어 입력 : ')
+url = 'https://section.blog.naver.com/Search/Post.nhn?keyword='+keyword
+
+options = webdriver.ChromeOptions()
+options.add_argument('')

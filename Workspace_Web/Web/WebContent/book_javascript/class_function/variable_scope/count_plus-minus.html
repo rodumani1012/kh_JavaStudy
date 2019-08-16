@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var count = 0;										
+function plus() {									
+	count = count + 1;							
+	window.alert("plus()::count=" + count)
+}														
+function minus() {									
+	count = count - 1;							
+	window.alert("minus()::count=" + count)
+}								
+</script>										   
+</head>								     		   
+<body>
+<input type="button" value="카운트 plus" onclick="plus()">
+<input type="button" value="카운트 minus" onclick="minus()">
+</body>
+</html>

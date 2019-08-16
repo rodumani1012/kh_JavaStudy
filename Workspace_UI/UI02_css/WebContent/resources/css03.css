@@ -1,0 +1,27 @@
+h1{
+	background-color: pink;
+}
+
+#a{
+	color: red;
+}
+
+.b{
+	color: blue;
+}
+
+*{
+	padding: 2px;
+}
+
+p > strong {
+	color: orange;
+}
+
+#c + p {
+	color: green;
+}
+
+p[title="mytt"] {
+	font-size: 20pt;
+}

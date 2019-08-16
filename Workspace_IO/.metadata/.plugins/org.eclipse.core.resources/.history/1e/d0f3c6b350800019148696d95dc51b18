@@ -1,0 +1,23 @@
+package exception.ex;
+
+import java.util.Scanner;
+
+public class Exception2 {
+
+	// 1. 랜덤값으로 나눴다!
+	// 2. 입력한 값으로 나눠보자!
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		// 결과값 담을 변수
+		int res = 0;
+		
+		System.out.println("나눌 숫자 하나 입력!:");
+		int num = sc.nextInt();
+		
+		res = 10/num;
+		
+		System.out.println(res);
+	}
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="man" class="com.test02.Man"></bean>
+	<bean id="woman" class="com.test02.Woman"></bean>
+
+	<bean id="myAdvice" class="com.test02.MyAspect"></bean>
+	
+<!-- 프록시 객체 생성. invoke 메소드가 man, woman 클래스를 납치해서 앞 뒤에 자기를 붙여줌 -->
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"></bean>
+	
+	<bean id="myAdvisor" class="org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
+      <property name="advice" ref="myAdvice"></property>
+      		<!-- 
+      		* : 하나 이상
+      		.. : 0또는 그 이상
+      		* 메모리영역, * 메소드명(.. 파라미터)
+      		에 해당하는게 호출되면 ccc를 적용시키겠다. -->
+      <property name="expression" value="execution(public * *(..))"></property>
+   	</bean>
+	
+</beans>

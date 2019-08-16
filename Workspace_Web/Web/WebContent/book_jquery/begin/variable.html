@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="//code.jquery.com/jquery-3.3.1.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("#btn01").click(function(){
+		//div
+		var divObj = $("#div01");
+		var divObjText = divObj.text();
+		alert("divObjText= " + divObjText);
+		//text
+		var textObj = $("#txt01");
+		var textObjVal = textObj.val();
+		alert("textObjVal= " + textObjVal);
+	});
+});
+</script>
+</head>
+<body>
+	<div id="div01">Hello World</div>
+	<input type="text" id="txt01" size="10" maxlength="10">
+	<br><br>
+	<input type="button" id="btn01" value="getInfo">
+</body>
+</html>

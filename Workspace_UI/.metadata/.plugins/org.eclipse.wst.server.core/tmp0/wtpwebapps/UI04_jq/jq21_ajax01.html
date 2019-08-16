@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<style type="text/css">
+
+    *{margin: 0px; padding: 0px;}
+    table{width: 400px;}
+    table tr:nth-child(odd){background-color: orange;} /* 테이블 중 tr태그 짝수번째들만 */
+    fieldset{width: 400px;}
+    body{width: 1000px; margin: 50px auto;}
+
+
+</style>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+    $(function(){
+        $("#emp_search").click(function(){
+
+            var empid = $("input[name=empid]").val();
+
+            //empid가 !NaN(==숫자일 때)
+            //&& empid가 100보다 클 때(100일때 length 3, 1000일때 length 4)
+            if(!isNaN(empid) && (empid.length>2)){
+
+                $.ajax({ // ajax는 비동기적으로 서버를 새로고침하지 않는다.
+                    url:"emplist.xml",  //데이터 전송할 주소(서버에 저장되어 있음. ex) 아파치 톰캣의 서버에)
+                    method:"get",       //전송방식(get 방식, post 방식)
+                    async:true,         //비동기(true:비동기 / false:동기) // 동기: 일하다 호출하면 멈추고 다 끝나면 다시 일함
+                                                                        // 비동기: 일하다 호출해도 계속 일함.
+                    dataType:"xml",     //전송받을 값(데이터)의 타입(xml,json,html,script)      
+                    // data : {"key":"value"} //전송할 값(데이터)
+                    success:function(data){ //주소와 통신이 성공했을 때
+                        //alert(data);
+                    	var empInfo = $(data).find("EMPLOYEE_ID:contains(" + empid + ")").parent();
+                        
+                        if(empInfo.is("ROW")){
+                            $("table input").each(function(i){
+                                $(this).val($(empInfo).children().eq(i).text());
+                            });
+                        } else{
+                            alert("검색대상이 존재하지 않습니다!!");
+                        }
+                    },
+                    error:function(request, status, error){ //주소와 통신이 실패했을 때
+                        alert("code:" + request.status + "\n" +
+                                "message:" + request.responseText + "\n" +
+                                "error:" + error);
+                    }
+                });
+            } else {
+                alert("사원번호를 제대로 작성해 주세요!!");
+            }
+        });
+    });
+
+</script>
+</head>
+<body>
+
+    <h1>데이터 가져오기</h1>
+
+    <fieldset>
+        <legend>사원정보 조회</legend>
+        <input type="text" name="empid">
+        <input type="button" id="emp_search" value="조회">
+    </fieldset>
+
+    <table>
+        <tr>
+            <th>사원번호</th>
+            <td><input type="text" name="empNum"></td>
+        </tr>
+        <tr>
+            <th>이    름</th>
+            <td><input type="text" name="lastName"></td>
+        </tr>
+        <tr>
+            <th>이 메 일</th>
+            <td><input type="text" name="email"></td>
+        </tr>
+        <tr>
+            <th>전화번호</th>
+            <td><input type="text" name="phone"></td>
+        </tr>
+        <tr>
+            <th>입 사 일</th>
+            <td><input type="text" name="hire"></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# Lanbda(람다)
+
+# var hap = function(a,b) { return a+b} 와 같은 식
+hap = lambda a, b : a + b       # lambda 파라미터 : 실행할 내용
+print(hap(1,2))
+
+gob = lambda a, b : a * b
+print(type(gob))
+print(gob(3,4))

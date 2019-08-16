@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- target -->
+	<bean id="targetBean" class="com.test07.MessageBeanImpl">
+		<property name="name" value="AOP!!"></property>
+	</bean>
+	
+	<!-- advice(ccc) 로그[LOG] 메소드 -->
+	<bean id="loggingAdvice" class="com.test07.LoggingAdvice"></bean>
+	
+	<!-- advisor = advice + pointcut -->
+	<bean id="myAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="loggingAdvice"></property>
+		<property name="pointcut">
+			<!-- 정규표현식을 사용해서 생성한 bean객체 -->
+			<bean class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+				<property name="pattern">
+					<value>.*sayHello.*</value>
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- proxy : weaving -->
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="targetBean"></property>
+		<property name="interceptorNames">
+			<list>
+				<value>myAdvisor</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

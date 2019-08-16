@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\rodum\OneDrive\문서\카카오톡 받은 파일\페이징와르\zezepaging\zezePaging"/>
+			<item value="C:\wnsdus\kh백업\세미프로젝트\TOY_Semiproject(준연백업6.19) AM"/>
+			<item value="C:\wnsdus\kh백업\세미프로젝트\TOY_Semiproject(준연백업6.18) 달력 스크립트완성"/>
+			<item value="C:\wnsdus\kh백업\세미프로젝트\TOY_Semiproject(준연백업6.15) 달력이동완료"/>
+			<item value="C:\wnsdus\kh백업\세미프로젝트\TOY_Semiproject(준연백업6.10)"/>
+			<item value="C:\Users\wnsdu\Downloads\TOYsemiproject-master\TOY\TOY_Semiproject"/>
+			<item value="C:\wnsdus\kh백업\세미프로젝트\TOY_Semiproject(준연백업6.8)"/>
+			<item value="C:\Users\wnsdu\Downloads\TOYsemiproject-master\TOYsemiproject-master\TOY\TOY_Semiproject"/>
+			<item value="C:\Users\wnsdu\Desktop\toyprojectgit\TOY"/>
+			<item value="C:\Users\wnsdu\Downloads\TOYsemiproject-master"/>
+			<item value=""/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+			<item value="C:\Users\wnsdu\Desktop\TOY_Semiproject.zip"/>
+			<item value="C:\wnsdus\kh백업\빅데이터 웹&amp;서버 강의 with 김승모.zip"/>
+		</list>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="598"/>
+		<item key="DIALOG_Y_ORIGIN" value="232"/>
+	</section>
+	<section name="CleanDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="649"/>
+		<item key="DIALOG_Y_ORIGIN" value="210"/>
+		<item key="DIALOG_WIDTH" value="581"/>
+		<item key="DIALOG_HEIGHT" value="452"/>
+		<item key="TOGGLE_SELECTED" value="false"/>
+	</section>
+</section>

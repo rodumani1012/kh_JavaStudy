@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function work1() {
+	var inputObj = document.getElementById("input1");
+	inputObj.style.background = "orange";
+}
+function work2() {
+	var inputObj = document.getElementById("input1");
+	inputObj.style.background = "white";
+}
+</script>
+</head>
+<body>
+	<input type="text" size="10" id="input1" onfocus="work1()" onblur="work2()">
+	<input type="text" size="10" id="input2">
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+}
+#onbutton {
+	width: 20%;
+	height: 50px;
+	background-color: gray;
+	color: white;
+	font-size: 25px;
+}
+#offbutton {
+	width: 20%;
+	height: 50px;
+	background-color: orange;
+	color: black;
+	font-size: 25px;
+}
+</style>
+<script>
+function turnLight(onoff) {
+	var lightObj = document.getElementById("light");
+	if (onoff == "on") {
+		document.getElementById("onbutton").style.backgroundColor = "orange";
+		document.getElementById("onbutton").style.color = "white";
+		document.getElementById("offbutton").style.backgroundColor = "gray";
+		document.getElementById("offbutton").style.color = "black";
+		lightObj.src = "../../image/on.jpg";
+		
+	} else {
+		document.getElementById("onbutton").style.backgroundColor = "gray";
+		document.getElementById("onbutton").style.color = "black";
+		document.getElementById("offbutton").style.backgroundColor = "orange";
+		document.getElementById("offbutton").style.color = "white";
+		lightObj.src = "../../image/off.jpg";
+	}
+}
+</script>
+</head>
+<body>
+	<input type="button" value="ON" id="onbutton" onclick="turnLight('on')">
+	<input type="button" value="OFF" id="offbutton" onclick="turnLight('off')">
+	<br><br>
+	<img src="../../image/off.jpg" id="light">
+</body>
+</html>

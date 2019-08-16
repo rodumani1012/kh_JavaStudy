@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+input[type=text] {
+	font-size: 20px;
+	font-weight: bold;
+}
+input[type=button] {
+	width : 15%;
+	background-color: green;
+	font-size: 20px;
+	color : white;
+}
+</style>
+<script>
+var timer;
+var count = 0;
+var maxCount = 10;
+
+function startTimer() {
+	timer = setInterval(work, 500);
+}
+function stopTimer() {
+	clearInterval(timer);
+}
+function work() {
+	if (count < maxCount) {
+		count = count + 1;
+		document.getElementById("textTimer").value = count;
+	} /*else {
+		clearInterval(timer);
+	}*/
+
+}
+function initTimer() {
+	clearInterval(timer);
+	count = 0; 										//올라가던 숫자를 0으로 만드는 것
+	document.getElementById("textTimer").value = 0; //텍스트 상자의 값을 0로 만드는 것
+}
+</script>
+
+</head>
+<body>
+<input type="text" id="textTimer" size="40" value="0" readonly>
+<br><br>
+<input type="button" value="시작" onclick="startTimer()">
+<input type="button" value="정지" onclick="stopTimer()">
+<br><br>
+<input type="button" value="Clear" onclick="initTimer()">
+</body>
+</html>

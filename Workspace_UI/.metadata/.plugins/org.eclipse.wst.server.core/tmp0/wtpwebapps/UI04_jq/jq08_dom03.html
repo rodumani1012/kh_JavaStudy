@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("p:eq(0)").add("span").css("color","red");
+        // 0번지 p랑 span 태그의 색을 바꿈.
+
+        $("div").children().click(function(){
+            if($(this).prop("tagName") == "SPAN"){ // 클릭한 것의 속성명(tagName)이 SPAN 이면
+                alert("span 태그 클릭!");
+                $(this).css("color","green");
+            }
+            if($(this).is("p")){     // 클릭한 것이 p태그 라면
+                $(this).css("background","yellow");
+            }
+        });
+    });
+</script>
+</head>
+<body>
+
+    <div>
+        <p>add()</p>
+        <span>add() : 선택한 엘리먼트에 추가적으로 selector 표현식을 작성할 때 사용</span>
+        <p>is()</p>
+        <span>is() : 선택한 엘리먼트들 중에 구하는 엘리먼트가 있는지 확인할 때 사용</span>        
+    </div>
+
+
+
+</body>
+</html>

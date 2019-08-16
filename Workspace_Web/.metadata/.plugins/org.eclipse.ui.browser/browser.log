@@ -1,0 +1,404 @@
+
+4월 19, 2019 22:20:30.97 NEW SESSION
+4월 19, 2019 22:20:30.97 [7104:4632:0419/222030.972:ERROR:http_bridge.cc(126)] NOT IMPLEMENTED
+4월 19, 2019 22:20:31.03 [7104:11652:0419/222031.037:ERROR:browser_process_sub_thread.cc(209)] Waited 11 ms for network service
+4월 19, 2019 22:23:23.08 [1548:11060:0419/222323.079:ERROR:http_bridge.cc(126)] NOT IMPLEMENTED
+4월 19, 2019 22:23:23.13 [1548:11304:0419/222323.135:ERROR:browser_process_sub_thread.cc(209)] Waited 10 ms for network service
+4월 19, 2019 22:23:48.59 [128:2760:0419/222348.594:ERROR:http_bridge.cc(126)] NOT IMPLEMENTED
+4월 19, 2019 22:23:48.68 [128:11652:0419/222348.680:ERROR:browser_process_sub_thread.cc(209)] Waited 11 ms for network service
+4월 19, 2019 22:23:56.27 [5232:4388:0419/222356.272:ERROR:http_bridge.cc(126)] NOT IMPLEMENTED
+4월 19, 2019 22:23:56.34 [5232:1928:0419/222356.340:ERROR:browser_process_sub_thread.cc(209)] Waited 12 ms for network service
+4월 19, 2019 22:24:11.98 [12184:5320:0419/222411.987:ERROR:http_bridge.cc(126)] NOT IMPLEMENTED
+4월 19, 2019 22:24:12.06 [12184:4060:0419/222412.063:ERROR:browser_process_sub_thread.cc(209)] Waited 14 ms for network service
+4월 19, 2019 22:24:49.02 [7720:4296:0419/222449.023:ERROR:http_bridge.cc(126)] NOT IMPLEMENTED
+4월 19, 2019 22:24:49.08 [7720:11284:0419/222449.088:ERROR:browser_process_sub_thread.cc(209)] Waited 10 ms for network service
+
+4월 22, 2019 10:04:07.84 NEW SESSION
+4월 22, 2019 10:04:07.84 [816:9084:0422/100407.831:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 11:04:07.84 [816:9084:0422/110407.843:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 12:00:50.75 [816:5900:0422/120050.757:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+4월 22, 2019 12:00:53.09 [816:9084:0422/120053.089:ERROR:connection_factory_impl.cc(411)] Failed to connect to MCS endpoint with error -106
+4월 22, 2019 12:00:53.89 [816:9084:0422/120053.898:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 12:04:10.21 [816:9084:0422/120410.217:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 12:04:10.28 [816:9084:0422/120410.285:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 12:04:10.30 [816:9084:0422/120410.305:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 12:04:10.30 [816:9084:0422/120410.305:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 12:04:10.41 [816:9084:0422/120410.409:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 12:04:10.42 [816:9084:0422/120410.425:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 12:04:10.54 [816:9084:0422/120410.545:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 13:07:50.32 [816:5900:0422/130750.324:ERROR:textfield.cc(1768)] NOT IMPLEMENTED
+4월 22, 2019 13:07:52.71 [816:5900:0422/130752.711:ERROR:prefix_selector.cc(163)] NOT IMPLEMENTED
+4월 22, 2019 13:09:07.01 [816:9084:0422/130907.017:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 14:09:07.82 [816:9084:0422/140907.823:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 15:09:06.85 [816:9084:0422/150906.857:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 15:09:10.38 [816:9084:0422/150910.387:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 15:09:10.88 [816:9084:0422/150910.884:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 15:09:10.89 [816:9084:0422/150910.895:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 15:09:10.94 [816:9084:0422/150910.946:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 15:09:10.98 [816:9084:0422/150910.986:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 22, 2019 15:09:11.12 [816:9084:0422/150911.128:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+
+4월 30, 2019 14:39:07.12 NEW SESSION
+4월 30, 2019 14:39:07.12 [6260:12452:0430/143907.122:ERROR:appcache_update_url_loader_request.cc(139)] NOT IMPLEMENTED
+4월 30, 2019 15:14:26.70 [6260:12452:0430/151426.704:ERROR:connection_factory_impl.cc(411)] Failed to connect to MCS endpoint with error -21
+4월 30, 2019 15:29:08.68 [6260:12452:0430/152908.687:ERROR:connection_factory_impl.cc(411)] Failed to connect to MCS endpoint with error -21
+
+5월 10, 2019 09:19:16.05 NEW SESSION
+5월 10, 2019 09:19:16.05 [16212:2784:0510/091916.043:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 10, 2019 09:19:16.21 [16212:5232:0510/091916.216:ERROR:browser_process_sub_thread.cc(217)] Waited 54 ms for network service
+5월 10, 2019 09:19:23.49 [14696:4760:0510/091923.496:ERROR:browser_process_sub_thread.cc(217)] Waited 48 ms for network service
+5월 10, 2019 09:19:34.12 [12120:8784:0510/091934.126:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 10, 2019 09:19:34.25 [12120:13876:0510/091934.258:ERROR:browser_process_sub_thread.cc(217)] Waited 9 ms for network service
+5월 10, 2019 09:21:00.71 [12656:16124:0510/092100.716:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 10, 2019 09:21:00.82 [12656:10080:0510/092100.818:ERROR:browser_process_sub_thread.cc(217)] Waited 22 ms for network service
+5월 10, 2019 09:28:42.60 [11520:3036:0510/092842.600:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 10, 2019 09:28:42.69 [11520:8792:0510/092842.689:ERROR:browser_process_sub_thread.cc(217)] Waited 19 ms for network service
+5월 10, 2019 09:38:54.71 [10748:8248:0510/093854.714:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 10, 2019 09:38:54.83 [10748:8616:0510/093854.827:ERROR:browser_process_sub_thread.cc(217)] Waited 18 ms for network service
+5월 10, 2019 09:40:00.63 [8264:17232:0510/094000.637:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 10, 2019 09:40:00.73 [8264:16696:0510/094000.733:ERROR:browser_process_sub_thread.cc(217)] Waited 26 ms for network service
+5월 10, 2019 09:40:48.29 [11916:696:0510/094048.291:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 10, 2019 09:40:48.37 [11916:6644:0510/094048.375:ERROR:browser_process_sub_thread.cc(217)] Waited 28 ms for network service
+5월 10, 2019 09:41:02.63 [2464:12192:0510/094102.638:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 10, 2019 09:41:02.72 [2464:560:0510/094102.727:ERROR:browser_process_sub_thread.cc(217)] Waited 10 ms for network service
+5월 10, 2019 09:42:12.59 [12488:15508:0510/094212.592:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 10, 2019 09:42:12.74 [12488:8932:0510/094212.744:ERROR:browser_process_sub_thread.cc(217)] Waited 47 ms for network service
+5월 10, 2019 10:27:41.75 [1896:6100:0510/102741.755:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 10, 2019 10:27:41.87 [1896:12188:0510/102741.872:ERROR:browser_process_sub_thread.cc(217)] Waited 22 ms for network service
+5월 10, 2019 10:28:59.71 [1188:7728:0510/102859.710:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 10, 2019 10:28:59.79 [1188:11612:0510/102859.795:ERROR:browser_process_sub_thread.cc(217)] Waited 18 ms for network service
+5월 10, 2019 10:32:49.46 [8800:10724:0510/103249.459:ERROR:textfield.cc(1773)] NOT IMPLEMENTED
+5월 10, 2019 12:59:11.53 [8800:16560:0510/125911.529:ERROR:socket_stream.cc(219)] Closing stream with result -2
+5월 10, 2019 12:59:12.78 [8800:10724:0510/125911.536:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+5월 10, 2019 12:59:12.82 [8800:16560:0510/125911.571:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -21
+5월 10, 2019 13:24:49.25 [8800:10724:0510/132449.253:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 10, 2019 13:24:49.35 [8800:16560:0510/132449.350:ERROR:browser_process_sub_thread.cc(217)] Waited 15 ms for network service
+5월 10, 2019 13:30:32.03 [2440:10372:0510/133032.032:ERROR:CONSOLE(0)] "Access to XMLHttpRequest at 'https://play.google.com/log?format=json&hasfast=true&authuser=0' from origin 'chrome-search://local-ntp' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: The 'Access-Control-Allow-Origin' header has a value 'http://play.google.com' that is not equal to the supplied origin.", source: chrome-search://local-ntp/local-ntp.html (0)
+5월 10, 2019 13:30:34.82 [2440:10372:0510/133034.829:ERROR:CONSOLE(0)] "Access to XMLHttpRequest at 'https://play.google.com/log?format=json&hasfast=true&authuser=0' from origin 'chrome-search://local-ntp' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: The 'Access-Control-Allow-Origin' header has a value 'http://play.google.com' that is not equal to the supplied origin.", source: chrome-search://local-ntp/local-ntp.html (0)
+
+5월 13, 2019 12:33:32.67 NEW SESSION
+5월 13, 2019 12:33:32.67 [18148:10648:0513/123332.670:ERROR:browser_process_sub_thread.cc(217)] Waited 237 ms for network service
+5월 13, 2019 12:47:36.84 [5728:10036:0513/124736.847:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 12:47:36.94 [5728:17400:0513/124736.941:ERROR:browser_process_sub_thread.cc(217)] Waited 22 ms for network service
+5월 13, 2019 12:47:42.77 [4612:10856:0513/124742.777:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 12:47:42.86 [4612:3880:0513/124742.863:ERROR:browser_process_sub_thread.cc(217)] Waited 22 ms for network service
+5월 13, 2019 12:49:05.50 [7520:18000:0513/124905.502:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 12:49:05.58 [7520:17172:0513/124905.580:ERROR:browser_process_sub_thread.cc(217)] Waited 15 ms for network service
+5월 13, 2019 12:49:34.09 [14048:9016:0513/124934.099:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 12:49:34.17 [14048:11008:0513/124934.161:ERROR:browser_process_sub_thread.cc(217)] Waited 19 ms for network service
+5월 13, 2019 13:45:09.72 [11792:15256:0513/134509.727:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 13:45:09.82 [11792:3148:0513/134509.820:ERROR:browser_process_sub_thread.cc(217)] Waited 22 ms for network service
+5월 13, 2019 13:48:51.62 [13560:3616:0513/134851.622:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 13:48:51.71 [13560:17720:0513/134851.716:ERROR:browser_process_sub_thread.cc(217)] Waited 28 ms for network service
+5월 13, 2019 13:57:17.18 [6644:6256:0513/135717.184:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 13:57:17.27 [6644:9948:0513/135717.277:ERROR:browser_process_sub_thread.cc(217)] Waited 13 ms for network service
+5월 13, 2019 13:59:08.05 [17260:8636:0513/135908.051:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 13:59:08.15 [17260:11796:0513/135908.155:ERROR:browser_process_sub_thread.cc(217)] Waited 18 ms for network service
+5월 13, 2019 14:07:54.85 [17720:14316:0513/140754.856:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 14:07:54.94 [17720:10900:0513/140754.948:ERROR:browser_process_sub_thread.cc(217)] Waited 22 ms for network service
+5월 13, 2019 14:25:29.62 [8880:16976:0513/142529.622:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 14:25:29.68 [8880:17864:0513/142529.685:ERROR:browser_process_sub_thread.cc(217)] Waited 12 ms for network service
+5월 13, 2019 14:25:57.29 [16732:18072:0513/142557.291:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 14:25:57.38 [16732:16808:0513/142557.385:ERROR:browser_process_sub_thread.cc(217)] Waited 31 ms for network service
+5월 13, 2019 14:34:12.25 [8768:18400:0513/143412.250:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 14:34:12.32 [8768:17804:0513/143412.328:ERROR:browser_process_sub_thread.cc(217)] Waited 14 ms for network service
+5월 13, 2019 14:34:32.05 [5032:4164:0513/143432.034:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 14:34:32.13 [5032:17632:0513/143432.130:ERROR:browser_process_sub_thread.cc(217)] Waited 21 ms for network service
+5월 13, 2019 14:40:54.44 [7568:13168:0513/144054.447:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 14:40:54.52 [7568:18116:0513/144054.510:ERROR:browser_process_sub_thread.cc(217)] Waited 13 ms for network service
+5월 13, 2019 15:16:50.31 [15352:13256:0513/151650.312:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 15:16:50.42 [15352:12292:0513/151650.421:ERROR:browser_process_sub_thread.cc(217)] Waited 43 ms for network service
+5월 13, 2019 15:48:55.27 [16700:17108:0513/154855.276:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 15:48:55.40 [16700:4080:0513/154855.400:ERROR:browser_process_sub_thread.cc(217)] Waited 31 ms for network service
+5월 13, 2019 16:29:07.07 [9768:12972:0513/162907.074:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 13, 2019 17:07:39.59 [9768:5712:0513/170739.595:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 17:07:39.66 [9768:12972:0513/170739.664:ERROR:browser_process_sub_thread.cc(217)] Waited 13 ms for network service
+5월 13, 2019 17:15:34.80 [16784:4788:0513/171534.807:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 17:15:34.89 [16784:17328:0513/171534.887:ERROR:browser_process_sub_thread.cc(217)] Waited 31 ms for network service
+5월 13, 2019 17:31:39.06 [18268:11576:0513/173139.068:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 13, 2019 17:31:39.12 [18268:17736:0513/173139.126:ERROR:browser_process_sub_thread.cc(217)] Waited 13 ms for network service
+
+5월 15, 2019 08:50:27.01 NEW SESSION
+5월 15, 2019 08:50:27.01 [9276:9000:0515/085027.002:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 15, 2019 08:50:27.09 [9276:10388:0515/085027.096:ERROR:browser_process_sub_thread.cc(217)] Waited 19 ms for network service
+5월 15, 2019 09:01:57.04 [5912:9392:0515/090157.026:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 15, 2019 09:01:57.12 [5912:15464:0515/090157.104:ERROR:browser_process_sub_thread.cc(217)] Waited 17 ms for network service
+5월 15, 2019 09:24:06.93 [14356:12652:0515/092406.936:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 15, 2019 12:40:28.50 [14356:11004:0515/124028.500:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+5월 15, 2019 12:40:29.91 [14356:12652:0515/124029.919:ERROR:socket_stream.cc(219)] Closing stream with result -2
+5월 15, 2019 12:40:32.62 [14356:12652:0515/124032.626:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -21
+5월 15, 2019 12:44:06.84 [14356:12652:0515/124406.849:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 15, 2019 13:41:27.98 [14356:12652:0515/134127.984:ERROR:socket_stream.cc(219)] Closing stream with result -2
+5월 15, 2019 13:41:45.11 [14356:11004:0515/134145.117:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 15, 2019 13:41:45.24 [14356:12652:0515/134145.242:ERROR:browser_process_sub_thread.cc(217)] Waited 19 ms for network service
+5월 15, 2019 13:54:06.88 [16480:10828:0515/135406.881:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 15, 2019 15:05:32.78 [16480:10828:0515/150532.789:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -21
+5월 15, 2019 15:05:41.33 [16480:14696:0515/150541.333:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 15, 2019 15:05:41.42 [16480:10828:0515/150541.426:ERROR:browser_process_sub_thread.cc(217)] Waited 25 ms for network service
+5월 15, 2019 15:07:00.90 [9512:16412:0515/150700.909:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 15, 2019 15:07:00.98 [9512:15900:0515/150700.988:ERROR:browser_process_sub_thread.cc(217)] Waited 25 ms for network service
+5월 15, 2019 15:08:05.63 [10584:13844:0515/150805.633:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 15, 2019 15:08:05.72 [10584:1056:0515/150805.713:ERROR:browser_process_sub_thread.cc(217)] Waited 27 ms for network service
+5월 15, 2019 15:15:54.15 [16076:17700:0515/151554.141:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 15, 2019 15:15:54.23 [16076:11100:0515/151554.234:ERROR:browser_process_sub_thread.cc(217)] Waited 20 ms for network service
+5월 15, 2019 16:16:30.58 [8796:13268:0515/161630.580:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 15, 2019 16:16:30.65 [8796:2680:0515/161630.659:ERROR:browser_process_sub_thread.cc(217)] Waited 22 ms for network service
+5월 15, 2019 16:18:35.19 [17348:7208:0515/161835.198:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 15, 2019 16:18:35.28 [17348:11440:0515/161835.288:ERROR:browser_process_sub_thread.cc(217)] Waited 14 ms for network service
+5월 15, 2019 16:54:07.07 [8396:968:0515/165407.071:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 15, 2019 16:59:07.26 [8396:968:0515/165907.260:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 15, 2019 17:04:51.33 [8396:1108:0515/170451.329:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 15, 2019 17:04:51.42 [8396:968:0515/170451.428:ERROR:browser_process_sub_thread.cc(217)] Waited 15 ms for network service
+
+5월 17, 2019 09:05:15.01 NEW SESSION
+5월 17, 2019 09:05:15.01 [12884:6032:0517/090514.807:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 17, 2019 09:05:15.01 [12884:14140:0517/090514.885:ERROR:browser_process_sub_thread.cc(217)] Waited 16 ms for network service
+5월 17, 2019 09:26:11.28 [12732:6304:0517/092611.281:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 17, 2019 09:26:11.34 [12732:4752:0517/092611.344:ERROR:browser_process_sub_thread.cc(217)] Waited 9 ms for network service
+5월 17, 2019 09:39:56.21 [10388:1784:0517/093956.218:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 17, 2019 09:39:56.28 [10388:5820:0517/093956.281:ERROR:browser_process_sub_thread.cc(217)] Waited 14 ms for network service
+5월 17, 2019 10:12:55.04 [12812:8600:0517/101255.047:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 17, 2019 10:12:55.12 [12812:1188:0517/101255.125:ERROR:browser_process_sub_thread.cc(217)] Waited 17 ms for network service
+5월 17, 2019 13:19:06.87 [6172:736:0517/131906.871:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 17, 2019 14:20:43.70 [6172:736:0517/142043.706:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -21
+5월 17, 2019 14:22:45.36 [6172:4136:0517/142245.367:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 17, 2019 14:22:45.46 [6172:736:0517/142245.461:ERROR:browser_process_sub_thread.cc(217)] Waited 13 ms for network service
+5월 17, 2019 14:28:08.04 [7972:7784:0517/142808.043:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 17, 2019 14:28:08.15 [7972:12560:0517/142808.152:ERROR:browser_process_sub_thread.cc(217)] Waited 26 ms for network service
+5월 17, 2019 14:59:06.89 [14252:13244:0517/145906.892:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 17, 2019 15:18:34.84 [14252:1956:0517/151834.841:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 17, 2019 15:18:34.91 [14252:13244:0517/151834.919:ERROR:browser_process_sub_thread.cc(217)] Waited 21 ms for network service
+
+5월 17, 2019 16:59:05.89 NEW SESSION
+5월 17, 2019 16:59:05.89 [13156:9744:0517/165905.889:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 17, 2019 17:21:13.54 [13156:992:0517/172113.543:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+5월 17, 2019 17:21:16.51 [13156:9744:0517/172116.514:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+
+5월 22, 2019 14:53:11.42 NEW SESSION
+5월 22, 2019 14:53:11.42 [7684:13736:0522/145311.202:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 22, 2019 14:53:11.42 [7684:8808:0522/145311.296:ERROR:browser_process_sub_thread.cc(217)] Waited 24 ms for network service
+5월 22, 2019 15:18:18.70 [10792:9680:0522/151818.701:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 22, 2019 15:18:18.77 [10792:8200:0522/151818.779:ERROR:browser_process_sub_thread.cc(217)] Waited 12 ms for network service
+
+5월 22, 2019 16:44:57.97 NEW SESSION
+5월 22, 2019 16:44:57.97 [14548:13996:0522/164457.158:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 22, 2019 16:44:57.98 [14548:16692:0522/164457.264:ERROR:browser_process_sub_thread.cc(217)] Waited 29 ms for network service
+
+5월 22, 2019 18:49:07.57 NEW SESSION
+5월 22, 2019 18:49:07.57 [1524:16960:0522/184907.555:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.00 [1524:16960:0522/185407.008:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.08 [1524:16960:0522/185407.082:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.08 [1524:16960:0522/185407.083:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.09 [1524:16960:0522/185407.087:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.09 [1524:16960:0522/185407.089:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.10 [1524:16960:0522/185407.093:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.11 [1524:16960:0522/185407.098:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.11 [1524:16960:0522/185407.101:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.12 [1524:16960:0522/185407.104:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.13 [1524:16960:0522/185407.104:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.14 [1524:16960:0522/185407.109:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.15 [1524:16960:0522/185407.113:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.15 [1524:16960:0522/185407.118:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.16 [1524:16960:0522/185407.123:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.17 [1524:16960:0522/185407.124:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.18 [1524:16960:0522/185407.140:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.19 [1524:16960:0522/185407.141:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.20 [1524:16960:0522/185407.145:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.21 [1524:16960:0522/185407.146:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.22 [1524:16960:0522/185407.148:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.23 [1524:16960:0522/185407.149:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.23 [1524:16960:0522/185407.152:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.24 [1524:16960:0522/185407.153:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.25 [1524:16960:0522/185407.155:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.26 [1524:16960:0522/185407.159:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.27 [1524:16960:0522/185407.163:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.28 [1524:16960:0522/185407.167:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.28 [1524:16960:0522/185407.169:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.29 [1524:16960:0522/185407.173:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.30 [1524:16960:0522/185407.173:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.30 [1524:16960:0522/185407.173:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.31 [1524:16960:0522/185407.176:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.32 [1524:16960:0522/185407.179:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.33 [1524:16960:0522/185407.179:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.33 [1524:16960:0522/185407.180:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.34 [1524:16960:0522/185407.183:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.35 [1524:16960:0522/185407.183:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.36 [1524:16960:0522/185407.185:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.37 [1524:16960:0522/185407.187:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.38 [1524:16960:0522/185407.188:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.39 [1524:16960:0522/185407.190:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.40 [1524:16960:0522/185407.193:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.40 [1524:16960:0522/185407.195:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.41 [1524:16960:0522/185407.197:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.42 [1524:16960:0522/185407.199:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.43 [1524:16960:0522/185407.200:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 18:54:07.44 [1524:16960:0522/185407.201:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 19:14:07.54 [1524:16960:0522/191407.546:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 22, 2019 22:56:02.50 [1524:13740:0522/225602.500:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+5월 22, 2019 22:56:06.08 [1524:4536:0522/225606.087:ERROR:get_updates_processor.cc(245)] PostClientToServerMessage() failed during GetUpdates
+5월 22, 2019 22:56:06.09 [1524:16960:0522/225606.087:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+5월 23, 2019 08:35:36.49 [1524:13740:0523/083536.492:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+5월 23, 2019 08:35:39.24 [1524:16960:0523/083539.241:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -21
+5월 23, 2019 08:35:44.42 [1524:16960:0523/083544.428:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -105
+5월 23, 2019 08:35:44.43 [1524:4536:0523/083544.428:ERROR:get_updates_processor.cc(245)] PostClientToServerMessage() failed during GetUpdates
+5월 23, 2019 08:35:44.44 [1524:4536:0523/083544.433:ERROR:get_updates_processor.cc(245)] PostClientToServerMessage() failed during GetUpdates
+5월 23, 2019 08:35:56.20 [1524:16960:0523/083556.208:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -21
+5월 23, 2019 09:04:36.88 [1524:13740:0523/090436.886:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 23, 2019 09:04:37.01 [1524:16960:0523/090437.017:ERROR:browser_process_sub_thread.cc(217)] Waited 20 ms for network service
+5월 23, 2019 09:24:06.96 [15152:4364:0523/092406.962:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 09:33:51.16 [15152:964:0523/093351.164:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 23, 2019 09:33:51.24 [15152:4364:0523/093351.242:ERROR:browser_process_sub_thread.cc(217)] Waited 17 ms for network service
+5월 23, 2019 09:38:58.23 [11228:17168:0523/093858.232:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 23, 2019 09:38:58.31 [11228:12312:0523/093858.310:ERROR:browser_process_sub_thread.cc(217)] Waited 19 ms for network service
+5월 23, 2019 09:40:45.51 [4568:6892:0523/094045.511:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 23, 2019 09:40:45.58 [4568:1504:0523/094045.589:ERROR:browser_process_sub_thread.cc(217)] Waited 14 ms for network service
+5월 23, 2019 09:44:08.49 [13328:11536:0523/094408.494:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 23, 2019 09:44:08.57 [13328:7688:0523/094408.573:ERROR:browser_process_sub_thread.cc(217)] Waited 16 ms for network service
+5월 23, 2019 09:57:13.50 [10416:11424:0523/095713.505:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 23, 2019 09:57:13.56 [10416:12868:0523/095713.568:ERROR:browser_process_sub_thread.cc(217)] Waited 17 ms for network service
+5월 23, 2019 10:05:10.64 [8908:17400:0523/100510.645:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 23, 2019 10:05:10.73 [8908:12592:0523/100510.738:ERROR:browser_process_sub_thread.cc(217)] Waited 28 ms for network service
+5월 23, 2019 10:58:57.44 [3724:2336:0523/105857.446:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 23, 2019 10:58:57.57 [3724:9756:0523/105857.571:ERROR:browser_process_sub_thread.cc(217)] Waited 24 ms for network service
+5월 23, 2019 11:02:29.84 [14200:8480:0523/110229.842:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 23, 2019 11:02:29.93 [14200:13968:0523/110229.935:ERROR:browser_process_sub_thread.cc(217)] Waited 16 ms for network service
+5월 23, 2019 11:09:30.32 [15576:15836:0523/110930.321:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 23, 2019 11:09:30.39 [15576:17320:0523/110930.399:ERROR:browser_process_sub_thread.cc(217)] Waited 19 ms for network service
+5월 23, 2019 11:12:07.17 [6116:16260:0523/111207.178:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 23, 2019 11:12:07.25 [6116:3816:0523/111207.256:ERROR:browser_process_sub_thread.cc(217)] Waited 15 ms for network service
+5월 23, 2019 11:34:06.95 [9124:7772:0523/113406.952:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 11:47:26.43 [9124:11952:0523/114726.433:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 23, 2019 11:47:26.54 [9124:7772:0523/114726.543:ERROR:browser_process_sub_thread.cc(217)] Waited 22 ms for network service
+5월 23, 2019 12:19:06.92 [17128:15472:0523/121906.922:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 12:19:07.00 [17128:15472:0523/121907.006:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 12:19:07.01 [17128:15472:0523/121907.007:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 12:19:07.01 [17128:15472:0523/121907.007:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 12:19:07.02 [17128:15472:0523/121907.013:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 12:19:07.02 [17128:15472:0523/121907.021:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 12:44:06.94 [17128:15472:0523/124406.940:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:23:29.12 [17128:15472:0523/132329.119:ERROR:socket_stream.cc(219)] Closing stream with result -2
+5월 23, 2019 13:23:31.77 [17128:15472:0523/132331.773:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -21
+5월 23, 2019 13:23:32.47 [17128:15472:0523/132332.471:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:23:34.88 [17128:15472:0523/132334.884:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:23:34.88 [17128:15472:0523/132334.885:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:23:34.89 [17128:15472:0523/132334.890:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:23:34.89 [17128:15472:0523/132334.891:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:23:34.90 [17128:15472:0523/132334.900:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:23:34.91 [17128:15472:0523/132334.914:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:44:07.12 [17128:15472:0523/134407.122:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:59:06.88 [17128:15472:0523/135906.880:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:59:06.95 [17128:15472:0523/135906.951:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:59:06.96 [17128:15472:0523/135906.952:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:59:06.97 [17128:15472:0523/135906.956:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:59:06.97 [17128:15472:0523/135906.958:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:59:06.98 [17128:15472:0523/135906.983:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:59:06.98 [17128:15472:0523/135906.983:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:59:06.99 [17128:15472:0523/135906.988:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:59:06.99 [17128:15472:0523/135906.989:ERROR:appcache_update_url_loader_request.cc(174)] NOT IMPLEMENTED
+5월 23, 2019 13:59:41.18 [17128:16408:0523/135941.181:ERROR:textfield.cc(1773)] NOT IMPLEMENTED
+5월 23, 2019 14:48:08.59 [17128:10208:0523/144808.594:ERROR:platform_sensor_reader_win.cc(244)] NOT IMPLEMENTED
+5월 23, 2019 14:48:50.82 [17128:10208:0523/144850.825:ERROR:platform_sensor_reader_win.cc(244)] NOT IMPLEMENTED
+5월 23, 2019 14:49:06.87 [17128:10208:0523/144906.878:ERROR:platform_sensor_reader_win.cc(244)] NOT IMPLEMENTED
+5월 23, 2019 14:49:07.72 [17128:10208:0523/144907.727:ERROR:platform_sensor_reader_win.cc(244)] NOT IMPLEMENTED
+5월 23, 2019 14:49:26.23 [17128:10208:0523/144926.233:ERROR:platform_sensor_reader_win.cc(244)] NOT IMPLEMENTED
+5월 23, 2019 14:50:15.86 [17128:10208:0523/145015.867:ERROR:platform_sensor_reader_win.cc(244)] NOT IMPLEMENTED
+5월 23, 2019 14:51:18.57 [17128:10208:0523/145118.577:ERROR:platform_sensor_reader_win.cc(244)] NOT IMPLEMENTED
+5월 23, 2019 14:51:29.73 [17128:10208:0523/145129.731:ERROR:platform_sensor_reader_win.cc(244)] NOT IMPLEMENTED
+5월 23, 2019 14:51:50.55 [17128:10208:0523/145150.554:ERROR:platform_sensor_reader_win.cc(244)] NOT IMPLEMENTED
+5월 23, 2019 14:51:54.36 [17128:10208:0523/145154.368:ERROR:platform_sensor_reader_win.cc(244)] NOT IMPLEMENTED
+5월 23, 2019 15:11:43.02 [17128:16408:0523/151143.027:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 23, 2019 15:11:43.12 [17128:15472:0523/151143.121:ERROR:browser_process_sub_thread.cc(217)] Waited 27 ms for network service
+
+5월 30, 2019 16:09:02.45 NEW SESSION
+5월 30, 2019 16:09:02.46 [16176:17892:0530/160902.452:ERROR:textfield.cc(1773)] NOT IMPLEMENTED
+5월 30, 2019 17:31:09.00 [16176:17892:0530/173109.004:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 30, 2019 17:31:09.09 [16176:856:0530/173109.093:ERROR:browser_process_sub_thread.cc(217)] Waited 13 ms for network service
+
+5월 31, 2019 17:06:25.58 NEW SESSION
+5월 31, 2019 17:06:25.59 [20444:4608:0531/170625.586:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 31, 2019 17:06:25.68 [20444:19324:0531/170625.686:ERROR:browser_process_sub_thread.cc(217)] Waited 15 ms for network service
+5월 31, 2019 20:00:29.22 [18744:7644:0531/200029.226:ERROR:browser_process_sub_thread.cc(217)] Waited 87 ms for network service
+5월 31, 2019 22:17:53.67 [19484:9540:0531/221753.676:ERROR:platform_sensor_reader_win.cc(244)] NOT IMPLEMENTED
+5월 31, 2019 22:18:52.25 [19484:11804:0531/221852.258:ERROR:textfield.cc(1773)] NOT IMPLEMENTED
+
+5월 31, 2019 23:47:35.81 NEW SESSION
+5월 31, 2019 23:47:35.81 [13000:17180:0531/234735.809:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+5월 31, 2019 23:47:35.91 [13000:12660:0531/234735.909:ERROR:browser_process_sub_thread.cc(217)] Waited 22 ms for network service
+
+6월 02, 2019 11:43:41.62 NEW SESSION
+6월 02, 2019 11:43:41.62 [17028:5648:0602/114341.602:ERROR:textfield.cc(1773)] NOT IMPLEMENTED
+6월 02, 2019 12:11:44.00 [17028:12368:0602/121144.005:ERROR:platform_sensor_reader_win.cc(244)] NOT IMPLEMENTED
+6월 02, 2019 12:15:46.75 [17028:12368:0602/121546.751:ERROR:platform_sensor_reader_win.cc(244)] NOT IMPLEMENTED
+6월 02, 2019 15:27:44.52 [17028:5648:0602/152744.524:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+6월 02, 2019 15:27:45.78 [17028:11220:0602/152745.664:ERROR:get_updates_processor.cc(245)] PostClientToServerMessage() failed during GetUpdates
+6월 02, 2019 15:27:47.42 [17028:11220:0602/152747.429:ERROR:get_updates_processor.cc(245)] PostClientToServerMessage() failed during GetUpdates
+6월 02, 2019 15:27:49.12 [17028:10628:0602/152749.120:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -105
+6월 02, 2019 17:06:31.73 [17028:10628:0602/170631.587:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -21
+6월 02, 2019 17:06:31.74 [17028:5648:0602/170631.667:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+
+6월 14, 2019 13:30:04.27 NEW SESSION
+6월 14, 2019 13:30:04.27 [3432:6388:0614/133004.258:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+6월 14, 2019 13:30:04.33 [3432:11592:0614/133004.336:ERROR:browser_process_sub_thread.cc(217)] Waited 22 ms for network service
+6월 14, 2019 15:17:50.93 [13288:7784:0614/151750.937:ERROR:socket_stream.cc(219)] Closing stream with result -2
+6월 14, 2019 15:17:55.31 [13288:7784:0614/151755.316:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -21
+6월 14, 2019 17:14:29.67 [13288:9520:0614/171429.671:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+6월 14, 2019 17:14:32.24 [13288:13268:0614/171432.240:ERROR:get_updates_processor.cc(245)] PostClientToServerMessage() failed during GetUpdates
+6월 14, 2019 17:14:32.53 [13288:7784:0614/171432.537:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+6월 14, 2019 20:14:34.54 [13288:9520:0614/201434.546:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+6월 14, 2019 20:14:36.56 [13288:7784:0614/201436.569:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+6월 15, 2019 12:03:40.44 [13288:9520:0615/120340.440:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+6월 15, 2019 12:03:40.47 [13288:13268:0615/120340.440:ERROR:get_updates_processor.cc(245)] PostClientToServerMessage() failed during GetUpdates
+6월 15, 2019 12:03:40.48 [13288:7784:0615/120340.440:ERROR:checkin_request.cc(219)] Failed to get checkin response. Fetcher failed. Retrying.
+6월 15, 2019 12:03:40.48 [13288:7784:0615/120340.445:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+6월 15, 2019 12:42:37.88 [13288:9520:0615/124237.886:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+6월 15, 2019 12:42:37.99 [13288:7784:0615/124237.991:ERROR:browser_process_sub_thread.cc(217)] Waited 11 ms for network service
+
+6월 16, 2019 09:04:09.99 NEW SESSION
+6월 16, 2019 09:04:09.99 [8144:5180:0616/090409.990:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+6월 16, 2019 09:16:11.93 [8144:5180:0616/091611.938:ERROR:http_bridge.cc(127)] NOT IMPLEMENTED
+6월 16, 2019 09:16:12.01 [8144:12468:0616/091612.017:ERROR:browser_process_sub_thread.cc(217)] Waited 12 ms for network service
+
+6월 24, 2019 09:15:55.50 NEW SESSION
+6월 24, 2019 09:15:55.50 [17772:2696:0624/091555.501:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+6월 24, 2019 09:15:55.60 [17772:3364:0624/091555.605:ERROR:browser_process_sub_thread.cc(221)] Waited 14 ms for network service
+6월 24, 2019 09:43:06.70 [14304:8448:0624/094306.700:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+6월 24, 2019 09:43:06.81 [14304:18648:0624/094306.813:ERROR:browser_process_sub_thread.cc(221)] Waited 9 ms for network service
+6월 24, 2019 10:44:10.69 [7204:19632:0624/104410.693:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+6월 24, 2019 10:44:10.77 [7204:13920:0624/104410.771:ERROR:browser_process_sub_thread.cc(221)] Waited 18 ms for network service
+6월 24, 2019 10:57:30.57 [8240:11380:0624/105730.575:ERROR:textfield.cc(1758)] NOT IMPLEMENTED
+6월 24, 2019 11:13:04.43 [8240:11380:0624/111304.437:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+6월 24, 2019 11:13:04.51 [8240:18436:0624/111304.515:ERROR:browser_process_sub_thread.cc(221)] Waited 22 ms for network service
+6월 24, 2019 11:15:38.15 [16524:11400:0624/111538.141:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+6월 24, 2019 11:15:38.23 [16524:11008:0624/111538.235:ERROR:browser_process_sub_thread.cc(221)] Waited 18 ms for network service
+6월 24, 2019 11:59:58.29 [11948:12060:0624/115958.294:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+6월 24, 2019 12:11:38.99 [11948:12060:0624/121138.995:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+6월 24, 2019 12:11:39.08 [11948:13112:0624/121139.088:ERROR:browser_process_sub_thread.cc(221)] Waited 15 ms for network service
+
+6월 24, 2019 20:51:13.96 NEW SESSION
+6월 24, 2019 20:51:13.96 [21356:18660:0624/205113.958:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+6월 24, 2019 20:51:14.06 [21356:15424:0624/205114.062:ERROR:browser_process_sub_thread.cc(221)] Waited 16 ms for network service
+6월 24, 2019 20:51:31.20 [17796:3984:0624/205131.204:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+6월 24, 2019 20:51:31.33 [17796:2244:0624/205131.331:ERROR:browser_process_sub_thread.cc(221)] Waited 15 ms for network service
+6월 24, 2019 20:52:26.77 [13496:7504:0624/205226.778:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+6월 24, 2019 20:52:26.91 [13496:6820:0624/205226.912:ERROR:browser_process_sub_thread.cc(221)] Waited 32 ms for network service
+6월 24, 2019 22:06:25.86 [8896:18420:0624/220625.863:ERROR:textfield.cc(1758)] NOT IMPLEMENTED
+6월 24, 2019 23:26:53.68 [8896:18420:0624/232653.687:ERROR:gcm_channel_status_request.cc(151)] GCM channel request failed.
+
+7월 09, 2019 12:27:36.76 NEW SESSION
+7월 09, 2019 12:27:36.76 [9132:10032:0709/122736.761:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 09, 2019 12:27:36.85 [9132:22072:0709/122736.853:ERROR:browser_process_sub_thread.cc(221)] Waited 7 ms for network service
+7월 09, 2019 12:28:45.54 [12440:22204:0709/122845.545:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 09, 2019 12:28:45.63 [12440:16376:0709/122845.631:ERROR:browser_process_sub_thread.cc(221)] Waited 14 ms for network service
+7월 09, 2019 12:29:52.72 [11564:21876:0709/122952.727:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 09, 2019 12:29:52.80 [11564:23416:0709/122952.808:ERROR:browser_process_sub_thread.cc(221)] Waited 12 ms for network service
+7월 09, 2019 12:30:59.92 [12672:148:0709/123059.920:ERROR:textfield.cc(1758)] NOT IMPLEMENTED
+7월 09, 2019 15:08:53.34 [12672:148:0709/150853.341:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 09, 2019 15:08:53.46 [12672:23284:0709/150853.465:ERROR:browser_process_sub_thread.cc(221)] Waited 27 ms for network service
+
+7월 24, 2019 08:49:03.42 NEW SESSION
+7월 24, 2019 08:49:03.42 [6328:552:0724/084903.417:ERROR:socket_stream.cc(219)] Closing stream with result -2
+7월 24, 2019 08:54:43.25 [6328:552:0724/085443.253:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+7월 24, 2019 08:56:37.50 [6328:8132:0724/085637.096:ERROR:event_router.cc(730)] Event dispatched while shutting down extensions browser client.
+7월 24, 2019 08:56:37.51 [6328:8132:0724/085637.097:ERROR:event_router.cc(730)] Event dispatched while shutting down extensions browser client.
+7월 24, 2019 08:56:37.51 [6328:8132:0724/085637.114:ERROR:http_bridge.cc(110)] NOT IMPLEMENTED
+7월 24, 2019 08:56:37.52 [6328:552:0724/085637.177:ERROR:browser_process_sub_thread.cc(221)] Waited 18 ms for network service

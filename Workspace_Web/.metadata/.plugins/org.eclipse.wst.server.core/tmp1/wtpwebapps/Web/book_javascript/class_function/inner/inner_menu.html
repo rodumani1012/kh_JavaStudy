@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function work() {
+	var obj = document.getElementById("myselect");
+	var dObj = document.getElementById("mydiv");
+	var objValue = obj.value;
+	
+	switch (objValue) {
+	case "1":
+		dObj.innerHTML = "<br> <a href='http://www.google.co.kr'>베트남</a>|<a href='http://www.google.co.kr'>홍콩</a>|	<a href='http://www.google.co.kr'>방콕</a>";
+		break;
+		
+	case "2":
+		dObj.innerHTML = "<br> <a href='http://www.google.co.kr'>스페인</a>|<a href='http://www.google.co.kr'>그리스</a>|<a href='http://www.google.co.kr'>이탈리아</a>";
+		break;
+		
+	case "3":
+		dObj.innerHTML = "<br> <a href='http://www.google.co.kr'>미국</a>|<a href='http://www.google.co.kr'>캐나다</a>|	<a href='http://www.google.co.kr'>멕시코</a>";
+		break;
+	}
+}
+</script>
+
+</head>
+<body>
+	여행 지역을 선택하세요<br>
+	<select id="myselect" onchange="work()">
+		<option value="1" selected>아시아
+		<option value="2">유럽
+		<option value="3">아메리카
+	</select>
+	<div id="mydiv">
+		<br> <a href='http://www.google.co.kr'>베트남</a>|
+		<a href='http://www.google.co.kr'>홍콩</a>|
+		<a href='http://www.google.co.kr'>방콕</a>
+	</div>
+</body>
+</html>

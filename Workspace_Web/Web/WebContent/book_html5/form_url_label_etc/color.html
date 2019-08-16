@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function viewInfo() {
+	var orderCol = document.getElementById("orderColor").value;
+	var orderCou = document.getElementById("orderCount").value;
+	var orderSiz = document.getElementById("orderSize").value;
+	alert(orderCol + " / " + orderCou + " / " + orderSiz);
+}
+</script>
+</head>
+<body>
+	<form>
+		<fieldset>
+		<legend>주문 정보</legend>
+		<label for="orderColor">주문색상</label>
+		<input type="color" id="orderColor">
+		<br>
+		<label for="orderCount">주문개수</label>
+		<input type="range" id="orderCount" min="1" max="100" step="1" value="1">
+		<label for="orderSize">사이즈</label>
+		<input type="number" id="orderSize" min="80" max="120" step="5" value="100">
+		<br>
+		</fieldset>
+		<input type="reset" value="Clear">
+		<input type="button" value="viewInfo" onclick="viewInfo()">
+	</form>
+	
+</body>
+</html>

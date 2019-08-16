@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#wow {
+	visibility: hidden;
+	
+	position: absolute;
+	top: 50px; /* 아래 방향으로 */
+	left: 700px; /* 오른쪽 방향으로 */
+	
+	border-color: red;
+	border-style: solid;
+	border-width: 1px;
+	
+	color: black;
+	font-size: 30px;
+	font-family: "나눔명조";
+}
+</style>
+<script>
+function showMessage() {
+	var messageObj = document.getElementById("wow");
+	messageObj.style.visibility="visible";
+}
+function hiddenMessage() {
+	var messageObj = document.getElementById("wow");
+	messageObj.style.visibility="hidden";
+}
+</script>
+</head>
+<body>
+	<img src="../../image/gg.jpg" border="0" onmouseover="showMessage()" onmouseout="hiddenMessage()">
+	<div id="wow">!!! WOW !!!</div>
+</body>
+</html>

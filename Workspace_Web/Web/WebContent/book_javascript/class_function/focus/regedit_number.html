@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function changeFocus1() {
+	var text1 = document.getElementById("text1");
+	var text1Value = text1.value;
+	var text1Length = text1Value.length;
+	if (text1Length > 2) {
+		document.getElementById("text2").focus();
+	}
+}
+function changeFocus2() {
+	var text2 = document.getElementById("text2").value;
+	if (text2.length > 2) {
+		document.getElementById("text3").focus();
+	}
+}
+</script>
+</head>
+<body>
+<form>
+<input type="text" id="text1" size="5" onkeydown="changeFocus1()">
+-
+<input type="text" id="text2" size="5" onkeydown="changeFocus2()">
+-
+<input type="text" id="text3" size="5">
+<input type="reset" value="clear">
+</form>
+</body>
+</html>

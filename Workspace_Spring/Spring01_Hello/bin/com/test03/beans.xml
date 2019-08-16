@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- bean 태그의 형태는 두종류로 표현 가능하다.(일반태그, 단일태그)
+	 com.test03.MessageBeanEn 클래스를 가지고 bean01이라는 객체를 만들었다. -->
+	<bean id="bean01" class="com.test03.MessageBeanEn"></bean>
+	<bean id="bean02" class="com.test03.MessageBeanKo" />
+	
+</beans>

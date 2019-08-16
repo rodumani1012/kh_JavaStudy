@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+}
+input[type=button], [type=reset] {
+	width: 25%;
+	background-color: rgba(47, 157, 39, 0.7);
+	color: white;
+	font-size: 30px;
+	border-radius: 10px;
+}
+</style>
+<script>
+	function viewInfo() {
+		var imageObj = document.getElementById("myImg");
+		var imageSrc = imageObj.src;
+		var info = "src=[ " + imageSrc + " ]";
+		alert(info);
+}
+</script>
+</head>
+<body>
+	<img src="../../../image/222.jpg" id="myImg">
+	<br>
+	<input type="button" value="viewInfo" onclick="viewInfo()">
+
+</body>
+</html>

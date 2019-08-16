@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<style type="text/css">
+    div{
+        border: 1px solid red;
+    }
+</style>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("button:eq(0)").click(function(){
+            $("#base").after("<div>새로운 엘리먼트(after)</div>");
+        });
+            // after: 타겟을 앞에 써줌, 타겟 자식요소 뒤에 붙여줌
+        $("button:eq(1)").click(function(){
+            $("<div>새로운 엘리먼트(insertAfter)</div>").insertAfter("#base");
+        });
+            // insertAfter : 타겟을 뒤에 써줌, 타겟 자식요소 뒤에 붙여줌
+        
+        $("button:eq(2)").click(function(){
+            $("#base").before("<div>새로운 엘리먼트(before)</div>")
+            // before: 타겟을 앞에 써줌, 타겟 자식요소 앞에 붙여줌
+        });
+
+        $("button:eq(3)").click(function(){
+            $("<div>새로운 엘리먼트(insertBefore)</div>").insertBefore("#base");
+            // insertBefore : 타겟을 뒤에 써줌, 타겟 자식요소 앞에 붙여줌
+        });
+    })
+</script>
+</head>
+<body>
+
+    <button>after() 메소드</button>
+    <button>insertAfter() 메소드</button>
+    <button>before() 메소드</button>
+    <button>insertBefore() 메소드</button>
+
+    <div id="base">
+        <p>외부 삽입 메소드</p>
+    </div>
+
+
+</body>
+</html>

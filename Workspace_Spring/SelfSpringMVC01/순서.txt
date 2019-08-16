@@ -1,0 +1,32 @@
+
+1. pom.xml - ojdbc6, mybatis, mabatis-spring, commons-dbcp, spring-orm
+	다운받기
+2. web.xml - url-pattern은 *.do로 바꾸기, filter 적용하기
+3. WEB-INF/spring/sqls/test.sql 생성하기
+4. src/main/resources/properties/db.properties 생성하기
+(dtd파일 생성하기. 마이바티스 시작하기 페이지 가서 mapper랑 config dtd파일 생성하기)
+5. src/main/resources/sqls/mapper.xml
+6. WEB-INF/spring/sqls/config.xml
+7. applicationContext.xml 에서 properties 잡아주기
+8. dto, dao, biz (config, mapper, controller, ...)
+
+----------------------------------------------------------
+<AOP> - aop 만들어 보기.
+9. pom.xml - aspectjweaver, aspectjrt (aspectjweaver의 버전은 동일하게 맞춰주기. 
+	aspectjrt는 이미 있으니 지우기)
+10.(CCC) com.my.mvc.common.aop(LogAop.java) 클래스 생성 후 before, after 작성
+11. WEB-INF/spring/appServlet/aop-context.xml 파일 생성하기.
+12. web.xml에 서블릿에다가 aop-context 추가해주기.
+13. src/main/resources/log4j.xml 에 내용 추가하기
+
+----------------------------------------------------------
+<Filter> - web.xml이 아닌 셀프로 Filter 만들어보기
+(14. pom.xml에 commons-lang3 디펜던시 추가)
+15. com.my.mvc.common.filter(LogFilter.java implememts javax.servlet.Filter) 파일 생성
+16. web.xml에서 filter 적용
+
+----------------------------------------------------------
+보너스(로그파일 만들기)
+17. src/main/resources/log4j.xml 에 <appender> 와 <appender-ref> 추가하기
+
+

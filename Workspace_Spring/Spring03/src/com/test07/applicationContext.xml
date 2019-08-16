@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:component-scan base-package="com.test07"></context:component-scan>
+
+<!-- 	<bean id="Ig" class="com.test07.IgTv"></bean> -->
+	
+	<!-- lazy-init : 생성자의 초기화 시점을 결정해준다.
+	 기본값은 false(default)
+	 true로 하면 내가 해당 객체를 호출할 때 초기화한다. -->
+<!-- 	<bean id="Samsong" class="com.test07.SamsongTv" lazy-init="true"></bean> -->
+	
+
+</beans>

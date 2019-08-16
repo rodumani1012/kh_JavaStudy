@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#layer{
+	position: absolute;
+	top : 400px; left : 200px;
+	width: 400px;
+	height: 200px;
+	background-color: orange;
+	font-family: "나눔명조";
+	font-size: 50px;
+	font-weight: bold;
+}
+#layer01{
+	position: absolute;
+	top : 20px; left : 20px;
+	width: 400px;
+	height: 200px;
+	background-color: orange;
+	font-family: "나눔명조";
+	font-size: 50px;
+	font-weight: bold;
+	z-index: 10;
+}
+#layer02{
+	position: relative;
+	top : 20px; left : 20px;
+	width: 400px;
+	height: 200px;
+	background-color: yellow;
+	font-family: "나눔명조";
+	font-size: 50px;
+	font-weight: bold;
+	z-index: 1;
+}
+
+</style>
+
+</head>
+<body>
+	<!-- position 설정 없음 -->
+	<div id="layer">Hello</div>
+	
+	<div id="layer01">Layer1</div>
+	
+	<div id="layer02">Layer2</div>
+</body>
+</html>

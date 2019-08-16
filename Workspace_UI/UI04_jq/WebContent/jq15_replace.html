@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){            
+        
+        // replaceWith : 타겟이 앞에 온다.  
+        $("button:first").click(function(){
+            $("p").replaceWith("<p><b>replaceWith 메소드</b></p>"); //p를 찾아서 해당 문구로 대체한다.
+        });
+
+        // replaceAll : 타겟이 뒤에 온다.
+        $("button:last").click(function(){
+            $("<p><b>replaceAll 메소드</b></p>").replaceAll("p"); //p를 찾아서 해당 문구로 대체한다.
+        });
+    });
+</script>
+
+</head>
+<body>
+
+    <div>
+        <p>DOM 대체</p>
+    </div>
+    <!-- 타겟의 위치가 다르다. -->
+    <button>바꾸기(replaceWith)</button>
+    <button>바꾸기(replaceAll)</button>
+</body>
+</html>

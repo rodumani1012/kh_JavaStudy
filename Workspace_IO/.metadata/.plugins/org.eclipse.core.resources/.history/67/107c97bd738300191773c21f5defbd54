@@ -1,0 +1,10 @@
+package io.object.model.dao;
+
+public class ObjectIoTest {
+	public ObjectIoTest() {}
+	
+	// 보조 스트림
+	// ObjectInput/OutputStream
+	// 객체단위 => 바이트단위 (직렬화!)
+	// 바이트단위 => 객체단위 (역직렬화!)
+}

@@ -1,0 +1,424 @@
+body, td, table, p, b, strong, span, i, a, h1, h2, h3, h4, h5, h6, blockquote, div, label, li, dd, dl, dt {
+    font-family: dotum !important;
+}
+
+body{
+	height: 100%;
+    background-color: #010e16;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    display: block;
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+div{
+	display: block;
+}
+
+a {
+    color: #01b2f1;
+    text-decoration: none;
+}
+
+.games-landing{
+	background : url("../image/games-bg.jpg") no-repeat 50% 0 #142430;
+}
+
+.subheader{
+	width: 100%;
+}
+
+.subheader div .navsub{
+	padding: 15px 0 0 0;
+}
+
+.navigation{
+	position: relative;
+	width: 992px;
+	height: 132px;
+	z-index: 110;
+	margin: 0 auto;
+}
+
+.navigation .bg{
+	position: absolute;
+	background-color: transparent;
+	width: 992px;
+	height: 132px;
+	background: url("../image/nav-bg.png");
+	background-repeat: no-repeat;
+}
+
+.navigation .bar{
+	width: 762px;
+	height: 83px;
+	position: absolute;
+	top: 43px;
+	left: 217px;
+}
+
+.navigation .bar a{
+	background: url("../image/nav-bar.gif");
+	height: 83px;
+	display: block;
+	float: left;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.navigation .bar a span{
+	color: #FFF;
+	position: absolute;
+	right: 12px;
+	bottom: 10px;
+	font-size: 13px;	
+}
+
+.navigation .bar .navgames{
+	width: 152px;
+	background-position: 0px 0px;
+}
+
+.navigation .bar .navcompany{
+	width: 153px;
+	background-position: -152px 0px;
+}
+
+.navigation .bar .navcommunity{
+	width: 152px;
+	background-position: -305px 0px;
+}
+
+.navigation .bar .navsupport{
+	width: 153px;
+	background-position: -457px 0px;
+}
+
+.navigation .bar .navstore{
+	width: 152px;
+	background-position: -610px 0px;
+}
+
+.navigation .blizzlink{
+	width: 200px;
+	height: 105px;
+	background-color: transparent;
+	opacity: 0.5;
+	position: absolute;
+	top: 15px;
+	left: 12px;
+	display: block;
+}
+
+.navigaion .shop-subnav{
+	float: right;
+	width: 442px;
+	height: 321px;
+	position: absolute;
+	top: 126px;
+	right: 5px;
+	display: none;
+}
+
+.navigation .shop-subnav a{
+	float: left;
+	height: 321px;
+}
+
+.navigation .shop-subnav a.bg-left{
+	background: url("../image/shop-subnav-left.png") 0 0 no-repeat;
+	width: 221px;
+}
+
+.navigation .shop-subnav a.bg-right{
+	background: url("../image/shop-subnav-right.png") 0 0 no-repeat;
+	width: 221px;
+}
+
+.navigation .shop-subnav a h2{
+	color: #00abe8;
+	font-size: 20px;
+	margin: 160px 24px 6px 24px;
+}
+
+.navigation .shop-subnav a div{
+	color: #99cee0;
+	margin: 0px 24px;
+	font-size: 14px;
+	line-height: 1.25em;
+}
+
+/* 중간 시작 */
+
+.landingcontents, centercontent{
+	width: 980px;
+	margin: 0 auto;
+}
+
+.pagetitle{
+	font-size: 34px;
+	color: #ffffff;
+}
+
+.pagetitle .title{
+	padding: 44px 0 0 24px;
+}
+
+.textWrapper {
+	font-size: 35px;
+	letter-spacing: -0.014em;
+	margin-bottom: 6px;
+	position: relative;
+	line-height: 1;
+}
+
+.underTitle {	
+	color: #b7e1f9;
+	position: absolute;
+	top: 0px;
+	left: 0px;	
+}
+
+/* 최신작 */
+
+.topbar{
+	height: 44px;
+	width: 100%;
+}
+
+.leftcorner{
+	width: 6px;
+	height: 44px;
+	background: url("../image/box-corner-topleft.png");
+	float: left;
+}
+
+.rightcorner{
+	width: 6px;
+    height: 44px;
+    background: url("../image/box-corner-topright.png");
+    float: right;
+}
+
+.middle{
+	width: 99%;
+	height: 44px;
+	background: url("../image/box-top.jpg");
+    margin: 45px 6px 0 6px;
+}
+
+.recent {
+	width: 40%;
+    height: 44px;
+    top: 13px;
+	padding: 0 0 0 21px;
+    position: relative;
+	float: left;
+}
+
+.textWrapper.boxtitle {
+	font-size: 15px;
+}
+
+.middlebar{
+	background: url("../image/box-body-top.gif");
+	background-color: #001821;
+	background-repeat: repeat-x;
+}
+
+.middlebar a {
+	margin: 14px 0 0 13px;
+}
+
+.backgroundthreelines {
+	background: url("../image/box-bg-threelines.gif");
+    background-position: top center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.box1 {
+	width: 326px;
+    height: 290px;
+    float: left;
+}
+
+.grid-games {
+	width: 300px;
+	height: 135px;
+	display: block;
+}
+
+.grid-games-bfa{
+	background: url("../image/gamecard-games-bfa.jpg");
+}
+.grid-games-chest{
+	background: url("../image/gamecard-games-d3battlechest.jpg");
+}
+.grid-games-overwatch{
+	background: url("../image/gamecard-games-overwatch.jpg");
+}
+.grid-games-sc2-void{
+	background: url("../image/gamecard-games-lotv.jpg");
+}
+.grid-games-heroes{
+	background: url("../image/gamecard-games-heroes.jpg");
+}
+.grid-games-heart{
+	background: url("../image/gamecard-games-hearthstone-kr.jpg");
+}
+
+.standardbox .middlebar .line .description{
+	padding-left: 13px;
+	line-height: 16px;
+	font-size: 11px;
+    clear: both;
+    padding: 11px 15px 15px 15px;
+    color: #5d91a3;
+}
+
+/* 기타 게임 전체 */
+.games-landing .allgames {
+	width: 980px;
+	clear: both;
+	margin: 5px 0 0 0;
+}
+
+.backgroundthree{
+	height: auto;
+}
+
+.backgroundthree .line {
+	height: 166px;
+	clear: both;
+	background: url("../image/box-bg-one.gif");
+}
+
+.backgroundthree .line .bottomrow{
+	height: 164px;
+}
+.backgroundthree .line .box1 {
+	height: 150px;
+	width: 327px;
+	float: left;
+}
+
+.backgroundthree .line .box2 {
+	width: 326px;
+	float: left;
+}
+
+.backgroundthree a {
+	margin: 14px 0 0 13px;
+}
+
+.grid-games-legion {
+	background: url("../image/gamecard-games-legion.jpg");
+}
+.grid-games-warlords {
+	background: url("../image/gamecard-games-warlords.jpg");
+}
+.grid-games-d3console {
+	background: url("../image/gamecard-games-d3console.jpg");
+}
+.grid-games-d3x1 {
+	background: url("../image/gamecard-games-d3x1.jpg");
+}
+.grid-games-sc2-hots {
+	background: url("../image/gamecard-games-hots.jpg");
+}
+.grid-games-mists {
+	background: url("../image/gamecard-games-mists.jpg");
+}
+.grid-games-d3 {
+	background: url("../image/gamecard-games-d3.jpg");
+}
+.grid-games-cataclysm {
+	background: url("../image/gamecard-games-cataclysm.jpg");
+}
+.grid-games-sc2 {
+	background: url("../image/gamecard-games-sc2.jpg");
+}
+.grid-games-wrath {
+	background: url("../image/gamecard-games-wrath.jpg");
+}
+.grid-games-bc {
+	background: url("../image/gamecard-games-bc.jpg");
+}
+.grid-games-wow {
+	background: url("../image/gamecard-games-wow.jpg");
+}
+.grid-games-war3 {
+	background: url("../image/gamecard-games-war3.jpg");
+}
+.grid-games-d2 {
+	background: url("../image/gamecard-games-d2.jpg");
+}
+.grid-games-sc1 {
+	background: url("../image/gamecard-games-sc1.jpg");
+}
+
+/* 탐색 */
+.grid-games-music{
+	background: url("../image/gamecard-explore-music.jpg");
+}
+.grid-games-trailers{
+	background: url("../image/gamecard-explore-trailers.jpg");
+}
+.grid-games-legacy{
+	background: url("../image/gamecard-explore-legacy.jpg");
+}
+
+/* 하단 */
+.landing-footer{
+	clear: both;
+    display: block;
+    padding: 60px 0 60px 0;
+    z-index: 110;
+}
+
+.footer{
+	margin: 0 auto;
+	width: 980px;
+}
+
+.logo-blizzard{
+	width: 108px;
+    height: 58px;
+    background-image: url("../image/logo-blizzard.gif");
+    background-repeat: no-repeat;
+    display: block;
+    padding-bottom: 30px;
+    margin: auto;
+}
+
+.footcontents {
+    width: 100%;
+    height: 60px;
+    color: #FFF;
+    font-size: 11px;
+    text-align: center;
+}
+
+.footcontents .links {
+    line-height: 14px;
+    display: inline;
+}
+
+.spacer {
+    color: #012839;
+    font-size: 13px;
+    padding: 0 5px;
+}
+
+.copyrights{
+	color: #344956;	
+    line-height: 14px;
+	margin: 0;
+}

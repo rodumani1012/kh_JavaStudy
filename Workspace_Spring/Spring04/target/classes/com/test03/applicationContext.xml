@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="favoriteFood" class="com.test03.Food">
+		<property name="foodName" value="떡볶이"></property>
+		<property name="foodPrice" value="3000"></property>
+	</bean>
+	
+	<bean id="unfavoriteFood" class="com.test03.Food">
+		<property name="foodName" value="마라탕"></property>
+		<property name="foodPrice" value="23000"></property>
+	</bean>
+	
+	<bean id="myFood" class="com.test03.MyFoodMgr" autowire="byName"></bean>
+	<!-- 
+		* autowire 속성 4가지
+		1. byName - setter와 같은 이름(id 또는 name)의 bean이 있으먼 자동 할당
+			ex) setFavoriteFood(Food food) => <bean id="favoriteFood"/>
+		2. byType - setter와 같은 타입의 bean이 있으면 자동 할당된다. 
+			* 단, bean은 반드시 1개여야 한다.
+			ex) setFavoriteFood(Food food) => <bean class="com.test03.Food"/>
+		3. constructor - 생성자의 parameter와 같은 type의 bean 자동할당.
+			id나 name으로 호출.
+		4. default(autodetect) - 생성자에 할당할 type이 있는지 먼저 확인 후(constructor),
+			없으면 setter와 같은 type이 있는지 확인하여 할당(byType)한다.
+			* 기본생성자가 있으면 기본생성자를 먼저 호출함.
+
+	 -->
+	
+</beans>

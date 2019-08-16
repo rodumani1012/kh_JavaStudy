@@ -1,0 +1,142 @@
+<!-- 
+==================== [ 참고 ] ==================== 
+영화진흥공사 API
+	http://www.kobis.or.kr/kobisopenapi/homepg/apiservice/searchServiceInfo.do
+
+온라인 json 파싱
+	http://json.parser.online.fr
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- jQuery CDN -->
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<style>
+body {
+	font-family: "함초롱바탕","나눔명조";
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+}
+
+table {
+	width: 80%;
+	margin: auto;
+	border: 1px solid #ccc;
+	border-spacing: 1px;
+}
+
+th {
+	padding: 10px;
+	background-color: #008CBA;
+	color: white;
+}
+
+td {
+	padding: 10px;
+}
+</style>
+<script>
+
+	// 3자리 수마다 콤마 찍기
+	function numberWithCommas(x) {
+	    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+	
+	// 일별 박스 오피스 조회
+	function callDailyBoxOffice() {
+		
+		// 조회 조건 : Start ======================================================================
+		
+		// 조회 일자 --------------------
+			
+		// 입력받은 날짜(YYYY-MM-DD)를 전송 가능한 형태(YYYYMMDD)로 변환한다. 
+		var boxOfficeDate;
+		var boxOfficeDateValue = document.getElementById("boxOfficeDate").value;	
+		
+		if (boxOfficeDateValue.length == 10) {
+			boxOfficeDate = boxOfficeDateValue.substring(0,4) + 
+							boxOfficeDateValue.substring(5,7) + 
+							boxOfficeDateValue.substring(8,10);
+		}
+		//alert("boxOfficeDate=" + boxOfficeDate);
+		
+		// 조회 조건 : End ========================================================================
+				
+		
+		$.ajax({
+			type : "get",
+			dataType : "json",
+			
+			/* 방식 1. url */
+			url : "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e" + "&targetDt=" + boxOfficeDate,
+			/* 방식 2. data */		
+/*			url : "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e",	
+  			data : {
+				targetDt : boxOfficeDate
+			},   */
+			
+			success : function(result) {	
+				
+				// 결과 타이틀 ------------------------------------------------------
+				var boxofficeType = result['boxOfficeResult']['boxofficeType'];								
+				$("#movieInfo").text(boxofficeType);		
+				//-------------------------------------------------------------------
+				
+				var listLength = result['boxOfficeResult']['dailyBoxOfficeList'].length;
+			    if (listLength> 0) {
+			    	
+			    	var contents = "<br><br>";
+			    	contents = contents + "<table border='1'>";
+			    	contents = contents + "<tr>";
+			    	contents = contents + "<th>순위</th>";
+			    	contents = contents + "<th>영화명</th>";
+			    	contents = contents + "<th>개봉일</th>";
+			    	contents = contents + "<th>누적관객수</th>";
+			    	contents = contents + "<th>누적매출액</th>";
+			    	contents = contents + "<th>스크린수</th>";
+			    	contents = contents + "</tr>";
+			    	
+			    			
+			    	for(var i=0; i<result['boxOfficeResult']['dailyBoxOfficeList'].length; i++){
+			    		
+	 					var rank = result['boxOfficeResult']['dailyBoxOfficeList'][i]['rank'];			// 박스오피스 순위
+	 					var movieNm = result['boxOfficeResult']['dailyBoxOfficeList'][i]['movieNm'];	// 영화명(국문)
+	 					var openDt = result['boxOfficeResult']['dailyBoxOfficeList'][i]['openDt'];		// 개봉일
+	 					var audiAcc = result['boxOfficeResult']['dailyBoxOfficeList'][i]['audiAcc'];	// 누적관객수
+	 					var salesAcc = result['boxOfficeResult']['dailyBoxOfficeList'][i]['salesAcc'];	// 누적매출액
+	 					var scrnCnt = result['boxOfficeResult']['dailyBoxOfficeList'][i]['scrnCnt'];	// 스크린수
+	 					
+	 					contents = contents + "<tr>";
+	 					contents = contents + "<td>" + rank + "</td>";
+	 					contents = contents + "<td>" + movieNm + "</td>";
+	 					contents = contents + "<td>" + openDt + "</td>";
+	 					contents = contents + "<td>" + numberWithCommas(audiAcc) + "</td>";
+	 					contents = contents + "<td>" + numberWithCommas(salesAcc) + "</td>";
+	 					contents = contents + "<td>" + numberWithCommas(scrnCnt) + "</td>";
+	 					contents = contents + "</tr>";
+			    	}			
+			    	
+			    	contents = contents + "</table>";
+			    	
+			    	$("#movieInfo").append(contents);
+			    }
+
+			},
+			error : function(xhr, status, error) {
+				alert("error");
+			}
+		});
+	}
+</script>
+</head>
+<body>	
+	<input type="button" onclick="callDailyBoxOffice()" value="일별 박스오피스">
+	<br>
+	<input type="date" id="boxOfficeDate">
+	<hr width="90%">
+	<div id="movieInfo"></div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<style type="text/css">
+    img{
+        width: 150px; 
+        height: 150px; 
+        float: left;
+    }
+
+    #menubox{position: relative;}
+    #menu{overflow: auto;}
+
+    .sel{
+        width: 140px;
+        height: 140px;
+        border: 5px dotted red;
+        position: absolute;
+        left: 300px;
+    }
+</style>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    setInterval(function(){ //setInterval(실행할 함수, 시간 간격)
+        var div = $("#menu");
+        // $(".active").first().appendTo(div); //메뉴태그 맨 뒤에다 .active 클래스를 가진 첫번째 것을
+        div.append($(".active").first());
+    },100);// 0.1초마다 함수 실행.          //appendTo(추가) 해줘라
+                                    // prepend, append, appendTo 는 이미 있는 것은 이동시켜주고 없는건 추가해준다.
+    
+
+    $("button").click(function(){
+        $("img").toggleClass("active");
+
+        if($("button").text() == "start"){
+            $("button").text("stop");
+        }else{
+            $("button").text("start");
+            alert("오늘의 그림은 " + $("img:eq(2)").attr("alt")+"입니다.");
+        }
+    });
+});
+</script>
+</head>
+<body>
+
+    <h1>그림을 선택해 주세요!</h1>
+
+    <div id="menubox">
+        <div class="sel"></div>
+        <div id="menu">
+            <img alt="img1" src="image/img1.png">
+            <img alt="img2" src="image/img2.png">
+            <img alt="img3" src="image/img3.png">
+            <img alt="img4" src="image/img4.png">
+            <img alt="img5" src="image/img5.png">
+        </div>
+        <button>start</button>
+    </div>
+
+</body>
+</html>

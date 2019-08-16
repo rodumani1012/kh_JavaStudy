@@ -1,0 +1,14 @@
+package io.conversion.controller;
+
+public class ByteToCharTest {
+
+	// 매개변수로 외부자원을 선택한다면 기반 스트림.
+	// 매개변수로 다른스트림을 선택한다면 보조 스트림.
+	// -> 보조는 단독사용 안됨.
+	
+	public ByteToCharTest() {}
+	
+	public void input() {
+		
+	}
+}

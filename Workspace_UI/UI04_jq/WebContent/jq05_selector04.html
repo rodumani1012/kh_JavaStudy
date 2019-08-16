@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+
+        //form에서 submit 이벤트가 발생할 때 실행
+        $("#signal").submit(function(){
+            if($(".infobox").val()==null || $(".infobox").val()==""){
+                $(".error").show();
+                return false;
+            }
+        });
+
+        $("#confirm").click(function(){
+            $("#result").empty();
+
+            var totalprice = 0;
+
+            if($("input[name=chk]:checked").length==0){
+                alert("하나 이상 체크해 주세요!!");
+            } else{
+                $("input[name=chk]:checked").each(function(i){ //input 태그에서 이름이 chk인 것 중에 체크 되있는 것들.
+                                            // each : 반복해서 하나씩 가져오겠다.
+                    var chk = $("input[name=chk]:checked").eq(i);
+                    var book = chk.next().text(); // chk.next() : i 번지의 chk태그 다음에 있는 b태그의 text
+                    var price = chk.val(); // chk.val() : i 번지의 chk태그의 value
+
+                    totalprice += parseInt(price);
+
+                    $("#result").append(book+": 가격 " + price + "<br/>");
+
+                })
+            }
+            $("#result").append("총" + totalprice + "원");
+        });
+
+        $("input[name=chk]").click(function(){
+            if($("input[name=chk]").length == 
+                $("input[name=chk]:checked").length){
+                    // 전부 다 체크되어 있을 경우
+                    $("input[name=all]").prop("checked",true);
+            } else {
+                $("input[name=all]").prop("checked",false);
+            }
+        });
+    });
+/*
+    attr("attrName"), prop("attrName") 
+        → 엘리먼트의 속성값을 가져온다. (Getter)
+    .attr()은 HTML의 속성(attribute)를. (HTML문서에 바로 적용)
+    .prop()은 Javascript의 속성(property)를 취급하는 메서드. (문서에서 자바스크립트로 가져온 객체에 적용)
+
+    ∴ 결과는 같지만 제 3자를 거쳐서 적용 되는것이 다르다. attr은 HTML에 바로 때려박기. prop는 script에서 부른 객체에 적용
+
+    attr("attrName","attrValue"), prop("attrName","attrValue") 
+        → 엘리먼트에 속성값을 넣는다. (Setter)
+*/
+    function allchk(bool){
+       $("input[name=chk]").each(function(){
+           $(this).attr("checked",bool); //each를 통해 가져와진 인덱스 안의 요소 1개
+       })        
+    }
+
+</script>
+
+</head>
+<body>
+
+    <form action="" id="signal" method="get">
+        <div>
+            <span class="label">User Id</span>
+            <input type="text" class="infobox" name="userId">
+            <span class="error" hidden="" style="color:red;">
+                반드시 입력하세요!!</span>
+        </div>
+        <input type="submit" value="입력하기" class="submit">
+    </form>
+
+    <hr>
+
+    <fieldset style="width: 300px">
+        <legend>체크 여부 확인</legend>
+        <input type="checkbox" name="all" onclick="allchk(this.checked)">전체선택<br>
+
+        <input type="checkbox" name="chk" value="20000"><b>java</b><br>
+        <input type="checkbox" name="chk" value="30000"><b>db</b><br>
+        <input type="checkbox" name="chk" value="40000"><b>javascript</b><br>
+
+        <input type="button" value="확인" id="confirm"><br>
+
+        <span>선택한 책 가격</span>
+        <div id="result"></div>
+    </fieldset>
+</body>
+</html>

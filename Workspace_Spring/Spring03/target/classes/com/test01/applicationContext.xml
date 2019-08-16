@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- singleton 명시적 사용(factory-method로 싱글톤임을 보여줌) -->
+	<bean id="singleton" class="com.test01.AbstractTest"
+		factory-method="getInstance"></bean>
+
+</beans>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="//code.jquery.com/jquery-3.3.1.min.js">
+</script>
+<script>
+	$(document).ready(function(){
+		$("#btn01").click(function(){
+			$("#img01").hide();
+		});
+	});
+	$(document).ready(function(){
+		$("#btn02").click(function(){
+			$("#img01").show();
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" id="btn01" value="hide">
+	<input type="button" id="btn02" value="show">
+	<br>
+	<br>
+	<img src="/image/02_beericon.JPG" id="img01">
+	<img src="/image/03_burger.JPG" id="img02">
+</body>
+</html>

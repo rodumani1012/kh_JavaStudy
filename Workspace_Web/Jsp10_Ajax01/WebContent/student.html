@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script type="text/javascript">
+	function getParameterValues() { //get방식의 쿼리스트링
+		var name = "name="+encodeURIComponent($("#name").val()); // encodeURIComponent() : 모든 문자를 인코딩하는 함수입니다.
+		var kor = "kor="+$("#kor").val();
+		var eng = "eng="+$("#eng").val();
+		var math = "math="+$("#math").val();
+		
+		return name + "&" + kor + "&" + eng + "&" + math;
+	}
+	
+	$(function(){ //서버 몰래 값만 갖고오는 비동기식의 ajax
+		$("#process").click(function(){
+			$.ajax({								
+				url:"calscore?"+getParameterValues(), // <uri-pattern> 과 같음. calscore?name=홍길동&kor=100&eng=50&math=70
+				dataType:"json", // 리턴되는 것들을 받아줄 때의 타입
+				success:function(msg){
+					$("#result").html( //innerHtml.
+							decodeURIComponent(msg.name) // decodeURIComponent : encodeURIComponent()로 인코딩한 문자열을 디코딩하는 함수입니다.
+							+ "님의 총점은 "+ msg.sum + "이고, 평균은 " + msg.avg + "이고, 등급은 "
+							+ msg.grade + "입니다.");
+				},
+				error:function(){
+					alert("실패");
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+
+	<h1>성적 처리 프로그램</h1>
+	
+	이름 : <input type="text" id="name"><br>
+	국어 : <input type="text" id="kor"><br>
+	영어 : <input type="text" id="eng"><br>
+	수학 : <input type="text" id="math"><br>
+	
+	<button id="process">성적 처리</button><br>
+	<div id="result"></div>
+	
+</body>
+</html>

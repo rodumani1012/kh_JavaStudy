@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+
+<style type="text/css">
+
+    #circle{
+        border: 1px solid red;
+        display: none;
+    }
+
+</style>
+
+<script type="text/javascript">
+    function randomNum(){
+        var rnum = Math.floor(Math.random()*81+10);
+        document.getElementById("rnum").value = rnum;
+    }
+
+    function randomBgColor(){
+        // style 색상 표현식 : rgb(256,256,256)
+
+        var rnum = function(){
+            return Math.floor(Math.random()*256);
+        }
+        document.body.style.backgroundColor = "rgb("+ rnum() + "," + rnum() + "," + rnum() + ")";
+    }
+
+    function circleView() {
+        var rnum = Math.floor(Math.random()*200);
+        var circle = document.getElementById("circle");
+        
+        circle.style.width = rnum + "px";
+        circle.style.height = rnum + "px";
+
+        circle.style.borderRadius = Math.floor(rnum/2) + "px";
+        circle.style.display = "block";
+    }
+
+    function circleArea() {
+        var circleWidth = document.getElementById("circle").style.width;
+        
+        var r2 = circleWidth.substring(0, circleWidth.length-2);
+        var r = Math.floor(r2/2);
+
+        var area = Math.PI * (Math.pow(r,2));
+        var len = Math.PI * r2;
+        document.getElementById("area").innerHTML = Math.round(area);
+        document.getElementById("len").innerHTML = Math.round(len);
+        // document.getElementById("area").innerHTML = (Math.PI * Math.pow(parseInt(r)/2, 2)).toFixed(2);
+        // document.getElementById("len").innerHTML = (2* Math.PI * parseInt(r)/2).toFixed(2);
+    }
+
+    function gugu() {
+        var res = "";
+        for(var i = 2; i < 10; i++) {
+            res += i + "단\n";
+            for(var j = 1; j < 10; j++){
+                res += i + " * " + j + " = " + i*j + "\n";
+            }
+        }
+        console.log(res);
+    }
+
+    function guguDan(val) {
+        var res = "";
+        res += val + "단\n";
+        for(var i = 1; i < 10; i++){
+            res += val + " * " + i + " = " + val*i + "\n";
+        }
+        console.log(res);
+    }
+
+    function guguDanRandom() {
+
+    }
+</script>
+
+</head>
+<body>
+
+    <h1>랜덤 숫자 생성하기</h1>
+    숫자 : 
+    <input type="text" id="rnum" readonly="readonly"/><br/>
+    <input type="button" value="숫자 생성" onclick="randomNum()"/>
+
+    <h1>랜덤으로 배경색 설정하기</h1>
+    <input type="button" value="배경 생성" onclick="randomBgColor()"/>
+
+    <h1>랜덤 원 만들기</h1>
+    <input type="button" value="원 만들기" onclick="circleView()"/><br/>
+    <br/><br/><br/>
+    <div id="circle"></div>
+    
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+
+    <h1>원의 넓이, 둘레 구하기</h1>
+        <input type="button" value="원" onclick="circleArea()"/><br/>
+    원 넓이 : <span id="area"></span><br/>
+    원 둘레 : <span id="len"></span>
+
+    <!-- 넓이 : pi * r * r
+        둘레 : 2 * pi * r
+        Math.PI
+        Math.pow(a,2) -->
+
+    <h1>구구단을 출력해 보자</h1>
+    <input type="button" value="전체 단 구구단" onclick="gugu()"/>
+    <br>
+    <input type="text" id="dan"/>
+    <br>
+    <input type="button" value="특정 단 구구단" onclick="guguDan(dan.value)">
+    <br>
+    <input type="button" value="랜덤 단 구구단" onclick="guguDanRandom()"/>
+
+
+</body>
+</html>

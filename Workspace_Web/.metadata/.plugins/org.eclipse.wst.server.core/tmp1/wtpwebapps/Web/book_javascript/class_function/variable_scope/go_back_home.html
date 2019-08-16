@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var position = 0; //위치
+function go() {
+	position = position + 1;
+	window.alert("go()::position=" + position)
+}
+function back() {
+	position = position - 1;
+	window.alert("back()::position=" + position)	
+}
+function home() {
+	position = 0;
+	window.alert("home()::position=" + position)	
+}
+</script>
+</head>
+<body>
+<input type="button" value="전진" onclick="go()">
+<input type="button" value="후진" onclick="back()">
+<input type="button" value="원위치" onclick="home()">
+</body>
+</html>

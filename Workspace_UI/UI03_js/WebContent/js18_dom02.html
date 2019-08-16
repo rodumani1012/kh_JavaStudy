@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+    // 문구 추가하기
+    function elementCreate(){
+        // 엘리먼트 객체 생성 : createElement("String tagName");
+        // text 객체 생성 : createTextNode("String text");
+        // 객체의 속성 생성 : createAttribute("String attrName");
+        // 속성 추가 : setAttributeNode(Attr attr);
+        // setAttribute("String attr", "String value");
+
+        var div = document.createElement("div");
+        // -> <div></div>
+
+        /*
+        // 1번 방법
+        var attr = document.createAttribute("style");
+        // -> style="";
+        attr.nodeValue = "border: 2px solid blue";
+        // -> style="border: 2px solid blue";
+        div.setAttributeNode(attr);
+        // -> <div style="border: 2px solid blue"></div>
+
+        var txt = document.createTextNode("엘리먼트 생성!!");
+        div.appendChild(txt);
+        // -> <div style="border: 2px solid blue">엘리먼트 생성!!</div>
+
+        document.body.appendChild(div);
+        // -> body에 추가!
+        */
+
+        // 2번 방법
+        div.setAttribute("style","border: 2px solid red");
+        
+        var txt = document.createTextNode("엘리먼트 생성!!");
+        div.appendChild(txt);
+
+        document.body.appendChild(div);
+    }
+
+</script>
+
+</head>
+<body>
+
+    <button onclick="elementCreate()">엘리먼트 생성하기</button>
+
+</body>
+</html>

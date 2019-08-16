@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+}
+input[type=button], [type=reset] {
+	width: 25%;
+	background-color: rgba(47, 157, 39, 0.7);
+	color: white;
+	font-size: 30px;
+	border-radius: 10px;
+}
+</style>
+<script>
+function right() {
+	var leftObj = document.getElementById("left");
+	var leftObjValue = leftObj.value
+	var targetRight = document.getElementById("right");
+	targetRight.value = leftObjValue;
+	document.getElementById("left").value = "";
+}
+function left() {
+	var rightObj = document.getElementById("right");
+	var rightObjValue = rightObj.value;
+	var emptyValue = "";
+	
+	document.getElementById("right").value = emptyValue;
+	document.getElementById("left").value = rightObjValue;
+}
+</script>
+</head>
+<body>
+<input type="text" size="20" id="left">
+<input type="text" size="20" id="right">
+<br>
+<input type="button" value="이동(오른쪽)" onclick="right()">
+<input type="button" value="이동(왼쪽)" onclick="left()">
+<br>
+</body>
+</html>

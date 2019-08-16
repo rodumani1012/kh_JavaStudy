@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="muldelmapper">
+
+	<delete id="muldel" parameterType="map">
+		DELETE FROM MDBOARD
+		WHERE SEQ IN
+		<foreach collection="seqs" item="seq" open="(" separator="," close=")"> <!-- seqs로 던져준 컬렉션을 받아 seq라는 이름으로 쓸 수 있다. -->
+			#{seq} <!-- ex) seqs 배열 안에 있는 값이 [1, 2, 4] 라면 seq로 1을 가져오고 separator로 , 구분 짓고 seq로 2 가져오고
+			, 로 구분짓고 seq로 4 가져오고 ) 로 close한다. 
+			즉, 현재 query문 내용은 DELETE FROM MDBOARD WHERE SEQ IN (1,2,4)  이다.-->
+		</foreach>
+	</delete>
+	
+	<insert id="insert" parameterType="MDBoardDto">
+		INSERT INTO MDBOARD
+		VALUES(MDBOARDSEQ.NEXTVAL, #{writer}, #{title}, #{content}, SYSDATE)
+	</insert>
+	
+	<select id="selectList" resultType="MDBoardDto">
+		 SELECT * FROM MDBOARD
+	</select>
+</mapper>

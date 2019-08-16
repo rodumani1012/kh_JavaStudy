@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+	//명시적 함수
+	function func01() {
+		alert("명시적 함수");
+	}
+	
+	// 익명 함수
+	var func02 = function() {
+		alert("익명 함수"); // 함수에 이름이 없는것. 
+						//이름 없는 함수를 변수에 넣어서 변수를 호출
+	}
+
+	function func03() {
+		
+		//리터럴 함수 	
+		literalPrn(function(msg){
+			alert(msg);
+		});
+	}
+	
+	function literalPrn(literal) { //literal 변수에 익명함수를 넣음
+		literal("안녕하세요, 리터럴 입니다. 안사 오지게 박습니다.");
+		/* 
+		function(msg){
+		alert(msg);    //msg에 "안녕하세~~~ 박습니다."가 들어감
+		}
+		*/
+	}
+	
+	function valTest() {
+		var val = "";
+		for(var i=0; i<arguments.length; i++){
+			val += arguments[i] + " ";
+		}
+		alert(val);
+	}
+	
+	// closure : 외부함수 안에 있는 내부함수
+	// 외부함수에 접근 가능(변수/파라미터)  ex) addVal()에서 closureTest에 있는 val
+											//을 접근해서 사용함.
+	function closureTest(val) {
+		var msg = "재밌어!!";
+		
+		function addVal(){
+			alert(val + " " + msg);
+		}
+		
+		return addVal;	//함수가 들어가있는 변수.
+	}
+	
+	var amEdu = closureTest("CSS");
+	
+	function pmEdu(val) {
+		closureTest(val)(); //마지막 ()는 리턴된 함수를 실행하는 것.
+		// ex) var temp = closureTest(val);
+		//		temp(); 
+		alert(closureTest(val) + " : " + typeof(closureTest(val)));
+	}
+	
+</script>
+
+
+</head>
+<body>
+
+	<h1>함수!!!</h1>
+	
+	<h2>함수의 종류</h2>
+	<p onclick="func01()">1.명시적 함수</p>
+	<p onclick="func02()">2.익명 함수</p>
+	<p onclick="func03()">3.리터럴 함수</p>
+	
+	<h2 onclick="valTest('kh','정보','교육원','Q강의장')">args(arguments)</h2>
+	
+	<h2>클로저(함수 리턴하기)</h2>
+	
+	<label>오전강의</label>
+		<input type="text" id="am" value=""/>
+		<input type="button" value="클릭" onclick="amEdu()"/>
+	<hr/>
+	
+	<label>오후강의</label>
+		<input type="text" id="pm" value=""/>
+		<input type="button" value="클릭" onclick="pmEdu(pm.value)"/>
+
+</body>
+</html>

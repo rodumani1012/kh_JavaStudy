@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+	// 객체 작성 방법 1
+	function myClassQAm() {
+		this.name = "kh 정보교육원"; //외부에서 접근 가능
+		var name02 = "java framework 개발자과정"; //외부에서 접근 불가능
+		this.getName02 = function() { //불가능을 가능으로 만들어주는 방법.
+			return name02;
+		}		
+	}
+	
+	// 객체 작성 방법 2
+	var classQAm = {
+			name:"kh",
+			print:function(){
+				alert(classQAm.name + " : print");
+				return classQAm.name;
+			}
+	}
+	
+	//prototype : 이미 만들어진 것에 기능을 확장하겠다.
+	myClassQAm.prototype.printName = function(){
+		var subject = "javascript";
+		alert(this.name + " " + this.getName02() + " // " + subject);
+	}
+	
+	
+	function objTest(){
+		var cls = new myClassQAm();
+		
+		alert(cls.name);
+		alert(cls.name02); //지역변수는 가져올 수 없어서 undefined 라고 뜸
+		alert(cls.getName02());
+		
+		alert(classQAm.name);
+		classQAm.print();
+		
+		cls.printName();
+	}
+	
+
+</script>
+
+</head>
+<body>
+	
+	<pre>
+		객체의 구성
+		-메서드 : 기능 정의
+		-속성 : 객체 내부 데이터
+		-this : 객체 내부의 메서드나 속성을 정의할 때 사용
+		-프로토타입 : 객체의 확장
+	</pre>
+	
+	<button onclick="objTest()">객체</button>
+	
+</body>
+</html>

@@ -1,0 +1,5 @@
+package io.file.fileChar.model.dao;
+
+public class FileCharTest {
+
+}

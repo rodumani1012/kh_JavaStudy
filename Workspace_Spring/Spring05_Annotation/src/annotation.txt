@@ -1,0 +1,98 @@
+Spring Annotation
+- 어노테이션은 java 1.5부터 지원.
+- 스프링은 어노테이션을 이용하여 빈과 관련된 정보를 설정할 수 있다.(메타데이터 역할)
+
+스프링 프레임워크를 이용하여 구현할 때
+어노테이션 구문을 사용하여 구현하려면 다음과 같은 설정이 필요하다.
+
+1. CommonAnnotationBeanPostProcessor 클래스를 설정파일에 빈 객체로 등록하여
+어노테이션을 적용한다. 
+<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+
+2. <context:annotation-config /> 태그를 이용한다.
+3. <context:component-scan base-package="???" /> 태그를 이용한다.
+
+// 현재는 주로 2번과 3번을 사용한다.
+
+spring web MVC framework는 자바 1.5이상부터 어노테이션을 제공하며,
+어노테이션의 사용으로 설정파일을 간결화하고,
+view 페이지와 객체 또는 메서드의 맵핑을 명확하게 할 수 있다.
+
+-4개의 스트레오타입 어노테이션(기본)
+@Component : 스테레오타입 어노테이션의 조상
+@Controller : Spring MVC에서 Controller로 인식
+@Service : 역할 부여 없이 스캔 대상. 비즈니스 클래스(biz)
+@Repository : 일반적으로 Dao에 사용. Exception을 DataAccessException으로 변환.
+
+스테레오타입 어노테이션 : component-scan에 의해 자동으로 등록(== spring이 자동으로 관리)
+
+-------------------------------------------------------------------------------------
+
+1. @Component
+패키지 : org.springframework.stereotype
+버전 : spring 2.5
+클래스를 선언하며 해당클래스를 자동으로 bean에 등록
+bean의 이름은 해당 클래스명(첫 글자는 소문자로)이 사용된다.
+범위는 default로 singleton. @scope를 사용하여 지정 가능하다.
+
+2. @Autowired
+패키지 : org.springframework.beans.factory.annotation
+버전 : spring 2.5
+오토와이어링 어노테이션은 spring에서 의존관계를 자동으로 설정할 때 사용한다.
+생성자, 필드, 메서드 세곳에서 사용할 수 있다. 
+타입을 이용하여 프로퍼티 자동 설정기능을 제공한다.
+즉, 해당 타입의 빈 객체가 없거나 2개 이상의 경우 예외 발생.
+프로퍼티 설정 메서드(setter) 형식이 아닌 일반 메서드에도 적용 가능.
+프로퍼티 설정이 필수가 아닌 경우 @Autowired(required=false)로 선언(기본값 = true)
+
+byType으로 의존관계를 자동으로 설정할 경우 
+같은타입의 빈이 2개 이상 존재하게 되면 예외가 발생하는데, @Autowired도 같은 문제 발생.
+이 때, @Qualifier를 사용하면 동일한 타입의 빈 중 특정 빈을 
+사용하도록 하여 문제를 해결할 수 있다.
+
+ex)
+@Autowired
+@Qualifier("test") // applicationContext.xml에 test라는 bean 있음!
+private Test test;
+※ byType에서 byName 순으로 탐색.
+
+3. @Qualifier
+패키지 : org.springframework.beans.factory.annotation 
+버전 : spring 2.5
+@Autowired 타입 기반이기 때문에 2개 이상의 동일타입 빈 객체 중 
+특정 빈을 사용하도록 선언한다.
+@Qualifier("mainBean") 의 형태로 @Autowired와 함께 사용하며
+해당 bean 태그에 qualifier value="mainBean" 태그를 선언해야 한다.
+메서드에서 두개 이상의 파라미터를 사용하는 경우, 파라미터 앞에 선언해야 한다.
+
+4. @Required
+패키지 : org.springframework.beans.factory.annotation
+버전 : spring 2.0
+필수 프로퍼티임을 명시하는 것으로, set 메서드에 붙이면 된다.
+필수 프로퍼티를 설정하지 않을 경우 빈 생성시 예외를 발생시킨다.
+
+5. @Repository
+패키지 : org.springframework.stereotype
+버전 : spring 2.0
+Dao에 사용되며 Exception을 DataAccessException으로 변환한다.
+
+6. @Service
+@Service를 적용한 class는 비즈니스로직(biz)이 들어가는 Service로 등록
+Controller에 있는 @Autowired는 @Service("~~~Service")에 등록된
+~~~Service와 변수명이 같아야하며, Servicedp 에 있는 @Autowired는 
+@Repository("~~~Dao")에 등록된 ~~~Dao와 변수명이 같아야 한다.
+
+7. @Resource
+자바 6버전 및 JEE 5버전에 추가된 것으로
+어플리케이션에서 필요로 하는 자원을 자동 연결할 때 사용한다.
+스프링 2.5부터 지원하는 어노테이션으로 
+스프링에서는 의존하는 빈 객체를 전달할 때 사용한다.
+name 속성에 자동으로 연결된 빈 객체의 이름을 입력한다.
+@Resource(name="testDao")
+
+※ byName에서 byType 순으로 탐색.
+
+
+
+
+

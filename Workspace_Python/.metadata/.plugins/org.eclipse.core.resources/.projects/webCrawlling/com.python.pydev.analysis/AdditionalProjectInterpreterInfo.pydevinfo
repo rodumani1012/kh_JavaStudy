@@ -1,0 +1,38 @@
+-- VERSION_5
+-- START DISKCACHE_2
+C:\Work\Workspace_Python\.metadata\.plugins\org.eclipse.core.resources\.projects\webCrawlling\com.python.pydev.analysis\v2_indexcache
+com.__init__|1563327773567208000|C:\Work\Workspace_Python\webCrawlling\com\__init__.py
+com.insta.__init__|1563408426415514000|C:\Work\Workspace_Python\webCrawlling\com\insta\__init__.py
+com.naver.naverMovie|1563335146858435000|C:\Work\Workspace_Python\webCrawlling\com\naver\naverMovie.py
+com.insta.instagramTest01|1563409199867987000|C:\Work\Workspace_Python\webCrawlling\com\insta\instagramTest01.py
+com.naver.__init__|1563327773567208000|C:\Work\Workspace_Python\webCrawlling\com\naver\__init__.py
+com.insta.instagramTest02|1563412867475816000|C:\Work\Workspace_Python\webCrawlling\com\insta\instagramTest02.py
+-- END DISKCACHE
+-- START DICTIONARY
+6
+1=C:\Work\Workspace_Python\webCrawlling\com\insta\instagramTest02.py
+3=C:\Work\Workspace_Python\webCrawlling\com\naver\naverMovie.py
+4=com.naver.naverMovie
+5=C:\Work\Workspace_Python\webCrawlling\com\insta\instagramTest01.py
+6=com.insta.instagramTest01
+2=com.insta.instagramTest02
+-- END DICTIONARY
+-- START TREE 1
+13
+des|0|
+dri|1|driver!1^23#1*19@
+img|2|img!1^34#5*19@imgSrc!3^29#5*35@
+ins|1|instaImages!1^31#1*19@
+key|0|
+lin|1|link!3^21#5*35@
+mov|2|movieList!3^16#1*35@movieImg!3^26#1*35@
+num|1|num!3^22#5*35@
+opt|1|options!1^19#1*19@
+res|2|resp!5^11#1*51@resp!3^8#1*35@
+sou|3|soup!5^13#1*51@soup!1^27#1*19@soup!3^12#1*35@
+tag|2|tag!5^8#1*51@tag!1^15#1*19@
+url|2|url!5^10#1*51@url!1^16#1*19@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

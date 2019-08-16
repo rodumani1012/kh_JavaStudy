@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="//code.jquery.com/jquery-3.3.1.min.js">
+</script>
+<script>
+	$(document).ready(function(){
+		$("div > a").css("color", "red");  // 부모 - 자식 관계. div 다음에 a가 나올 경우에만 색상 적용
+	});
+</script>
+</head>
+<body>
+	<div>
+		<a href="http://www.google.com">Google</a>
+		<br>
+		<a href="http://www.naver.com">Naver</a>
+		<br>
+		<!-- em은 글씨를 이텔릭체로 바꿔주는 태그인데 a보다 앞에 있으므로 a가 적용이 안된다. -->
+		<em><a href="http://www.daum.net">Daum</a></em>
+		<br>
+		<a href="http://www.naver.com">ggg</a>
+	</div>
+</body>
+</html>

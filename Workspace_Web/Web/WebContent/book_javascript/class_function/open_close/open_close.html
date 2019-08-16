@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var newWin;
+function openWin() {
+	newWin = window.open("open.html", "", "width=600, height=400");
+}
+function closeWin() {
+	newWin.close();
+}
+</script>
+</head>
+<body>
+<input type="button" value="Open" onclick="openWin()">
+<input type="button" value="Close" onclick="closeWin()">
+</body>
+</html>

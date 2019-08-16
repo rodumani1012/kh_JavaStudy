@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+}
+</style>
+<script src="//code.jquery.com/jquery-3.3.1.min.js">
+</script>
+<script>
+	$(document).ready(function(){
+		$("#img01").mouseover(function(){
+			alert("mouseover() 발동!")
+		});
+	});
+	$(document).ready(function(){
+		$("#img02").mouseout(function(){
+			alert("mouseout() 발동!")
+		});
+	});
+</script>
+</head>
+<body>
+	<img src="/image/02_beericon.JPG" id="img01">
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<img src="/image/03_burger.JPG" id="img02">
+</body>
+</html>

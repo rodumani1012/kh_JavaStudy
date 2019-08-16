@@ -1,0 +1,65 @@
+
+1. pom.xml - ojdbc6, mybatis, mabatis-spring, commons-dbcp, spring-orm
+	다운받기
+2. web.xml - url-pattern은 *.do로 바꾸기, filter 적용하기
+3. WEB-INF/spring/sqls/test.sql 생성하기
+4. src/main/resources/properties/db.properties 생성하기
+(dtd파일 생성하기. 마이바티스 시작하기 페이지 가서 mapper랑 config dtd파일 생성하기)
+5. src/main/resources/sqls/mapper.xml
+6. WEB-INF/spring/sqls/config.xml
+7. applicationContext.xml 에서 properties 잡아주기
+8. dto, dao, biz (config, mapper, controller, ...)
+
+----------------------------------------------------------
+<AOP> - aop 만들어 보기.
+9. pom.xml - aspectjweaver, aspectjrt (aspectjweaver의 버전은 동일하게 맞춰주기. 
+	aspectjrt는 이미 있으니 지우기)
+10.(CCC) com.my.mvc.common.aop(LogAop.java) 클래스 생성 후 before, after 작성
+11. WEB-INF/spring/appServlet/aop-context.xml 파일 생성하기.
+12. web.xml에 서블릿에다가 aop-context 추가해주기.
+13. src/main/resources/log4j.xml 에 내용 추가하기
+
+----------------------------------------------------------
+<Filter> - web.xml이 아닌 셀프로 Filter 만들어보기
+(14. pom.xml에 commons-lang3 디펜던시 추가)
+15. com.my.mvc.common.filter(LogFilter.java implememts javax.servlet.Filter) 파일 생성
+16. web.xml에서 filter 적용
+
+----------------------------------------------------------
+보너스(로그파일 만들기)
+α. src/main/resources/log4j.xml 에 <appender> 와 <appender-ref> 추가하기
+
+----------------------------------------------------------
+<Login>
+17. pom.xml - jackson-core, jackson-mapper 다운
+18. login.jsp 만들기
+19. mapper, dao, biz, controller 내용 추가
+
+----------------------------------------------------------
+<transaction>
+20. dao, biz, controller 내용 추가
+	@Transactional (tx:)
+	- isolation : 별도로 정의하지 않으면 DB의 isolation level을 따른다.
+	* isolation level
+		- default : 데이터베이스에 의존
+		- uncommitted : commit되지 않은 데이터를 볼 수 있다.
+		- committed : commit 된 데이터만 볼 수 있다.
+		- repeatable : 새로운 데이터 입력 시 볼 수 있다.
+		- serializable : 동일한 데이터에 동시에 두 개 이상의 트랜잭션이 수행될 수 없다.
+	- propagation : 전파규칙 정의(기본값 : required)
+		- required : 기존 트랜잭션이 존재하면 지원, 없으면 새로운 트랜잭션 시작
+		- supports : 기존 트랜잭션이 존재하면 지원, 없으면 트랜잭션 없이.
+		- mandatory : 반드시 트랜잭션 내에서 메소드 실행. 없으면 예외발생
+		- required_new : 언제나 새로운 트랜잭션 실행. 기존 트랜잭션 일시정지
+		- not_supported : 기존 트랜잭션 내에서 실행. 없으면 트랜잭션 없이.
+		- never : mandatory와 반대 (반드시 트랜잭션 외에서)
+		- nested : 트랜잭션이 존재하면 중첩되어 실행, 없으면 새로운 트랜잭션 시작
+	
+	- readOnly : 읽기 전용
+	- rollbackFor : 정의된 exception에 대해서 rollback 수행
+		ex) rollbackFor=Exception.class
+	- norollbackFor : 정의된 exception에 대해서 rollback 수행 안함
+	- timeout : 지정한 시간 내에 메소드 수행이 완료되지 않으면 rollback
+		(기본값 : -1 // ∴ 무제한)
+		mybatis에서 timeout 존재하면 중첩되어 실행, 없으면 새로운 트랜잭션 시작 
+21. applicationContext.xml, servlet-context.xml 내용 추가

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+	function searchQS() {
+		var doc = document.querySelectorAll(".test"); //해당 css표현식에 따른 nodeList 반환
+		doc[1].innerHTML = "querySelectorAll(css표현식)"; //innerHTML : 태그 안의 내용을 조작할 때
+	}
+	
+	function searchId() {
+		var doc = document.getElementById("test");
+		
+		alert(doc + " : " + typeof doc); // HTMLParagraphElement(p태그 요소) 리턴
+		
+		doc.innerHTML = "id로 탐색합니다.";
+		doc.style.color = "red";
+	}
+	
+	function searchName() {
+		var doc = document.getElementsByName("test02");
+		
+		alert(doc + " : " + typeof(doc)); //nodeList 리턴
+		
+		doc[1].value = "name 속성으로 엘리먼트 탐색";
+	}
+	
+	function searchTagName(){
+		var doc = document.getElementsByTagName("p");
+		// "태그 네임으로 탐색됩니다.", 파란색으로 변경
+		doc[3].innerHTML = "태그 네임으로 탐색됩니다.";
+		doc[3].style.color = "blue";
+	}
+	
+	
+</script>
+
+
+</head>
+<body>
+
+	<p onclick="searchQS()">DOM 탐색 메서드</p> <!-- Document Object Model -->
+	
+	<p id="test" onclick="searchId()">1.엘리먼트의 id로 탐색 : 엘리먼트 하나를 선택(중복 불가)
+	- 반환 : 값 하나</p>
+	
+	<p onclick="searchName()">2.엘리먼트의 name으로 탐색 : 엘리먼트 여러개를 선택
+	- 반환 : 배열(nodeList)
+		<input type="text" name="test02" value="" size="100%"/><br/>
+		<input type="text" name="test02" value="" size="100%"/><br/>
+		<input type="text" name="test02" value="" size="100%"/><br/>
+	</p>
+	
+	<p class="test" onclick="searchTagName()">3.엘리먼트의 태그 이름으로 탐색 : 엘리먼트 여러개를 선택
+	- 반환  배열(nodeList)</p>
+
+
+</body>
+</html>

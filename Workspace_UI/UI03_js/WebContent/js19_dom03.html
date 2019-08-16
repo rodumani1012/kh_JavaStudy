@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+
+<style type="text/css">
+    img, #imgView{
+        width: 300px;
+        height: 300px;
+    }
+</style>
+
+<script type="text/javascript">
+    function createImg() {
+        // 1. 이름이 rdoBtn 인 요소들을 가지고 온다.
+        var radioSet = document.getElementsByName("rdoBtn");
+
+        // 2. 가져온 요소들의 length만큼 for문 돌면서
+        // 라디오 버튼이 체크되었는지 확인하고
+        // 만일 체크되어있다면, 자신의 이미지를 가지고 온다.
+        var radioVal = "";
+
+        for(var i = 0; i < radioSet.length; i++){
+            if(radioSet[i].checked){
+                radioVal = "image/" + radioSet[i].value;
+            }
+        }
+
+        // 3. img 태그 생성하고, src 속성을 생성해서 주입하자.
+        var img = document.createElement("img");
+        img.setAttribute("src", radioVal);        
+
+        // 4. 이미지 태그를 바꿔치기 한다.
+        var div = document.getElementById("imgView");
+        var chd = document.querySelector("#imgView > img");
+        div.replaceChild(img, chd);
+                    // chd 를 img로 바꿔주시오.
+    }       
+
+    function deleteImg(){
+        document.getElementById("imgView").innerHTML="<img src=''>";
+    }
+    
+</script>
+
+</head>
+<body>
+
+    <input type="radio" name="rdoBtn" value="img1.png"/>img1<br/>
+    <input type="radio" name="rdoBtn" value="img2.png"/>img2<br/>
+    <input type="radio" name="rdoBtn" value="img3.png"/>img3<br/>
+
+    <button onclick="createImg()">이미지 생성하기</button>
+    <button onclick="deleteImg()">이미지 삭제하기</button>
+
+    <div id="imgView"><img src=""></div>
+    
+
+</body>
+</html>

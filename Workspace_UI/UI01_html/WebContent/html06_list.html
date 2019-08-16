@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>목록</h1>
+	
+	<h3>순차적 목록</h3>
+	
+	<b>학원 오는 순서</b>
+	<ol> <!-- ol : ordered list -->
+		<li>눈을 뜬다.</li>
+		<li>걸어서 지하철 탄다.</li>
+		<li>
+			<ol>
+				<li>역삼역에서 내린다.</li>
+				<li>학원까지 걸어온다.</li>
+			</ol>
+		</li>
+	</ol>
+	
+	<h3>비 순차적 목록</h3>
+	
+	<b>집에 가는 순서</b>
+	<ul>
+		<li>역삼역에서 지하철 탄다.</li>
+		<li>
+			<ul>
+				<li>지하철에서 내린다.</li>
+				<li>버스로 갈아탄다.</li>
+			</ul>
+		</li>
+		<li>집에 걸어간다.</li>
+	</ul>
+	
+	<h3>정의형 목록</h3>
+	
+	<dl>
+		<dt>Q 오전반 강의시간</dt> <!-- 제목 -->
+		<dd>오전시간(9:00~11:20)</dd>
+		<dd>점심시간</dd>
+		<dd>오후시간(12:00~15:20)</dd>
+		<dd>
+			<dl>
+				<dt>강의 목록</dt>
+				<dd>java</dd>
+				<dd>database</dd>
+				<dd>ui
+					<ol>
+						<li>html</li>
+						<li>css</li>
+					</ol>
+				</dd>				
+			</dl>
+		</dd>
+	</dl>
+
+</body>
+</html>

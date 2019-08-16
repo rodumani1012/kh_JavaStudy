@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function work_onload(input) {
+	var result = work(input);
+	window.alert("work_onload()::" + result);
+}
+function work(input2) {
+	var data = 10 + input2;
+	return data;
+}
+
+</script>
+</head>
+<body onload="work_onload(5)">
+
+</body>
+</html>

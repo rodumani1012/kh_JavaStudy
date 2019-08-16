@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+
+<style type="text/css">
+
+    #colorbox{
+        width: 320px;
+        height: 320px;
+        position: relative;
+    }
+
+    #red,#yellow,#blue,#black{
+        width: 150px;
+        height: 150px;
+        border: 1px solid black;
+        position: absolute;
+    }
+    
+    #yellow{left: 160px;}
+    #blue{top: 160px;}
+    #black{left: 160px; top: 160px;}
+
+</style>
+
+<script>
+    function allsel(check){
+        var chks = document.getElementsByName("chk");
+        
+        for(var i = 0; i < chks.length; i++){
+            chks[i].checked = check; //true면 true, false면 false를 배열에 넣음.
+        }
+    }
+
+    function sel(){
+        var chks = document.getElementsByName("chk");
+
+        for(var i = 0; i < chks.length; i++) {
+            if(chks[i].checked){
+                document.getElementById(chks[i].value).style.backgroundColor = chks[i].value;
+            } else{
+                document.getElementById(chks[i].value).style.backgroundColor = "white";
+            }
+        }
+    }
+
+    function clearDiv(){
+         // 이름이 all인 태그를 가져와서
+        // 체크를 해제하고 -> allsel()
+        document.getElementsByName("all")[0].checked=false;
+        allsel(false);    
+        // 색을 하얀색으로 바꾸자. -> sel()
+        sel();
+
+    }
+</script>
+
+</head>
+<body>
+
+    <div id="colorbox">
+        <div id="red">red</div>
+        <div id="yellow">yellow</div>
+        <div id="blue">blue</div>
+        <div id="black">black</div>
+    </div>
+
+    <div id="base">
+        <form action="">
+            <input type="checkbox" name="all" onclick="allsel(this.checked);"/>전체 선택<br/>
+                                                            <!-- this.checked : 체크되있는지 확인하여
+                                                                true, false 반환. -->
+            <input type="checkbox" name="chk" value="red"/>빨강<br/>
+            <input type="checkbox" name="chk" value="yellow"/>노랑<br/>
+            <input type="checkbox" name="chk" value="blue"/>파랑<br/>
+            <input type="checkbox" name="chk" value="black"/>검정<br/>
+
+            <input type="button" value="선택" onclick="sel();"/>
+            <input type="button" value="초기화" onclick="clearDiv();"/>
+        </form>
+    </div>
+
+
+</body>
+</html>

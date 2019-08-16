@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+input[type=button] {
+	width : 15%;
+	background-color: green;
+	font-size: 20px;
+	color : white;
+}
+select {
+	width : 12%;
+	font-size: 20px;
+	font-weight: bold;
+}
+</style>
+<script>
+function viewInfo() {
+	var obj = document.getElementById("myselect");
+	
+	// Option 개수
+	var objLength = obj.options.length;
+	alert("Option 개수 : " + objLength);
+	
+	// Option 정보
+	for (var i = 0; i < objLength; i++) {
+		var value = obj.options[i].value;
+		var text = obj.options[i].text;
+		alert("index : " + i + ", value : " + value + ", text : " + text);
+	}
+	
+	var sIndex = obj.selectedIndex;			//선택 대상 index
+	var sValue = obj.value;					//선택 대상 value
+	var sText = obj.options[sIndex].text;	//선택 대상 text
+	alert("[Select Info] index : " + sIndex + ", value : " + sValue + ", text : " + sText);
+}  
+</script>
+</head>
+<body>
+<h1>올해 여행을 가고 싶은 나라?</h1>
+	<select id="myselect" size="1">
+		<option value="1">스페인
+		<option value="2"selected>터키
+		<option value="3">브라질
+		<option value="4">그리스		
+	</select>
+	<br>
+	<br>
+	<input type="button" value="viewInfo" onclick="viewInfo()">
+</body>
+</html>

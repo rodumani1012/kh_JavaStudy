@@ -1,0 +1,6 @@
+# -*- coding:UTF-8 -*-
+
+from selenium import webdriver
+from bs4 import BeautifulSoup
+
+keyword = input('검색어 입력 : ')

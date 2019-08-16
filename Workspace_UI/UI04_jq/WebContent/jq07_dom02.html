@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    /*
+    아래랑 같음
+    $(document).ready(function(){
+        $("div").find("b").css({"font-size":"30px", "color":"red"});
+            ......
+    });
+    */
+    $(function(){
+        $("div").find("b").css({"font-size":"30px", "color":"red"});
+        $("div").children("#chd").text("2.children() 메소드");
+        $("p").parent().css("background","skyblue");
+        $("p > b").parents("div").css("background-color","pink");
+                    //parents("태그이름") : b를 감싸고 있는 모두다 (p, div, body)
+                        // 중에서 원하는 요소.
+        $("p").eq(0).next().css({"font-size":"30px","color":"blue"});
+                // <p><b>1</b></p> 의 next()인 <p id="chd">2</p> 의 css
+    });
+
+    
+</script>   
+</head>
+<body>
+
+    <pre>
+        <b>find("selector") 메소드 : 
+            선택한 엘리먼트의 자손들 중에 탐색하고자 하는 엘리먼트를 찾는다.
+        </b>
+        <b>children("selector") 메소드 : 
+            선택한 엘리먼트의 자식요소들 중에 탐색하고자 하는 엘리먼트를 찾는다.
+        </b>
+        <b>parent() / parents("selector") 메소드 :
+            선택한 엘리먼트의 부모요소를 찾는다.
+        </b>
+        <b>next("selector") 메소드 :
+            선택한 엘리먼트 다음에 따라오는 요소를 찾는다.
+        </b>
+    </pre>
+
+    <div>
+        <p><b>1</b></p>
+        <p id="chd">2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+
+</body>
+</html>

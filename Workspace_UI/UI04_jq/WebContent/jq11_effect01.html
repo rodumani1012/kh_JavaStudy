@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<style type="text/css">
+    img{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 200px;
+        top: 100px;
+    }
+    
+    p{
+        width: 100px;
+        border: 1px solid red;
+        position: absolute;
+        left: 10px;
+        display: none;
+    }
+</style>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("b").click(function(){
+            $("p").toggle();
+            $("p").each(function(i){
+                $(this).animate({
+                    "top":50*(i+1)+"px" // "top":50*(0+1)+"px"
+                                        // top:50*1 +"px"= 50px
+                },1000);
+            });
+        });
+
+        $("p").bind("click",function(){
+            var ele = $(this);
+            ele.css("background-color","hotpink");
+            ele.siblings("p").css("background","gray");
+            //siblings(): 같은 선상에 있는 태그들에 옵션 적용
+
+            // :contains(문자열)  : 문자열이 포함된 것을 찾아준다.
+            if(ele.is("p:contains(hide)")){
+                $("img").hide();
+            }
+
+            if(ele.is("p:contains(show)")){
+                $("img").show();
+            }
+
+            if(ele.is("p:contains(toggle)")){
+                $("img").toggle();
+            }
+
+            if(ele.is("p:contains(slideUp)")){
+                $("img").slideUp();
+            }
+            
+            if(ele.is("p:contains(slideDown)")){
+                $("img").slideDown();
+            }
+            
+            if(ele.is("p:contains(fadeOut)")){
+                $("img").fadeOut();
+            }
+            
+            if(ele.is("p:contains(fadeIn)")){
+                $("img").fadeIn();
+            }
+            
+            if(ele.is("p:contains(fadeToggle)")){
+                $("img").fadeToggle();
+            }
+
+            if(ele.is("p:contains(fadeTo)")){
+                $("img").fadeTo(4000,0.2); //투명도도 지정할 수 있음
+            }
+
+            if(ele.is("p:contains(animate)")){
+                $("#img1").animate({
+                    "width":"500px",
+                    "height":"500px",
+                    "left":"600px",
+                    "top":"0px"
+                }, 2000);
+            }
+        });
+    });
+</script>
+</head>
+<body>
+
+    <b>이펙트 메소드</b>
+
+    <div>
+        <p>hide()</p>
+        <p>show()</p>
+        <p>toggle()</p>
+        <p>slideUp()</p>
+        <p>slideDown()</p>
+        <p>fadeOut()</p>
+        <p>fadeIn()</p>
+        <p>fadeToggle()</p>
+        <p>fadeTo()</p> <!-- fadeToggle에 영향을 미침 -->
+        <p>animate()</p>
+    </div>
+    <img src="image/img1.png" alt="image" id="img1">
+    
+</body>
+</html>

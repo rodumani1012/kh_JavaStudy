@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var timer;
+function startTimer() {
+	timer = setTimeout(work, 3000); //앞은 함수이름 , 뒤는 3000밀리 세컨즈(3초) => 즉 3초후에 work함수를 호출하겠다.
+}
+function work() {
+	alert("Wow!!!");
+}
+
+</script>
+</head>
+<body>
+<input type="button" value = "3초후 실행" onclick="startTimer()">
+</body>
+</html>

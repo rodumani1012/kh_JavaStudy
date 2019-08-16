@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 
+<link href="resources/css01.css" rel="stylesheet" type="text/css" /> 
+-->
+
+<!-- 
+resources 폴더 생성 후 html파일이 아닌 그냥 file로 css를 생성 후 내용 입력.
+href : 파일 위치
+rel : 연결 대상의 속성 (stylesheet로 만들어져 있다.)
+type : 해당 파일의 정보(text로 이루어져 있으며/css 기능을 한다)
+-->
+
+<style type="text/css">
+	/* 주석 */	
+	@import url("resources/css01.css"); /* link와 같은 역할 */
+	p {
+		background-color: olive;
+	}
+	
+</style>
+
+
+</head>
+<body>
+
+	<h1>css 기본 문법</h1>
+	
+	<h3>css 기본 작성 방법</h3>
+	
+	<b style="color: purple;">1.인라인 스타일시트 : (외부 스타일보다)우선순위가 높다</b>
+	
+	<p>
+		<span>2. 내부 스타일시트 : html 내부에서 간단하게 작성</span><br/>
+		<b>3. 외부 스타일시트 : css 파일을 만든다. (가장 많이 사용)</b>
+	</p>
+
+</body>
+</html>

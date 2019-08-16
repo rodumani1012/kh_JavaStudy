@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+	font-family: "나눔명조";
+	font-size: 23px;
+	font-weight: bold;
+}
+
+table {
+	margin: 0 auto;
+}
+
+/* input [type=text] {
+	width: 50px;
+} */
+
+.width_150 {
+	width: 150px;	
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	padding: 10px 20px; 
+}
+
+.width_50 {
+	width: 50px;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	padding: 10px 20px; 
+}
+
+input[type=button],[type=submit],[type=reset] {
+	/* border */
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	padding: 10px 20px;
+	/* color */
+	background-color: orange;
+	color: white;
+	/* font */
+	font-family: "나눔명조";
+	font-size: 30px;
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	계정생성
+	<br>
+	<hr width="80%">
+	<form>
+	<table>
+		<tr>
+			<td>아이디</td>
+			<td><input type="text" maxlength="10" class="width_150"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>패스워드</td>
+			<td><input type="password" maxlength="10" class="width_150"></td>
+		</tr>
+		<tr>
+			<td>이메일</td>
+			<td><input type="email" class="width_150"></td>
+		</tr>
+		<tr>
+			<td>성명</td>
+			<td>
+			<input type="text" placeholder="성" class="width_50">
+			<input type="text" placeholder="이름" class="width_50">
+			</td>
+		</tr>
+		<tr>
+			<td>성별</td>
+			<td>
+			<input type="radio" name="sex" value="1" checked>남자
+			<input type="radio" name="sex" value="2">여자
+			</td>
+		</tr>
+		<tr>
+			<td>생년월일</td>
+			<td>
+			<input type="text" placeholder="년" class="width_50">
+			<select size="1" class="width_150">
+					<option value="1">1월
+					<option value="2">2월
+					<option value="3">3월
+					<option value="4">4월
+					<option value="5">5월
+					<option value="6">6월
+					<option value="7" selected>7월
+					<option value="8">8월
+					<option value="9">9월
+					<option value="10">10월
+					<option value="11">11월
+					<option value="12">12월
+			</select>
+			<input type="text" placeholder="일" class="width_50">
+			</td>
+		</tr>
+	</table>
+	<input type="submit" value="가입">
+	<input type="reset" value="취소">	
+	</form>	
+</body>
+</html>

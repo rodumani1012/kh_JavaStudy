@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align : center;
+}
+</style>
+<script>
+var booster = 0; 		// 부스터
+var speed = 0; 			//스피드
+var maxBooster = 2; 	//부스터 : 최대 소지 개수
+var maxSpeed = 5;		//스피드 : 최대 속도
+var boosterSpeed = 3;	// 스피드 : 부스터 사용시 스피드
+function go() {
+	if (speed < maxSpeed) {
+		speed = speed + 1;
+		window.alert("go()::속도=" + speed + " 부스터=" + booster)
+	} else {
+		window.alert("속도 최대치 입니다.")
+	}
+}
+function slow() {
+	if (speed > 0) {
+		speed = speed - 1;
+		window.alert("slow()::속도=" + speed + " 부스터=" + booster)	
+	} else {
+		window.alert("정지 상태입니다.")
+	}
+}
+function stop() {
+	speed = 0;
+	window.alert("stop()::속도=" + speed + " 부스터=" + booster)	
+}
+function getBooster() {
+	if (booster < maxBooster) {
+		booster = booster + 1;
+		window.alert("getBooster()::속도=" + speed + " 부스터=" + booster)	
+	}else {
+		window.alert("부스터가 최대치 입니다. 더 이상 추가할 수 없습니다.")
+	}
+}
+function useBooster() {
+	if (booster > 0) {
+		speed = speed + boosterSpeed;
+		booster = booster - 1;
+		if (speed > maxSpeed) {
+			speed = maxSpeed;
+		}
+		window.alert("useBooster()::속도=" + speed + " 부스터=" + booster)	
+	} else {
+		window.alert("사용할 수 있는 부스터가 없습니다.")
+	}
+}
+function printInfo() {
+	window.alert("printInfo()::속도=" + speed + " 부스터=" + booster)	
+}
+</script>
+</head>
+<body>
+<input type="button" value="가속" onclick="go()">
+<input type="button" value="감속" onclick="slow()">
+<br>
+<input type="button" value="정지" onclick="stop()">
+<br>
+<input type="button" value="부스터 얻기" onclick="getBooster()">
+<input type="button" value="부스터 사용" onclick="useBooster()">
+<br>
+<input type="button" value="속도-부스터 현황" onclick="printInfo()">
+</body>
+</html>

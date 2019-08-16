@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onkeydown = function (event) {
+		var code = event.keyCode;
+		window.alert("키코드 : " + code)
+		switch (code) {
+		case 13: //Enter
+			window.alert("Enter 키")
+			break;
+		case 37: //좌
+			window.alert("방향키 : 왼쪽")
+			break;
+		case 38: //위
+			window.alert("방향키 : 위쪽")
+			break;
+		case 39: //우
+			window.alert("방향키 : 오른쪽")
+			break;
+		case 40: //아래
+			window.alert("방향키 : 아래쪽")
+			break;
+
+		default:
+			break;
+		}
+		
+}
+</script>
+</head>
+<body>
+키를 누르세요
+</body>
+</html>

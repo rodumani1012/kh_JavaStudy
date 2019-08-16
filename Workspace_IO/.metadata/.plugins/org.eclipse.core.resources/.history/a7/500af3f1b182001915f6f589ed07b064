@@ -1,0 +1,33 @@
+package io.data.model.dao;
+
+import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class DataIoTest {
+
+	public DataIoTest() {}
+	// 기능추가와 관련된 스트림.
+	// 타입별로 데이터가 이동하도록 도와주는 스트림 : DataInputStream, DataOutputStream
+	// DataInput/OutputStream -> 바이트, 보조 스트림이다.
+	// 데이터를 읽는데 1byte 단위가 아닌, 
+		//기본 자료형(byte,short,int,long,float,double,char,boolean), String 단위로 읽고 쓴다.
+	
+	public void addDate() {
+		
+		try (DataOutputStream dout = new DataOutputStream(new FileOutputStream("member.txt"));){
+			
+			// write 엄청 많다!!! 자료형별로 존재함.
+			dout.writeUTF("홍길동"); // 이름(String)
+			dout.writeInt(20);		 // 나이(int)
+			dout.writeChar('M');	 // 성별(char)
+			dout.writeDouble(188.5); // 키(Double)
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+}

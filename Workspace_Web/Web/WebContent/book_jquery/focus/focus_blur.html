@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+}
+</style>
+<script src="//code.jquery.com/jquery-3.3.1.min.js">
+</script>
+<script>
+	$(document).ready(function(){
+		$("#txt01").focus(function(){ //focus
+			$(this).css("background-color", "orange");
+		});
+		$("#txt01").blur(function(){ //blur
+			$(this).css("background-color", "white");
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="text" size="20" id="txt01">
+</body>
+</html>

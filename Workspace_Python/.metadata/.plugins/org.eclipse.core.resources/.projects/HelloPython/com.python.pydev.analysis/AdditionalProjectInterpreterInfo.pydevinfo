@@ -1,0 +1,73 @@
+-- VERSION_5
+-- START DISKCACHE_2
+C:\Work\Workspace_Python\.metadata\.plugins\org.eclipse.core.resources\.projects\HelloPython\com.python.pydev.analysis\v2_indexcache
+com.test03.Module02|1563327551443791000|C:\Work\Workspace_Python\HelloPython\com\test03\Module02.py
+com.test01.Lambda|1563245636891740000|C:\Work\Workspace_Python\HelloPython\com\test01\Lambda.py
+com.test01.__init__|1563236246451046000|C:\Work\Workspace_Python\HelloPython\com\test01\__init__.py
+com.test03.Module01|1563326261711800000|C:\Work\Workspace_Python\HelloPython\com\test03\Module01.py
+com.__init__|1563236246439073000|C:\Work\Workspace_Python\HelloPython\com\__init__.py
+com.test01.StarPrint|1563251647772207000|C:\Work\Workspace_Python\HelloPython\com\test01\StarPrint.py
+com.test01.Control02_forTest|1563238488271156000|C:\Work\Workspace_Python\HelloPython\com\test01\Control02_forTest.py
+com.test01.Control04_break_coutinue|1563239843490045000|C:\Work\Workspace_Python\HelloPython\com\test01\Control04_break_coutinue.py
+com.test01.MTest01|1563236647010143000|C:\Work\Workspace_Python\HelloPython\com\test01\MTest01.py
+com.test02.MTest04|1563325298604101000|C:\Work\Workspace_Python\HelloPython\com\test02\MTest04.py
+com.test02.MTest02|1563323659320116000|C:\Work\Workspace_Python\HelloPython\com\test02\MTest02.py
+com.test01.Control01_ifTest|1563237029190947000|C:\Work\Workspace_Python\HelloPython\com\test01\Control01_ifTest.py
+com.test01.Control03_whileTest|1563238937091731000|C:\Work\Workspace_Python\HelloPython\com\test01\Control03_whileTest.py
+com.test02.MTest03|1563325419217566000|C:\Work\Workspace_Python\HelloPython\com\test02\MTest03.py
+com.test02.MTest01|1563323370468350000|C:\Work\Workspace_Python\HelloPython\com\test02\MTest01.py
+-- END DISKCACHE
+-- START DICTIONARY
+22
+22=com.test03.Module02
+7=C:\Work\Workspace_Python\HelloPython\com\test02\MTest02.py
+15=C:\Work\Workspace_Python\HelloPython\com\test02\MTest03.py
+13=C:\Work\Workspace_Python\HelloPython\com\test02\MTest01.py
+6=com.test01.Lambda
+10=com.test03.Module01
+5=C:\Work\Workspace_Python\HelloPython\com\test01\Lambda.py
+3=C:\Work\Workspace_Python\HelloPython\com\test02\MTest04.py
+9=C:\Work\Workspace_Python\HelloPython\com\test03\Module01.py
+11=C:\Work\Workspace_Python\HelloPython\com\test01\Control03_whileTest.py
+20=com.test01.Control02_forTest
+21=C:\Work\Workspace_Python\HelloPython\com\test03\Module02.py
+19=C:\Work\Workspace_Python\HelloPython\com\test01\Control02_forTest.py
+1=C:\Work\Workspace_Python\HelloPython\com\test01\Control01_ifTest.py
+18=com.test01.Control04_break_coutinue
+4=com.test02.MTest04
+8=com.test02.MTest02
+2=com.test01.Control01_ifTest
+12=com.test01.Control03_whileTest
+16=com.test02.MTest03
+17=C:\Work\Workspace_Python\HelloPython\com\test01\Control04_break_coutinue.py
+14=com.test02.MTest01
+-- END DICTIONARY
+-- START TREE 1
+23
+a|4|a!1^3#1*19@a!3^7#5*35@a!5^34#1*51@a!7^13#5*67@
+are|1|area!9^12#5*83@
+b|2|b!3^10#5*35@b!5^35#1*51@
+c|1|c!5^36#1*51@
+cir|1|circle!9^7#5*82@
+cou|1|count!11^9#1*99@
+d|1|d!5^40#1*51@
+e|1|e!5^45#1*51@
+fiv|1|five!5^41#1*51@
+fun|6|func01!7^3#5*66@func01!13^4#5*114@func03!7^9#5*66@func03!13^10#5*114@func02!7^6#5*66@func02!13^7#5*114@
+gob|1|gob!5^7#1*51@
+gug|3|gugudaninput!15^18#5*130@gugudan!15^11#5*130@gugu!15^4#5*130@
+hap|1|hap!5^4#1*51@
+i|2|i!11^2#1*99@i!17^3#1*147@
+max|1|max!5^23#1*51@
+min|1|min!5^14#1*51@
+myl|1|mylist!5^49#1*51@
+mys|1|mySum!3^3#5*34@
+res|1|res!5^46#1*51@
+sub|1|subject!19^1#1*163@
+sum|1|sum!11^8#1*99@
+x|1|x!21^11#5*179@
+y|1|y!21^12#5*179@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

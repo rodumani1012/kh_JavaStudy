@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+
+<script type="text/javascript">
+    // select 속성 : options, selectedIndex, selected
+    function show01() {
+        var food = document.getElementsByName("food")[0]; //선택창 전체 다 가져옴
+        var idx = food.selectedIndex; //선택된 옵션의 인덱스 반환
+        var foodName = food.options[idx].value; // 해당 인덱스의 옵션의 값.
+        alert(foodName + "먹고싶다.");
+    }
+
+    function show02() {
+        var food = document.getElementsByName("food")[1];
+        var str = "";
+
+        for(var i = 0; i < food.options.length; i++){
+            if(food.options[i].selected) {
+                str += food.options[i].value+ "\n";
+            }
+        }
+        alert(str);
+    }
+
+</script>
+
+</head>
+<body>
+
+    <h1>음식 선택하기</h1>    
+    <form>
+        <select name="food" onchange="show01();">
+            <optgroup label="선택">
+                <option value="라면">라면</option>
+                <option value="치킨">치킨</option>
+                <option value="만두">만두</option>
+                <option value="떡볶이">떡볶이</option>
+                <option value="김밥">김밥</option>
+            </optgroup>
+        </select>
+        <br/><br/><br/><br/><br/>
+        <select name="food" multiple="multiple" size="4"> <!-- 사이즈만큼만 보여줘라! -->
+                <option value="라면">라면</option>
+                <option value="치킨">치킨</option>
+                <option value="만두">만두</option>
+                <option value="떡볶이">떡볶이</option>
+                <option value="김밥">김밥</option>
+        </select>
+        <input type="button" value="선택" onclick="show02();"/>
+    </form>
+
+</body>
+</html>

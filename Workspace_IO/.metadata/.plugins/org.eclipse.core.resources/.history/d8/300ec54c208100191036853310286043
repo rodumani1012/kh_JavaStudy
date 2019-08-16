@@ -1,0 +1,20 @@
+package io.file.fileByte.model.dao;
+
+import java.io.File;
+import java.io.FileOutputStream;
+
+public class FileByteTest {
+
+	public FileByteTest() {
+	
+	}
+	
+	// 바이트 기반스트림으로 바이트 단위 데이터를 전송
+	// 종류 : FileInput/OutputStream, ByteArray, Piped, Audio
+	
+	// 저장
+	public void fileSave() {
+		File file = new File("test.txt");
+		FileOutputStream fout = new FileOutputStream(file);
+	}
+}

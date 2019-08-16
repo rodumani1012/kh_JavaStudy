@@ -1,0 +1,18 @@
+
+1. pom.xml - ojdbc6, mybatis, mabatis-spring, commons-dbcp, spring-orm
+	다운받기
+	
+2. web.xml - url-pattern은 *.do로 바꾸기, filter 적용하기
+
+3. WEB-INF/spring/sqls/test.sql 생성하기
+
+4. src/main/resources/properties/db.properties 생성하기
+
+(dtd파일 생성하기. 마이바티스 시작하기 페이지 가서 mapper랑 config dtd파일 생성하기)
+5. src/main/resources/sqls/mapper.xml
+
+6. WEB-INF/spring/sqls/config.xml
+
+7. applicationContext.xml 에서 properties 잡아주기
+
+8. dto, dao, biz (config, mapper, controller, ...)

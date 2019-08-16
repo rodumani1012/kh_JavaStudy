@@ -1,0 +1,19 @@
+package test;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServletRequest;
+
+public class test01 {
+
+	public static void main(String[] args) {
+		HttpServletRequest request;
+		try {
+			int result = new TestDao().testMethod();
+			//内靛 老何 积帆
+		} catch (MyServletException exception) {
+			request.setAttribute("exception", exception);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("error.jsp");
+			dispatcher.forward(request, response);
+		}
+	}
+}

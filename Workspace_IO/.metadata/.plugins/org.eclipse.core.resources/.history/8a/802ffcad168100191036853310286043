@@ -1,0 +1,8 @@
+package exception.ex.model.vo;
+
+public class KHBar {
+
+	public KHBar() {
+		
+	}
+}

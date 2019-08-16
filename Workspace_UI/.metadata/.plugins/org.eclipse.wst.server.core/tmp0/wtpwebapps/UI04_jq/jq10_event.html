@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<style type="text/css">
+    div{
+        width: 400px;
+        height: 200px;
+        border: 2px solid red;
+        padding: 20px;
+        overflow: auto;
+    }
+
+    div p:first-child{
+        float: left;
+        border: 1px solid blue;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        line-height: 150px;
+    }
+
+    div p:last-child{
+        float: right;
+        border: 1px solid blue;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        line-height: 150px;
+    }
+</style>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+    /* 
+        이벤트 전파 : 각 요소가 서로 포함관계(중첩)인 경우
+                    요소 중 하나에 이벤트가 발생되면
+                    중첩된 요소들도 이벤트가 전파된다.
+
+        이벤트 전파 막기 : 
+            - stopPropagation() : 이벤트 요소의 전파 막기  ex) 감싸는 다른 요소 실행 안됨
+            - preventDefault() : 이벤트에 의한 기본 동작 막기   ex) 다른 요소는 실행하면서 a태그의 href를 막음
+            - return false : 위의 두개 모두 적용 ex) 감싸는 + 기본 기능 다 막음
+    */
+
+    $(function(){
+        $("a:eq(0)").click(function(e){
+            alert("a 클릭!");
+
+            // e.stopPropagation();
+            // e.preventDefault();
+            return false;
+        });
+
+        $("p").click(function(e){
+            alert("p 클릭!")
+
+            // e.stopPropagation();
+        });
+
+        $("div").click(function(e){
+            alert("div 클릭!")
+        });
+            //bind : 이벤트 엮기
+        $("a:eq(1)").bind("mouseover mouseout", function(e){
+            if(e.type=="mouseover"){ //마우스 올리면 색깔 하늘색
+                $(this).css("background-color","skyblue");
+            }
+            if(e.type=="mouseout"){ //마우스 떼면 색깔 하얀색
+                $(this).css("background-color","white");
+            }
+        });
+            //unbind : 엮인 이벤트 해제
+        $("span").click(function(){
+            alert("unbind() !!!");
+            $("a:eq(1)").unbind();
+        });
+
+        $("button").click(function(){
+            $("body").append("<p>새로 추가된 p태그!</p>");
+        })
+            //on : 이벤트 엮기. bind보다 더 좋다. on 써라.
+        $("body").on("click",">p",function(){ //body의 자식 p를 클릭하면 function 하라.
+            alert("새로 추가된 요소에도 이벤트 적용!");
+        });
+    });
+</script>
+</head>
+<body>
+
+    <span>unbind() : 이벤트 해제</span>
+
+    <div>
+        <p>
+            <a href="https://www.naver.com">클릭!</a>
+        </p>
+        <p>클릭!</p>
+    </div>
+    <div>
+        <p>
+            <a href="https://www.google.com">클릭!</a>
+        </p>
+        <p>클릭!</p>
+    </div>
+
+    <button>요소 추가!</button>
+
+</body>
+</html>

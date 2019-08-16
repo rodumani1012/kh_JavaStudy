@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+    // parentNode : 부모태그 하나 (node)
+    function searchPar() {
+        var child02 = document.getElementsByTagName("p")[1];
+        var div = child02.parentNode;
+        alert(div.nodeName + " : " + typeof div + "<" + div + ">");
+        div.style.backgroundColor="skyblue";
+    }
+
+    // childNodes : 자식 태그들 (nodeList -> 배열)
+    function searchChild() {
+        var div = document.getElementsByTagName("div")[0];
+        var divChildren = div.childNodes;
+        alert(divChildren[5].tagName + " : " + typeof divChildren[5] + "<" + divChildren[5] + ">");
+        divChildren[5].style.backgroundColor="pink";
+        // divChildren[5] 에서 5인 이유는 공백이 [0], <p>child01</p> [1], 공백 [2],
+                            // <p>child02</p> [3], 공백 [4], <p>child03</p> [5]
+        // <div><p>child01</p><p>child02</p><p>child03</p></div>
+        // 25번 라인처럼 한줄로 쓰면 divChildren[0] 이 <p>child01</p> 를 가르킴
+    }
+
+    function changeColor(){
+        var test01 = document.getElementsByTagName("p")[3];
+        var div = test01.parentNode;
+        div.style.backgroundColor="pink";        
+    }
+
+    function changeSize(){
+        var div = document.getElementsByTagName("div")[2];
+        var divChildren = div.childNodes;
+        divChildren[3].style.fontSize="20pt";
+    }
+
+</script>
+
+</head>
+<body>
+
+    <h1>부모탐색, 자식탐색</h1>
+
+    <div>
+        <p>child01</p>
+        <p>child02</p>
+        <p>child03</p>
+    </div>
+
+    <button onclick="searchPar()">부모탐색</button>
+    <button onclick="searchChild()">자식탐색</button>
+
+    <hr/>
+
+    <h3>문제 1. "test01태그를 포함한 div태그"의 배경색을 pink로 설정</h3>
+    <h3>문제 2. 마지막 div태그에 포함된 test04 태그의 폰트 크기를 20pt 로 설정</h3>
+
+    <div>
+        <p>test01</p>
+        <p>test02</p>
+    </div>
+    <div>
+        <p>test03</p>
+        <p>test04</p>
+    </div>
+    <button onclick="changeColor()">문제 1</button>
+    <button onclick="changeSize()">문제 2</button>
+
+</body>
+</html>

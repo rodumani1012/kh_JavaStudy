@@ -1,0 +1,21 @@
+package io.buffered.run;
+
+import java.io.BufferedInputStream;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+import javax.sound.midi.SysexMessage;
+
+public class BufferedPractice {
+	
+	public static void main(String[] args) {
+		byte[] bt = new byte[1024];
+		
+		
+		BufferedInputStream bis = new BufferedInputStream(System.in);
+		
+		System.out.println("값을 입력하세요 : ");
+		bis.read();
+		
+	}
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>URI 연습</title>
+</head>
+<body>
+
+	<div style="size:10.9em; color : blue;">
+		<form action="res.jsp" method="get">
+			이름 : <input type="text" name="tname" /><br/> 
+			주소 : <input type="text" name="taddr" /><br/>
+			<input type="button" value="클릭" /> 
+			<input type="submit" value="전송" /> 
+			<input type="reset" value="취소" />
+		</form>
+	</div>
+
+<pre>
+	웹은 서버에 페이지로 요청(HTTP Request) 할 때
+	두가지 방식을 취한다.(GET방식, POST방식)
+	
+	QueryString을 포함한 GET 방식과
+	주소줄에 요청 페이지만 있고 QueryString이 없는
+	상태에서 폼의 데이터를 하나로 묶어 히든 처리 되면서
+	요청되는 POST 방식이 있다.
+	
+	QueryString 이란?
+	http://localhost:8787/Java19_URI_Web/res.jsp?tname=%EC%B5%9C%EC%A4%80%EC%97%B0&taddr=%EA%B2%BD%EA%B8%B0%EB%8F%84+%EC%95%88%EC%96%91
+	주소 중에서 ?를 포함한 변수=값&변수=값&...
+	을 말한다. (? 뒤에 있는 모든 것.)
+	즉, ?tname=%EC%B5%9C%EC%A4%80%EC%97%B0&taddr=%EA%B2%BD%EA%B8%B0%EB%8F%84+%EC%95%88%EC%96%91
+</pre>
+
+
+</body>
+</html>

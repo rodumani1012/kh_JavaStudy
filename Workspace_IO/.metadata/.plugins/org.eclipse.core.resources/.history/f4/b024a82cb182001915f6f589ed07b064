@@ -1,0 +1,9 @@
+package io.data.model.dao;
+
+public class DataIoTest {
+
+	public DataIoTest() {}
+	
+	// DataInput/OutputStream -> 바이트, 보조 스트림이다.
+	
+}

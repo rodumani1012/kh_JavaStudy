@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+   $(function(){
+        //eq()
+        $("div>p").eq(0).click(function(){
+            $("pre b").eq(0).toggle();
+        });
+
+        //slice()
+        $("div > p").eq(1).click(function(){
+            $("pre b").slice(1,2).toggle(); // 1번지부터 (2-1)번지까지
+        });
+
+        //first()
+        $("div > p").eq(2).click(function(){
+            // $("pre b").first().css("color","red");
+            // $("pre b").eq(2).toggle();
+            // 21~22를 한문장으로 하기
+            $("pre b").first().css("color","red").text("연결하기!!!").end().eq(2).toggle();
+                                                 //end() : 앞에 메소드들을 종료시켜줌
+                                                 // 즉, first()~text() 까지 수행함.
+        });
+
+        //last()
+        $("div > p").eq(3).click(function(){
+            $("pre b").last().toggle();
+        });
+
+    });
+</script>
+
+</head>
+<body>
+
+    <pre>
+        <b>eq()메소드 : 선택한 엘리먼트들 중에 인덱스로 탐색</b>
+        <b>slice()메소드 : 선택한 엘리먼트들 중에 인덱스 길이로 탐색</b>
+        <b>first()메소드 : 선택한 엘리먼트들 중에 첫번째 요소로 탐색</b>
+        <b>last()메소드 : 선택한 엘리먼트들 중에 마지막 요소로 탐색</b>
+    </pre>
+
+    <div>
+        <p>1.eq()</p>
+        <p>2.slice()</p>
+        <p>3.first()</p>
+        <p>4.last()</p>
+    </div>
+
+</body>
+</html>

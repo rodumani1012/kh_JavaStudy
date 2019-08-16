@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<properties resource="com/toy/db/db.properties"></properties>
+	
+	<typeAliases>
+		<typeAlias type="com.toy.home.dto.user_info_dto" alias="user_info_dto"/>
+		<typeAlias type="com.toy.project.dto.prj_info_dto" alias="prj_info_dto"/>
+		<typeAlias type="com.toy.project.dto.prj_board_dto" alias="prj_board_dto" />
+		<typeAlias type="com.toy.home.dto.normal_board_dto" alias="normal_board_dto" />  
+		<typeAlias type="com.toy.home.dto.comment_board_dto" alias="comment_board_dto" /> 
+		<typeAlias type="com.toy.project.dto.prj_issue_dto" alias="prj_issue_dto"/>
+		<typeAlias type="com.toy.project.dto.calendar_dto" alias="calendar_dto"/>
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/toy/db/home/home-mapper.xml" />
+		<mapper resource="com/toy/db/project/project-mapper.xml" />
+		<mapper resource="com/toy/db/project/calendar-mapper.xml"/>
+	</mappers>
+</configuration>

@@ -1,0 +1,16 @@
+MODULES_MANAGER_V2
+com.__init__|C:\Work\Workspace_Python\HelloPython\com\__init__.py
+com.test01.Control01_ifTest|C:\Work\Workspace_Python\HelloPython\com\test01\Control01_ifTest.py
+com.test01.Control02_forTest|C:\Work\Workspace_Python\HelloPython\com\test01\Control02_forTest.py
+com.test01.Control03_whileTest|C:\Work\Workspace_Python\HelloPython\com\test01\Control03_whileTest.py
+com.test01.Control04_break_coutinue|C:\Work\Workspace_Python\HelloPython\com\test01\Control04_break_coutinue.py
+com.test01.Lambda|C:\Work\Workspace_Python\HelloPython\com\test01\Lambda.py
+com.test01.MTest01|C:\Work\Workspace_Python\HelloPython\com\test01\MTest01.py
+com.test01.StarPrint|C:\Work\Workspace_Python\HelloPython\com\test01\StarPrint.py
+com.test01.__init__|C:\Work\Workspace_Python\HelloPython\com\test01\__init__.py
+com.test02.MTest01|C:\Work\Workspace_Python\HelloPython\com\test02\MTest01.py
+com.test02.MTest02|C:\Work\Workspace_Python\HelloPython\com\test02\MTest02.py
+com.test02.MTest03|C:\Work\Workspace_Python\HelloPython\com\test02\MTest03.py
+com.test02.MTest04|C:\Work\Workspace_Python\HelloPython\com\test02\MTest04.py
+com.test03.Module01|C:\Work\Workspace_Python\HelloPython\com\test03\Module01.py
+com.test03.Module02|C:\Work\Workspace_Python\HelloPython\com\test03\Module02.py

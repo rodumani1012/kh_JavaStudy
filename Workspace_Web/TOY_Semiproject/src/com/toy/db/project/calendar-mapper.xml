@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="calendar.mapper">
+	
+	<!-- 해당월의 해당일에 일정 목록을 보여주기위한 쿼리 -->
+	<select id="calendar_list" parameterType="map" resultType="calendar_dto">
+		SELECT * FROM PRJ_ISSUE WHERE PRJ_NUM = #{prj_num} AND
+			TO_CHAR(ISSUE_DATE_UPDATE,'yyyyMM') = ${yyyyMM}
+	</select>
+	
+	<!-- 로드맵에서 이슈 생성시 카테고리 항목(보드타이틀)을 보여주는 쿼리 -->
+	<select id="prj_board_list" parameterType="map" resultType="prj_board_dto">
+		SELECT * FROM PRJ_BOARD WHERE PRJ_NUM = #{prj_num} 
+	</select>
+	
+	<!-- 카테고리에 따른 보드 번호를 돌려줌 -->
+	<select id="board_num" parameterType="map" resultType="prj_board_dto">
+		SELECT * FROM PRJ_BOARD WHERE BOARD_TITLE = #{category}
+	</select>
+	
+	<!-- 캘린더에서 이슈 생성 -->
+	 <insert id="issue_insert" parameterType="calendar_dto">
+	 	INSERT INTO PRJ_ISSUE(ISSUE_NUM, PRJ_NUM, BOARD_NUM, 
+	 		ISSUE_TITLE, ISSUE_CONTENT, ISSUE_CHARGE, ISSUE_PRIORITY, ISSUE_DEADLINE,
+	 		 ISSUE_PARENT, ISSUE_DATE_CREATE, ISSUE_DATE_UPDATE, ISSUE_DEL)
+	 		 VALUES(ISSUESEQ.NEXTVAL, #{prj_num}, #{board_num},#{issue_title},#{issue_content},#{issue_charge},#{issue_priority},#{issue_deadline},NULL,SYSDATE,#{issue_date_update},'N')
+	 </insert>
+	 
+	 <!-- 날짜 클릭시 해당 날짜의 이슈 목록을 보여주는 쿼리 -->
+	 <select id="issue_list" parameterType="map" resultType="calendar_dto">
+	 	SELECT * FROM PRJ_ISSUE WHERE PRJ_NUM = #{prj_num} AND 
+			TO_CHAR(ISSUE_DATE_UPDATE,'yyyyMMdd') = ${yyyyMMdd}
+	 </select>
+</mapper>	

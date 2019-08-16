@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <!-- modelVersion : maven의 version -->
+  <modelVersion>4.0.0</modelVersion>
+  <!-- groupId, artifactId : 나중에 배포할 때의 이름 설정(application 설정) -->
+  <groupId>Spring02_Bean</groupId>
+  <artifactId>Spring02_Bean</artifactId>
+  <!-- application의 배포 버전 -->
+  <version>0.0.1-SNAPSHOT</version>
+  <!-- build : plugin, 기타 설정, lib, ... 을 추가할 수 있는 곳 -->
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+        <!-- source, target : java의 버전  -->
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <dependencies>
+  <!-- org.springframework.spring-core -->
+  	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-core</artifactId>
+	  <version>5.1.8.RELEASE</version>
+	</dependency>
+  <!-- org.springframework.spring-context -->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-context</artifactId>
+	  <version>5.1.8.RELEASE</version>
+	</dependency>
+  </dependencies>
+</project>

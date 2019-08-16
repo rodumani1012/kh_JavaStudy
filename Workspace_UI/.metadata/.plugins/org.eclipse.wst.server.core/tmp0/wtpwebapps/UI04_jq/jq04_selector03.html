@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript">
+    function c1(){
+        var doc = $("input:text").val();
+        alert("입력한 메시지 : " + doc);
+    }
+    
+    function c2(){
+        $("#view").html($("input:radio").val());
+        // document.getElementById("view").innerHTML = 라디오값;
+    }
+
+    function c3(){
+        $("#view").html($("input:checkbox").val());
+    }
+
+    /*
+    onload=function(){
+        var selEle = document.getElementsByTagName("select")[0];
+        selEle.onchange=function(){
+            alert(selEle.options[selEle.selectedIndex].value + "의 인덱스 : " + selEle.selectedIndex);
+        }
+    }
+    */
+
+    //위 주석을 jquery로 바꿔보기
+    $(function(){
+        $("select").change(function(){
+            var value = $("select option:selected").val();
+            alert(value + "의 인덱스 : ");
+        });
+    });
+</script>
+</head>
+<body>
+
+    <form action="">
+        <input type="text">
+        <input type="button" value="선택" onclick="c1()">
+        <input type="radio" value="19.02.13 ~" onclick="c2()">
+        19.02.13 ~
+        <input type="checkbox" value="java frame" onclick="c3()">
+        java framework 개발자 양성 과정
+        <div id="view"></div>
+        <select>
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+        </select>
+    </form>
+    
+
+</body>
+</html>

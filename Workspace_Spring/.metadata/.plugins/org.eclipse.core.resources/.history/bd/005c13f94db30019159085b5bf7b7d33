@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>지도 생성하기</title>
+    
+</head>
+<body>
+<!-- 지도를 표시할 div 입니다 -->
+<div id="map" style="width:100%; height:1200px;"></div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0977dce239fb63db06ca3665d5ee6d16"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>    
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	mapOption = {
+		center : new kakao.maps.LatLng(35.912346, 127.618080), // 지도의 중심좌표
+		level : 12
+	// 지도의 확대 레벨
+	};
+
+	// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+	var map = new kakao.maps.Map(mapContainer, mapOption);
+	map.setZoomable(false);
+	
+	//서울
+	google.charts.load('current', 
+		{'packages' : [ 'bar' ]
+	});
+	google.charts.setOnLoadCallback(drawChart1);
+
+	function drawChart1() {
+		var data = google.visualization.arrayToDataTable([
+				[ '안녕', '생활폐기물', '폐기물 처리현황', '폐기물 발생량' ],
+				['안녕 ', 2694, 2694, 384] ]);
+
+		var options = {
+		};
+
+		var chart = new google.charts.Bar(document.getElementById('columnchart_material1'));
+
+		chart.draw(data, google.charts.Bar.convertOptions(options));
+	}
+
+	// 커스텀 오버레이가 표시될 위치입니다 
+	var position1 = new kakao.maps.LatLng(37.878213, 126.710488);  
+
+	var content1 = '<div>서울</div>' +
+		'<div id="columnchart_material1"' + 
+		'style="width: 300px; height: 140px; font-size: 10px">' +
+		'</div>';
+
+	//커스텀 오버레이를 생성합니다
+	var customOverlay1 = new kakao.maps.CustomOverlay({
+    	position: position1,
+    	content: content1
+	});
+
+	//인천
+	google.charts.load('current', 
+		{'packages' : [ 'bar' ]
+	});
+	
+	google.charts.setOnLoadCallback(drawChart2);
+
+	function drawChart2() {
+		var data = google.visualization.arrayToDataTable([
+				[ '', '생활폐기물', '폐기물 처리현황', '폐기물 발생량' ],
+				[' ', 2694, 2694, 384] ]);
+
+		var options = {
+		};
+
+		var chart = new google.charts.Bar(document.getElementById('columnchart_material2'));
+
+		chart.draw(data, google.charts.Bar.convertOptions(options));
+	}
+
+	// 커스텀 오버레이가 표시될 위치입니다 
+	var position2 = new kakao.maps.LatLng(36.858180, 125.806327);  
+
+	var content2 = '<div>인천</div>' +
+		'<div id="columnchart_material2"' + 
+		'style="width: 300px; height: 140px; font-size: 10px">' +
+		'</div>';
+
+	//커스텀 오버레이를 생성합니다
+	var customOverlay2 = new kakao.maps.CustomOverlay({
+    	position: position2,
+    	content: content2,
+        xAnchor: 0.3,
+        yAnchor: 0.91
+	});
+	
+	//충남
+	google.charts.load('current', 
+		{'packages' : [ 'bar' ]
+	});
+	
+	google.charts.setOnLoadCallback(drawChart3);
+
+	function drawChart3() {
+		var data = google.visualization.arrayToDataTable([
+				[ '', '생활폐기물', '폐기물 처리현황', '폐기물 발생량' ],
+				[' ', 2694, 2694, 384] ]);
+
+		var options = {
+		};
+
+		var chart = new google.charts.Bar(document.getElementById('columnchart_material3'));
+
+		chart.draw(data, google.charts.Bar.convertOptions(options));
+	}
+
+	// 커스텀 오버레이가 표시될 위치입니다 
+	var position3 = new kakao.maps.LatLng(35.982251, 126.426263);  
+
+	var content3 = '<div>충남</div>' +
+		'<div id="columnchart_material3"' + 
+		'style="width: 300px; height: 140px; font-size: 10px">' +
+		'</div>';
+
+	//커스텀 오버레이를 생성합니다
+	var customOverlay3 = new kakao.maps.CustomOverlay({
+    	position: position3,
+    	content: content3,
+        xAnchor: 0.3,
+        yAnchor: 0.91
+	});
+	
+
+	//경기
+	google.charts.load('current', 
+		{'packages' : [ 'bar' ]
+	});
+	
+	google.charts.setOnLoadCallback(drawChart4);
+
+	function drawChart4() {
+		var data = google.visualization.arrayToDataTable([
+				[ '', '생활폐기물', '폐기물 처리현황', '폐기물 발생량' ],
+				[' ', 2694, 2694, 384] ]);
+
+		var options = {
+		};
+
+		var chart = new google.charts.Bar(document.getElementById('columnchart_material4'));
+
+		chart.draw(data, google.charts.Bar.convertOptions(options));
+	}
+
+	// 커스텀 오버레이가 표시될 위치입니다 
+	var position4 = new kakao.maps.LatLng(36.807292, 127.608884);  
+
+	var content4 = '<div>경기</div>' +
+		'<div id="columnchart_material4"' + 
+		'style="width: 300px; height: 140px; font-size: 10px">' +
+		'</div>';
+
+	//커스텀 오버레이를 생성합니다
+	var customOverlay4 = new kakao.maps.CustomOverlay({
+    	position: position4,
+    	content: content4,
+        xAnchor: 0.3,
+        yAnchor: 0.91
+	});
+	
+	//강원
+	google.charts.load('current', 
+		{'packages' : [ 'bar' ]
+	});
+	
+	google.charts.setOnLoadCallback(drawChart5);
+
+	function drawChart5() {
+		var data = google.visualization.arrayToDataTable([
+				[ '', '생활폐기물', '폐기물 처리현황', '폐기물 발생량' ],
+				[' ', 2694, 2694, 384] ]);
+
+		var options = {
+		};
+
+		var chart = new google.charts.Bar(document.getElementById('columnchart_material5'));
+
+		chart.draw(data, google.charts.Bar.convertOptions(options));
+	}
+
+	// 커스텀 오버레이가 표시될 위치입니다 
+	var position5 = new kakao.maps.LatLng(37.581763, 128.145238);  
+
+	var content5 = '<div>강원</div>' +
+		'<div id="columnchart_material5"' + 
+		'style="width: 300px; height: 140px; font-size: 10px">' +
+		'</div>';
+
+	//커스텀 오버레이를 생성합니다
+	var customOverlay5 = new kakao.maps.CustomOverlay({
+    	position: position5,
+    	content: content5,
+        xAnchor: 0.3,
+        yAnchor: 0.91
+	});
+	
+	//광주
+	google.charts.load('current', 
+		{'packages' : [ 'bar' ]
+	});
+	
+	google.charts.setOnLoadCallback(drawChart6);
+
+	function drawChart6() {
+		var data = google.visualization.arrayToDataTable([
+				[ '', '생활폐기물', '폐기물 처리현황', '폐기물 발생량' ],
+				[' ', 2694, 2694, 384] ]);
+
+		var options = {
+		};
+
+		var chart = new google.charts.Bar(document.getElementById('columnchart_material6'));
+
+		chart.draw(data, google.charts.Bar.convertOptions(options));
+	}
+
+	// 커스텀 오버레이가 표시될 위치입니다 
+	var position6 = new kakao.maps.LatLng(35.122208, 126.141484);  
+
+	var content6 = '<div>광주</div>' +
+		'<div id="columnchart_material6"' + 
+		'style="width: 300px; height: 140px; font-size: 10px">' +
+		'</div>';
+
+	//커스텀 오버레이를 생성합니다
+	var customOverlay6 = new kakao.maps.CustomOverlay({
+    	position: position6,
+    	content: content6,
+        xAnchor: 0.3,
+        yAnchor: 0.91
+	});
+	
+	//전라도
+	google.charts.load('current', 
+		{'packages' : [ 'bar' ]
+	});
+	
+	google.charts.setOnLoadCallback(drawChart7);
+
+	function drawChart7() {
+		var data = google.visualization.arrayToDataTable([
+				[ '', '생활폐기물', '폐기물 처리현황', '폐기물 발생량' ],
+				[' ', 2694, 2694, 384] ]);
+
+		var options = {
+		};
+
+		var chart = new google.charts.Bar(document.getElementById('columnchart_material7'));
+
+		chart.draw(data, google.charts.Bar.convertOptions(options));
+	}
+
+	// 커스텀 오버레이가 표시될 위치입니다 
+	var position7 = new kakao.maps.LatLng(34.194840, 126.498532);  
+
+	var content7 = '<div>전라도</div>' +
+		'<div id="columnchart_material7"' + 
+		'style="width: 300px; height: 140px; font-size: 10px">' +
+		'</div>';
+
+	//커스텀 오버레이를 생성합니다
+	var customOverlay7 = new kakao.maps.CustomOverlay({
+    	position: position7,
+    	content: content7,
+        xAnchor: 0.3,
+        yAnchor: 0.91
+	});
+	
+	//부산
+	google.charts.load('current', 
+		{'packages' : [ 'bar' ]
+	});
+	
+	google.charts.setOnLoadCallback(drawChart8);
+
+	function drawChart8() {
+		var data = google.visualization.arrayToDataTable([
+				[ '', '생활폐기물', '폐기물 처리현황', '폐기물 발생량' ],
+				[' ', 2694, 2694, 384] ]);
+
+		var options = {
+		};
+
+		var chart = new google.charts.Bar(document.getElementById('columnchart_material8'));
+
+		chart.draw(data, google.charts.Bar.convertOptions(options));
+	}
+
+	// 커스텀 오버레이가 표시될 위치입니다 
+	var position8 = new kakao.maps.LatLng(34.695365, 128.498960);  
+
+	var content8 = '<div>부산</div>' +
+		'<div id="columnchart_material8"' + 
+		'style="width: 300px; height: 140px; font-size: 10px">' +
+		'</div>';
+
+	//커스텀 오버레이를 생성합니다
+	var customOverlay8 = new kakao.maps.CustomOverlay({
+    	position: position8,
+    	content: content8,
+        xAnchor: 0.3,
+        yAnchor: 0.91
+	});
+	
+	//경상도
+	google.charts.load('current', 
+		{'packages' : [ 'bar' ]
+	});
+	
+	google.charts.setOnLoadCallback(drawChart9);
+
+	function drawChart9() {
+		var data = google.visualization.arrayToDataTable([
+				[ '', '생활폐기물', '폐기물 처리현황', '폐기물 발생량' ],
+				[' ', 2694, 2694, 384] ]);
+
+		var options = {
+		};
+
+		var chart = new google.charts.Bar(document.getElementById('columnchart_material9'));
+
+		chart.draw(data, google.charts.Bar.convertOptions(options));
+	}
+
+	// 커스텀 오버레이가 표시될 위치입니다 
+	var position9 = new kakao.maps.LatLng(36.453709, 129.476514);  
+
+	var content9 = '<div>경상도</div>' +
+		'<div id="columnchart_material9"' + 
+		'style="width: 300px; height: 140px; font-size: 10px">' +
+		'</div>';
+
+	//커스텀 오버레이를 생성합니다
+	var customOverlay9 = new kakao.maps.CustomOverlay({
+    	position: position9,
+    	content: content9,
+        xAnchor: 0.3,
+        yAnchor: 0.91
+	});
+	
+	//대구
+	google.charts.load('current', 
+		{'packages' : [ 'bar' ]
+	});
+	
+	google.charts.setOnLoadCallback(drawChart10);
+
+	function drawChart10() {
+		var data = google.visualization.arrayToDataTable([
+				[ '', '생활폐기물', '폐기물 처리현황', '폐기물 발생량' ],
+				[' ', 2694, 2694, 384] ]);
+
+		var options = {
+		};
+
+		var chart = new google.charts.Bar(document.getElementById('columnchart_material10'));
+
+		chart.draw(data, google.charts.Bar.convertOptions(options));
+	}
+
+	// 커스텀 오버레이가 표시될 위치입니다 
+	var position10 = new kakao.maps.LatLng(35.589858, 128.276933);  
+
+	var content10 = '<div>대구</div>' +
+		'<div id="columnchart_material10"' + 
+		'style="width: 300px; height: 140px; font-size: 10px">' +
+		'</div>';
+
+	//커스텀 오버레이를 생성합니다
+	var customOverlay10 = new kakao.maps.CustomOverlay({
+    	position: position10,
+    	content: content10,
+        xAnchor: 0.3,
+        yAnchor: 0.91
+	});
+	
+	//울산
+	google.charts.load('current', 
+		{'packages' : [ 'bar' ]
+	});
+	
+	google.charts.setOnLoadCallback(drawChart11);
+
+	function drawChart11() {
+		var data = google.visualization.arrayToDataTable([
+				[ '', '생활폐기물', '폐기물 처리현황', '폐기물 발생량' ],
+				[' ', 2694, 2694, 384] ]);
+
+		var options = {
+		};
+
+		var chart = new google.charts.Bar(document.getElementById('columnchart_material11'));
+
+		chart.draw(data, google.charts.Bar.convertOptions(options));
+	}
+
+	// 커스텀 오버레이가 표시될 위치입니다 
+	var position11 = new kakao.maps.LatLng(35.504800, 130.114398);  
+
+	var content11 = '<div>울산</div>' +
+		'<div id="columnchart_material11"' + 
+		'style="width: 300px; height: 140px; font-size: 10px">' +
+		'</div>';
+
+	//커스텀 오버레이를 생성합니다
+	var customOverlay11 = new kakao.maps.CustomOverlay({
+    	position: position11,
+    	content: content11,
+        xAnchor: 0.3,
+        yAnchor: 0.91
+	});
+	
+	
+	//제주
+	google.charts.load('current', 
+		{'packages' : [ 'bar' ]
+	});
+	
+	google.charts.setOnLoadCallback(drawChart12);
+
+	function drawChart12() {
+		var data = google.visualization.arrayToDataTable([
+				[ '', '생활폐기물', '폐기물 처리현황', '폐기물 발생량' ],
+				[' ', 2694, 2694, 384] ]);
+
+		var options = {
+		};
+
+		var chart = new google.charts.Bar(document.getElementById('columnchart_material12'));
+
+		chart.draw(data, google.charts.Bar.convertOptions(options));
+	}
+
+	// 커스텀 오버레이가 표시될 위치입니다 
+	var position12 = new kakao.maps.LatLng(33.342332, 126.129326);  
+
+	var content12 = '<div>제주</div>' +
+		'<div id="columnchart_material12"' + 
+		'style="width: 300px; height: 140px; font-size: 10px">' +
+		'</div>';
+
+	//커스텀 오버레이를 생성합니다
+	var customOverlay12 = new kakao.maps.CustomOverlay({
+    	position: position12,
+    	content: content12,
+        xAnchor: 0.3,
+        yAnchor: 0.91
+	});
+	
+	
+	customOverlay1.setMap(map);
+	customOverlay2.setMap(map);
+	customOverlay3.setMap(map);
+	customOverlay4.setMap(map);
+	customOverlay5.setMap(map);
+	customOverlay6.setMap(map);
+	customOverlay7.setMap(map);
+	customOverlay8.setMap(map);
+	customOverlay9.setMap(map);
+	customOverlay10.setMap(map);
+	customOverlay11.setMap(map);
+	customOverlay12.setMap(map);
+
+</script>
+</body>
+</html>

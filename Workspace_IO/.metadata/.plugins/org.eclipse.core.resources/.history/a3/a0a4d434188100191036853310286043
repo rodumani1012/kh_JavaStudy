@@ -1,0 +1,22 @@
+package exception.ex.controller;
+
+import exception.ex.model.vo.Customer;
+
+public class Controller {
+
+	private Customer[] cus; // 6명의 객체 초기화
+	private Customer[] on; // 가게 허용 인원수 크기의 객체 배열 생성
+	
+	public Controller() {
+		
+	}
+	
+	public void entrance() {
+		Customer cs1 = new Customer("홍길동", 19, 'M', "실버");
+		Customer cs2 = new Customer("신사임당", 22, 'F', "브론즈");
+		Customer cs3 = new Customer("안중근", 15, 'M', "골드");
+		Customer cs4 = new Customer("장영실", 21, 'M', "VIP");
+		Customer cs5 = new Customer("정우성", 30, 'M', "골드");
+		Customer cs6 = new Customer("김혜수", 29, 'F', "VVIP");
+	}
+}

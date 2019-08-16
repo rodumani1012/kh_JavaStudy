@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MyMVCBizImpl.java&apos; to &apos;Jsp08_MVC02_Mybatis/src/com.mvc.biz&apos;&#x0D;&#x0A;- Original project: &apos;Jsp08_MVC02&apos;&#x0D;&#x0A;- Destination element: &apos;Jsp08_MVC02_Mybatis/src/com.mvc.biz&apos;&#x0D;&#x0A;- Original element: &apos;com.mvc.biz.MyMVCBizImpl.java&apos;" description="Copy compilation unit" destination="=Jsp08_MVC02_Mybatis/src&lt;com.mvc.biz" element1="/src&lt;com.mvc.biz{MyMVCBizImpl.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1558667944881" units="1" version="1.0"/>
+</session>

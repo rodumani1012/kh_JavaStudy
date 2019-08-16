@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+
+<style type="text/css">
+    img{width: 200px; height: 200px;}
+    .addSize{width: 300px; height: 300px;}
+    .onOffImg{display: none;}
+</style>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#btn").click(function(){
+            $("img").toggleClass("onOffImg"); //클래스 속성을 태그안에 넣었다 뺏다 할 수 있음. F12로 확인해봐.
+        });
+
+        $("img").click(function(){
+            if($(this).hasClass("addSize")){ //addSize 클래스가 있으면 
+                $(this).removeClass("addSize").attr("title","이미지 축소"); // addSize클래스를 제거해라
+            } else{
+                $(this).addClass("addSize").attr("title","이미지 확대"); // 없으면 addSize클래스를 추가하라
+            }
+        });
+    });
+</script>
+</head>
+<body>
+
+    <button id="btn">이미지 on/off</button>
+    <br>
+    <img alt="img1" src="image/img1.png" title="이미지1번">
+    <img alt="img2" src="image/img2.png" title="이미지2번">
+    <img alt="img3" src="image/img3.png" title="이미지3번">
+
+</body>
+</html>

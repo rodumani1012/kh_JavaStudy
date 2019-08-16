@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function viewInfo() {
+	var orderDate = document.getElementById("orderDate").value;
+	alert(orderDate);
+}
+</script>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>주문 정보</legend>
+			<label for="orderDate">주문일</label>
+			<input type="date" id="orderDate">
+		</fieldset>
+		<br>
+		<input type="reset" value="Clear">
+		<input type="button" value="viewInfo" onclick="viewInfo()">
+	</form>
+</body>
+</html>

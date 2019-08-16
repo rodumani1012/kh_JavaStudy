@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<form action="#" method="get">
+		<fieldset> <!-- 네모 테두리 -->
+			<legend>여러줄 글상자와 목록상자</legend> <!-- 테두리 제목 -->
+			
+			<p>
+				<label for="reply">답글</label>
+				<textarea rows="3" cols="30" id="reply" name="re"></textarea>
+			</p>
+			
+			<p>
+				과목 선택
+				<select name="select01">
+					<option>JAVA</option>
+					<option>DataBase</option>
+					<option>HTML</option>
+					<option>CSS</option>
+				</select>
+			</p>
+			
+			<p>
+				웹개발
+				<select name="select02">
+					<optgroup label="front-end">
+						<option>html</option>
+						<option>css</option>
+						<option>javascript</option>
+						<option>jquery</option>
+					</optgroup>
+					<optgroup label="back-end">
+						<option>java</option>
+						<option>database</option>
+						<option>jsp/servlet</option>
+						<option>spring</option>
+					</optgroup>
+				</select>
+			</p>
+			
+		</fieldset>		
+	</form>
+	
+</body>
+</html>

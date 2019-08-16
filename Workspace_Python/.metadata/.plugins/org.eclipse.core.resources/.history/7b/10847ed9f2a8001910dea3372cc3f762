@@ -1,0 +1,30 @@
+# -*- coding:UTF-8 -*-
+
+# pip install selenium
+'''
+크롬 메뉴 -> 도움말 -> Chrome 정보 -> 버전 확인하기
+http://chromedriver.chromium.org/downloads 
+페이지 이동 후 버전에 맞는 
+https://chromedriver.storage.googleapis.com/index.html?path=75.0.3770.140/
+에서     chromedriver_win32.zip     다운로드하고 Work 폴더에 넣기!
+'''
+
+from bs4 import  BeautifulSoup
+from selenium import webdriver
+
+tag = input('search tag : ')
+url = 'https://www.instagram.com/explore/tags/'+tag
+
+driver = webdriver.Chrome('c:/Work/chromedriver.exe')
+driver.implicitly_wait(3) # 요청 후 3초동안 기다리기
+driver.get(url)
+
+soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+print(soup.find())
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+package exception.ex.controller;
+
+
+import exception.ex.model.vo.Customer;
+import exception.ex.model.vo.KHBar;
+
+public class Controller {
+
+	private Customer[] cus = new Customer[6]; // 6명의 객체 초기화
+	private Customer[] on = new Customer[KHBar.PERMITNUMBER]; // 가게 허용 인원수 크기의 객체 배열 생성
+	
+	public Controller() {
+		
+	}
+	
+	public void entrance() {
+		on = ;
+		cus =;
+		
+		Customer cs1 = new Customer("홍길동", 19, 'M', "실버");
+		Customer cs2 = new Customer("신사임당", 22, 'F', "브론즈");
+		Customer cs3 = new Customer("안중근", 15, 'M', "골드");
+		Customer cs4 = new Customer("장영실", 21, 'M', "VIP");
+		Customer cs5 = new Customer("정우성", 30, 'M', "골드");
+		Customer cs6 = new Customer("김혜수", 29, 'F', "VVIP");
+		
+		cus[0] = cs1;
+		cus[1] = cs2;
+		cus[2] = cs3;
+		cus[3] = cs4;
+		cus[4] = cs5;
+		cus[5] = cs6;
+		
+		int count = 0;
+		
+		try {
+			for(int i = 0; i < cus.length; i++) {
+				if(cus[i].getAge() >= KHBar.CUTAGE) {
+					on[count] = cus[i];
+					count++;
+				}
+			}
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("문제가 발생한 해당 배열의 인덱스 번호 : " + e.getMessage());
+		} finally {
+			System.out.println("---이번 입장 손님 명단---");
+			for(Customer c : on) {
+				System.out.println(c);
+			}
+		}
+	}
+}

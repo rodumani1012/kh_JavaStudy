@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<script type="text/javascript">
+    function addAppend(){
+        var fieldset = document.getElementById("addele");
+
+        var p = document.createElement("p");
+
+        // // 방법 1
+        // var txt = document.createTextNode("자식태그 마지막에 붙여넣는다.");
+        // p.appendChild(txt);
+
+        // 방법2
+        p.textContent = "자식태그 마지막에 붙여넣는다.";
+
+        fieldset.appendChild(p); //해당 영역 가장 밑 부분에 추가 된다.
+    }
+
+    var cnt = 1;
+
+    function addBefore(){
+        var newP = document.createElement("p");
+        var fieldset = document.getElementById("addele");
+
+        newP.textContent = "엘리먼트의 앞에 붙는다." + (cnt++);
+
+        var oldDiv = document.querySelector("fieldset > div");
+        fieldset.insertBefore(newP, oldDiv); //oldDiv 앞에 newP 가 생성된다.
+    }
+
+    function moveElement(){
+        var moveEle = document.querySelector("fieldset").children[1]; //1번지는 legend 다음 태그를 가르킴
+        var addEle = document.body;
+        addEle.appendChild(moveEle);
+    }
+    /*
+    검사 안하는 숙제!
+    childNodes와 children의 차이점
+    */
+
+    function addTest(){
+        var test01 = document.getElementById("test01");
+
+        var div = document.createElement("div");
+        div.textContent = "dom test";
+
+        test01.appendChild(div);
+        
+    }
+
+    function moveTest(){
+        // 나
+        // var test01 = document.getElementById("test01").children[0];
+        // var test02 = document.getElementById("test02");
+        // test02.appendChild(test01);
+
+        // 강사님
+        var test01 = document.getElementById("test01");
+        var test02 = document.getElementById("test02");
+        test02.appendChild(test01.children[0]);
+    }
+</script>
+
+<style type="text/css">
+    p{
+        border: 1px solid red;
+    }
+
+    #test01, #test02 {
+        width: 300px;
+        height: 300px;
+        border: 1px dotted blue;
+        overflow: auto;
+    }
+</style>
+
+</head>
+<body>
+
+    <h1>태그 추가하기</h1>
+
+    <button onclick="addAppend()">appendChild()</button>
+    <button onclick="addBefore()">insertBefore()</button>
+    <button onclick="moveElement()">appendChild를 이용한 엘리먼트 이동</button>
+
+    <fieldset id="addele">
+        <legend>부모 태그</legend>
+        <div>div 태그</div>
+    </fieldset>
+
+    <hr/>
+
+    <!-- 문제 -->
+
+    <h3>
+        문제 1 : test01 태그에 "dom test" 라는 내용을 가진 div태그를 여러개 추가해 보자.
+        <button onclick="addTest()">클릭!</button>
+    </h3>
+    <h3>
+        문제 2 : test01 태그에 추가된 태그들을 test02 태그로 이동시키자.
+        <button onclick="moveTest()">클릭!</button>
+    </h3>
+
+    *test01
+    <div id="test01"></div>
+    *test02
+    <div id="test02"></div>
+
+</body>
+</html>

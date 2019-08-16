@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="project.mapper">
+
+	
+	<insert id="project_new" parameterType="map">
+		INSERT INTO PRJ_INFO VALUES(PRJSEQ.NEXTVAL, #{prj_name}, #{prj_loc}, #{user_nickname})
+	</insert>
+	<insert id="project_new_in_user" parameterType="Integer">
+		INSERT INTO PRJ_IN_USER VALUES(#{user_num},PRJSEQ.CURRVAL)
+	</insert>
+	<insert id="project_new_board1">
+		INSERT INTO PRJ_BOARD VALUES(BOARDSEQ.NEXTVAL, PRJSEQ.CURRVAL, 'before',1)
+	</insert>
+	<insert id="project_new_board2">
+		INSERT INTO PRJ_BOARD VALUES(BOARDSEQ.NEXTVAL, PRJSEQ.CURRVAL, 'ing',2)
+	</insert>
+	<insert id="project_new_board3">
+		INSERT INTO PRJ_BOARD VALUES(BOARDSEQ.NEXTVAL, PRJSEQ.CURRVAL, 'after',3)
+	</insert>
+	
+	<select id="project_list" parameterType="Integer" resultType="prj_info_dto">
+		SELECT * FROM PRJ_INFO JOIN (SELECT PRJ_NUM FROM PRJ_IN_USER WHERE USER_NUM = #{user_num}) USING (PRJ_NUM)
+	</select>
+	
+	<select id="project_board" parameterType="Integer" resultType="prj_board_dto">
+		SELECT * FROM PRJ_BOARD WHERE PRJ_NUM = #{prj_num} ORDER BY BOARD_PLACE
+	</select>
+	<select id="project_show" parameterType="Integer" resultType="prj_info_dto">
+		SELECT * FROM PRJ_INFO WHERE PRJ_NUM =#{prj_num}
+	</select>
+	<update id="project_update" parameterType="prj_info_dto">
+		UPDATE PRJ_INFO SET
+		PRJ_NAME = #{prj_name}, PRJ_LOC = #{prj_loc}
+		WHERE PRJ_NUM = #{prj_num}
+	</update>
+	<delete id="project_delete" parameterType="prj_info_dto">
+		DELETE FROM PRJ_INFO
+		WHERE PRJ_NUM = #{prj_num}
+	</delete>
+	<insert id="board_new" parameterType="map">
+		INSERT INTO PRJ_BOARD VALUES(BOARDSEQ.NEXTVAL, #{prj_num}, #{title},(SELECT MAX(BOARD_PLACE) FROM PRJ_BOARD WHERE PRJ_NUM = #{prj_num})+1)
+	</insert>
+	
+	<update id="board_move_after" parameterType="map">
+		UPDATE PRJ_BOARD SET BOARD_PLACE = #{after_board} WHERE BOARD_NUM = #{before_num}
+	</update>
+	
+	<update id="board_move_before" parameterType="map">
+		UPDATE PRJ_BOARD SET BOARD_PLACE = #{before_board} WHERE BOARD_NUM != #{before_num} AND BOARD_PLACE = #{after_board}
+	</update>
+	
+	<!-- 닉네임 여부 확인 -->
+	<select id="nick_chk" parameterType="map" resultType="user_info_dto">
+		SELECT * FROM USER_INFO WHERE USER_NICKNAME = #{user_nickname}
+	</select>
+	<!-- 닉네임으로 정보 가져오기 -->
+	<select id="bring_bynick" parameterType="map" resultType="user_info_dto">
+		SELECT * FROM USER_INFO WHERE USER_NICKNAME = #{user_nickname}
+	</select>
+	<!-- 회원번호로 정보 가져오기 -->
+	<select id="bring_bynum" parameterType="map" resultType="user_info_dto">
+		SELECT * FROM USER_INFO WHERE USER_NUM = #{user_num}
+	</select>
+	<!-- 프로젝트 정보 가져오기 -->
+	<select id="bring_prj" parameterType="map" resultType="prj_info_dto">
+		SELECT * FROM PRJ_INFO JOIN PRJ_IN_USER USING(PRJ_NUM) JOIN USER_INFO USING(USER_NUM) WHERE PRJ_NAME = #{prj_name} AND USER_NUM = #{user_num}
+	</select>
+	<!-- 프로젝트 사용자 추가 -->
+	<insert id="insert_user" parameterType="Integer">
+		INSERT INTO PRJ_IN_USER VALUES(#{user_num},#{prj_num})
+	</insert>
+
+	<insert id="project_issue_insert" parameterType="prj_issue_dto">
+		INSERT INTO PRJ_ISSUE VALUES(ISSUESEQ.NEXTVAL, #{prj_num}, #{board_num}, #{issue_title}, #{issue_content}, #{issue_require}, #{issue_charge}, #{issue_priority}, null, #{issue_parent}, SYSDATE, NULL, 'N' )
+	</insert>
+	
+	
+	<insert id="issue_new" parameterType="map">
+		INSERT INTO PRJ_ISSUE(ISSUE_NUM, PRJ_NUM, BOARD_NUM, ISSUE_TITLE, ISSUE_PRIORITY, ISSUE_DATE_CREATE, ISSUE_DEL) VALUES(ISSUESEQ.NEXTVAL, #{prj_num}, #{board_num}, #{issue_title}, 'MEDIUM',SYSDATE, 'N')
+	</insert>
+	
+	<select id="issue_one" parameterType="Integer" resultType="map" >
+		SELECT * FROM PRJ_ISSUE WHERE ISSUE_NUM = #{issue_num}
+	</select>
+	
+	<select id="issue_list" parameterType="Integer" resultType="prj_issue_dto">
+		SELECT * FROM PRJ_ISSUE WHERE PRJ_NUM = #{prj_num} ORDER BY ISSUE_DATE_CREATE
+	</select>
+	
+	<!-- 업데이트 -->
+	<insert id="issue_priority" parameterType="map">
+		UPDATE PRJ_ISSUE SET ISSUE_PRIORITY = #{content} WHERE ISSUE_NUM = #{issue_num}
+	</insert>
+	<insert id="issue_title" parameterType="map">
+		UPDATE PRJ_ISSUE SET ISSUE_TITLE = #{content} WHERE ISSUE_NUM = #{issue_num}
+	</insert>
+	<insert id="issue_text" parameterType="map">
+		UPDATE PRJ_ISSUE SET ISSUE_CONTENT = #{content} WHERE ISSUE_NUM = #{issue_num}
+	</insert>
+	<insert id="issue_charger" parameterType="map">
+		UPDATE PRJ_ISSUE SET ISSUE_CHARGE = #{content} WHERE ISSUE_NUM = #{issue_num}
+	</insert>
+	
+	<delete id="issue_del" parameterType="Integer">
+		DELETE FROM PRJ_ISSUE WHERE ISSUE_NUM = #{issue_num}
+	</delete>
+</mapper>	

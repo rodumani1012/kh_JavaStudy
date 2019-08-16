@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function work() {
+	var inputObj = document.getElementById("myId");
+	var inputValue = inputObj.value;
+	var inputLength = inputValue.length;
+	alert("입력=" + inputValue + ", 길이=" + inputLength);
+	
+	var substringData = inputValue.substring(1, 4);
+	alert("substringData=" + substringData);
+}
+</script>
+</head>
+<body>
+<input type="text" id="myId" size="20" maxlength="10" value="2018-01-01" readOnly>
+<br>
+<input type="button" value="데이터 길이확인" onclick="work()">
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var timer;
+function startTimer() {
+	timer = setInterval(work, 1000); // 1초마다 work 함수를 호출
+}
+function work() {
+	alert("Wow!!!");
+}
+function stopTimer() {
+	clearInterval(timer); //timer를 정지한다.
+}
+</script>
+</head>
+<body>
+<input type="button" value = "반복 시작" onclick="startTimer()">
+<input type="button" value = "반복 정지" onclick="stopTimer()">
+</body>
+</html>

@@ -1,0 +1,17 @@
+package io.file;
+
+import java.io.File;
+
+public class FileList {
+
+	public static void main(String[] args) {
+		File file = new File("c:\\");
+		
+		int fileCount = 0;
+		int dirCount = 0;
+		
+		String[] fileList = file.list();
+		
+		for(int i = 0; i < file)
+	}
+}

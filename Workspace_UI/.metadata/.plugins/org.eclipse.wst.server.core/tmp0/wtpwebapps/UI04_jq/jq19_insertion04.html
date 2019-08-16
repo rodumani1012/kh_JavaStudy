@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<style type="text/css">
+    .box{
+        border: 2px solid red;
+    }
+
+    #menu{
+        background: orange;
+        text-align: right;
+    }
+
+    a{
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    #menu div{
+        display: inline-block;
+        margin-right: 10px;
+    }
+</style>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var $box = $("<div>").addClass("box"); //빨간 네모 박스 스타일을 가진 div태그 생성
+        $(".sub_menu:first").wrap($box); // 생성된 div태그를 첫번째 sub_menu태그에 감싼다(wrap).
+
+        $(".sub_menu").click(function(){
+            $(".sub_menu").each(function(){ //기존에 감싸진 box를 없애는 과정
+                if($(this).parent().is(".box")){ //.sub_menu의 부모가 .box이면 
+                    $(this).unwrap(".box"); //.box를 unwrap 해라
+                }
+            });
+            $(this).wrap($box); //클릭된 것을 box 씌우는 과정
+        });
+
+    });
+</script>
+</head>
+<body>
+
+    <div id="menu">
+
+        <div class="sub_menu"><a href="#"><span>국비지원</span></a></div>
+
+        <div class="sub_menu"><a href="#">훈련검색</a></div>
+
+        <div class="sub_menu"><a href="#">기관검색</a></div>
+
+        <div class="sub_menu"><a href="#">질문답변</a></div>
+        
+        <div class="sub_menu"><a href="#">자격증</a></div>
+
+    </div>
+
+</body>
+</html>

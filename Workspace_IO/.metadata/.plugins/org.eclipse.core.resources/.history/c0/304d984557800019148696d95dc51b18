@@ -1,0 +1,13 @@
+package exception.ex;
+
+import java.util.Scanner;
+
+public class Run {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("영문을 쓰세요(대문자 입력시 오류 발생): ");
+		
+	}
+}

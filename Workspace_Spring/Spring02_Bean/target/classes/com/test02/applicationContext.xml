@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 짝궁 2명의 Address / JobAddress를 생성하자 -->
+	<!-- 단, 한명은 생성자로, 나머지 한명은 setter로 값을 주입하자. -->
+	
+	<bean id="one" class="com.test02.Address">
+		<constructor-arg value="원종민"></constructor-arg>
+		<constructor-arg value="경기도 안양시"></constructor-arg>
+		<constructor-arg value="010-1111-1111"></constructor-arg>
+	</bean>
+	
+	<bean id="park" class="com.test02.Address">
+		<property name="name" value="박준용"></property>
+		<property name="addr" value="서울시 강남구"></property>
+		<property name="tel" value="010-2222-2222"></property>
+	</bean>
+	
+	<bean id="oneJob" class="com.test02.JobAddress">
+		<property name="addr" ref="one"></property>
+		<property name="jobName" value="학생1"></property>
+	</bean>
+	
+	<bean id="parkJob" class="com.test02.JobAddress">
+			<!-- address타입의 값을 넣으려면 value가 아닌 ref를 사용한다. -->
+		<property name="addr" ref="park"></property>
+		<property name="jobName" value="학생2"></property>
+	</bean>
+</beans>

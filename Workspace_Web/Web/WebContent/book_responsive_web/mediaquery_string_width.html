@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.travel{
+	margin: 5px;
+	padding: 15px;
+	border: 1px solid black;
+	height: 300px;
+	/* ----------가로 길이 ------------- */
+	max-width: 400px; /* 자동조정이 되면서 400px 이상으론 커지지 않고 길이 고정 */
+	float: left; /* 왼쪽부터 차례로 컨텐츠가 늘어선다. */
+	overflow: auto; /* 스크롤바 생성 */
+	resize : both; /* 원하는만큼 사이즈 조절 */
+}
+@media all and (min-width:320px) {/* 가로길이 최소가 320px이 됐을때 다음을 실행 */
+	.travel {
+		background: #00d2a5;	
+	}
+}
+@media all and (min-width:768px) {/* 가로길이 최소가 768px이 됐을때 다음을 실행 */
+	.travel {
+		background: #40b0f9;	
+	}
+}
+@media all and (min-width:1024px) {/* 가로길이 최소가 1024px이 됐을때 다음을 실행 */
+	.travel {
+		background: #f45750;	
+	}
+}
+</style>
+</head>
+<body>
+	<div class="travel">
+		<h2>1. 몰디브</h2>
+		<p>말디브 제도는 인도양 중북부에 있는 섬나라로, 인도와 스리랑카
+		 남서쪽에 자리한다. 국토는 남북으로 길게 늘어선 26개의 환초로 이루어져 있으며,
+		 섬의 총수는 1,192 개이다.</p>
+	</div>
+	
+	<div class="travel">
+		<h2>2. 하와이</h2>
+		<p>하와이 섬, 마우이 섬, 오아후 섬, 카우아이 섬, 몰로카이 섬 등의 주요
+		 8개의 섬과 100개 이상의 작은 섬으로 구성되어 있다. 총 면적은
+		 대한민국의 28%정도인 28311km2이다.</p>
+	</div>
+	
+	<div class="travel">
+		<h2>3. 아프리카</h2>
+		<p>발리섬은 인도네시아의 섬으로 자와 섬 동쪽에 자리하고 있다. 관광지로
+		 널리 알려져 있다. 인구는 약 310만 명이다.</p>
+	</div>
+	
+	<div class="travel">
+		<h2>4. 캐나다</h2>
+		<p>말디브 제도는 인도양 중북부에 있는 섬나라로, 인도와 스리랑카
+		 남서쪽에 자리한다. 국토는 남북으로 길게 늘어선 26개의 환초로 이루어져 있으며,
+		 섬의 총수는 1,192 개이다.</p>
+	</div>
+</body>
+</html>

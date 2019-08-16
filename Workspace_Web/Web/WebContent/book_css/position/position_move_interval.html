@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#layer1{
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	width : 50px;
+	height: 50px;
+	background-color: orange;
+}
+#layer2{
+	position: absolute;
+	top: 300px;
+	left: 50px;
+	width : 50px;
+	height: 50px;
+	background-color: blue;
+}
+#layer3{
+	position: absolute;
+	top: 350px;
+	left: 200px;
+	width : 50px;
+	height: 50px;
+	background-color: purple;
+}
+</style>
+<script>
+	var layerObj1; //진행 대상1
+	var layerObj2; //진행 대상2
+	var layerObj3; //진행 대상3
+	var layerObjPos1; //대상 위치값
+	var layerObjPos2; //대상 위치값
+	var layerObjPos3; //대상 위치값
+	var maxLayerObjPos; // 대상 위치 최대값
+	var layerInterval; // 인터벌
+	function work() {
+		layerObj1 = document.getElementById("layer1");
+		layerObj2 = document.getElementById("layer2");
+		layerObj3 = document.getElementById("layer3");
+		layerObjPos1 = 50;		//초기값
+		layerObjPos2 = 50;		//초기값
+		layerObjPos3 = 50;		//초기값
+		maxLayerObjPos = 350;	//초기값
+		layerInterval = setInterval(move, 5); //move()를 5 밀리세컨즈마다 실행
+	}
+	function move() {
+		if (layerObjPos1 <= maxLayerObjPos) {
+			layerObjPos1 = layerObjPos1 + 1;
+			layerObj1.style.top = layerObjPos1 + "px";
+			layerObj1.style.left = layerObjPos1 + "px";
+		} else {
+			clearInterval(layerInterval);
+		}
+		if (layerObjPos2 <= maxLayerObjPos) {
+			layerObjPos2 = layerObjPos2 + 1;
+			layerObj2.style.top = layerObjPos2 + "px";
+// 			layerObj2.style.left = layerObjPos2 + "px";
+		} else {
+			clearInterval(layerInterval);
+		}
+		if (layerObjPos3 <= maxLayerObjPos) {
+			layerObjPos3 = layerObjPos3 + 1;
+// 			layerObj3.style.top = layerObjPos3 + "px";
+			layerObj3.style.left = layerObjPos3 + "px";
+		} else {
+			clearInterval(layerInterval);
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="move" onclick="work()">
+	<br>
+	<div id="layer1"></div>
+	<div id="layer2"></div>
+	<div id="layer3"></div>
+</body>
+</html>

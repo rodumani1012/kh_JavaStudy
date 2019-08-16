@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+#space {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 400px;
+	height: 120px;
+	background-color: orange;
+	z-index: 0;
+}
+
+#ship {
+	position: absolute;
+	top: 50px;
+	left: 100px;
+	width: 20px;
+	height: 20px;
+	background-color: black;
+	z-index: 1;
+}
+
+#controller {
+	position: absolute;
+	top: 130px;
+}
+
+</style>
+<script>
+	var space; //우주 레이어
+	var spaceWidth; //우주 레이어 길이
+	var spaceHeight;//우주 레이어 높이
+	var ship; //우주선 레이어
+	var shipWidth; //우주선 레이어 길이 
+	var shipHeight; //우주선 레이어 높이	
+	var distance; //이동 거리
+function start() {
+	space = document.getElementById("space");
+	spaceWidth = space.offsetWidth;
+	spaceHeight = space.offsetHeight;
+	
+	ship = document.getElementById("ship");
+	shipWidth = ship.offsetWidth;
+	shipHeight = ship.offsetHeight;
+	
+	distance = 5;
+}
+function moveLeft() {
+	var shipX = ship.offsetLeft;
+	var nextX = shipX - distance; //다음 이동 X축 값
+	ship.style.left = nextX + "px";
+}
+function moveUp() {
+	var shipY = ship.offsetTop;
+	var nextY = shipY - distance; //다음 이동 Y축 값
+	ship.style.top = nextY + "px";
+}
+function moveDown() {
+	var shipY = ship.offsetTop;
+	var nextY = shipY + distance; //다음 이동 Y축 값
+	ship.style.top = nextY + "px";	
+}
+function moveRight() {
+	var shipX = ship.offsetLeft;
+	var nextX = shipX + distance; //다음 이동 X축 값
+	ship.style.left = nextX + "px";	
+}
+
+	
+</script>
+</head>
+<body onload="start()">
+	<div id="space"></div>
+	<div id="ship"></div>
+	<br>
+	<br>
+	<div id="controller">
+		<input type="button" value="Left" onclick="moveLeft()">
+		<input type="button" value="Up" onclick="moveUp()">
+		<input type="button" value="Down" onclick="moveDown()">
+		<input type="button" value="Right" onclick="moveRight()">
+	</div>
+</body>
+</html>

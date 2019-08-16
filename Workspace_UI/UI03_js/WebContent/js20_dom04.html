@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<script type="text/javascript">
+    window.onload = function(){
+        var anchs = document.querySelectorAll("a");
+        var img = document.querySelector("img");
+        var cnt = 1;
+
+        //왼쪽 화살표
+        anchs[0].onclick = function(){ 
+            // hint : alt 속성에 이미지파일의 이름을 넣어두자.
+            // (alt 속성의 value가 img01 이라면, img05.png로 넘어가야 하니까)
+            var imgAlt = img.getAttribute("alt");
+            if(imgAlt=="img1"){
+                cnt = 5;
+                img.setAttribute("alt","img5");
+                img.setAttribute("src","image/img5.png");
+            } else {
+                img.setAttribute("alt", "img" + (--cnt));
+                img.setAttribute("src","image/img" + cnt + ".png");
+            }
+        }
+
+        //오른쪽 화살표
+        anchs[1].onclick = function(){ 
+            var imgAlt = img.getAttribute("alt");
+            if(imgAlt=="img5"){
+                cnt = 1;
+                img.setAttribute("alt","img1");
+                img.setAttribute("src","image/img1.png");
+            } else {
+                img.setAttribute("alt", "img" + (++cnt));
+                img.setAttribute("src","image/img" + cnt + ".png");
+            }
+        }
+    }
+</script>
+
+<style type="text/css">
+    img{
+        width: 300px;
+        height: 300px;
+        vertical-align: middle;
+    }
+
+    a{
+        font-size: 30px;
+        text-decoration: none;
+    }
+</style>
+
+</head>
+<body>
+
+    <div>
+        <a href="#" id="lt">◀</a>
+        <img  alt="img1" src="image/img1.png">
+        <a href="#" id="rt">▶</a>
+    </div>
+
+</body>
+</html>

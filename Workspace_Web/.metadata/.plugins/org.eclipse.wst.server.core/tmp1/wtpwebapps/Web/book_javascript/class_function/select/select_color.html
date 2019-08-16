@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function changeBgColor() {
+	var obj = document.getElementById("myselect");
+	var sValue = obj.value;
+	var sIndex = obj.selectedIndex;
+	switch (sIndex) {
+	case 0:
+		document.bgColor = "white";
+		break;
+	case 1:
+		document.bgColor = "yellow";
+		break;
+	case 2:
+		document.bgColor = "orange";
+		break;
+	case 3:
+		document.bgColor = "red";
+		break;
+	case 4:
+		document.bgColor = "blue";
+		break;
+	case 5:
+		document.bgColor = "black";
+		break;
+	}
+}
+	//switch 문을 value 이용
+function changeBgColorByValue() {
+	var selectObj = document.getElementById("myselect");
+	var selectValue = selectObj.value;
+	document.bgColor = selectValue;
+	// 축약
+	document.bgColor = document.getElementById("myselect").value;
+}
+function init() {
+	var selectObj = document.getElementById("myselect");
+	selectObj.selectedIndex = 0;
+	
+	document.bgColor = "white";
+}
+</script>
+
+</head>
+<body>
+	<select id="myselect" size="1" onchange="changeBgColor()">
+		<option value="white" selected>White
+		<option value="yellow" >Yellow
+		<option value="orange" >Orange
+		<option value="red" >Red
+		<option value="blue" >Blue
+		<option value="black" >Black
+	</select>
+<br><br>
+<input type="button" value="초기화" onclick="init()">
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="board.mapper">
+
+	<resultMap type="BoardDto" id="board">
+		<result column="SEQ" property="seq"/>
+		<result column="TITLE" property="title"/>
+	</resultMap>
+
+	<select id="selectList" parameterType="Hashmap" resultType="BoardDto">		
+		SELECT * FROM(SELECT ROWNUM RN, a.* FROM((SELECT * FROM PAGINGTBL ORDER BY SEQ )a)) WHERE RN &gt;=#{begin} AND RN &lt;=#{end} 
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		SELECT COUNT(*) FROM PAGINGTBL 
+	</select>
+	
+	<insert id="insertData" parameterType="Hashmap">
+		INSERT INTO PAGINGTBL VALUES(PAGINGSQ.NEXTVAL,#{data})
+	</insert>
+</mapper>

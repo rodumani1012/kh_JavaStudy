@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+#space {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 400px;
+	height: 120px;
+	background-color: orange;
+	z-index: 0;
+}
+
+#ship {
+	position: absolute;
+	top: 50px;
+	left: 100px;
+	width: 20px;
+	height: 20px;
+	background-color: black;
+	z-index: 1;
+}
+
+#controller {
+	position: absolute;
+	top: 130px;
+}
+
+#bar{
+	position: absolute;
+	top: 0px;
+	left: 400px;
+	width: 1px;
+	height: 80px;
+	background-color: black;
+	z-index: 1;
+}
+</style>
+<script>
+	var space; //우주 레이어
+	var spaceWidth; //우주 레이어 길이
+	var spaceHeight;//우주 레이어 높이
+	var ship; //우주선 레이어
+	var shipWidth; //우주선 레이어 길이 
+	var shipHeight; //우주선 레이어 높이	
+	var distance; //이동 거리
+	
+	// 추가 ----------------------------------------
+	var bar;	//바
+	var barWidth;//바 길이
+	var barHeight;//바 높이
+	var timer; //반복수행 타이머
+function start() {
+	space = document.getElementById("space");
+	spaceWidth = space.offsetWidth;
+	spaceHeight = space.offsetHeight;
+	
+	ship = document.getElementById("ship");
+	shipWidth = ship.offsetWidth;
+	shipHeight = ship.offsetHeight;
+	
+	distance = 5;
+	
+	bar = document.getElementById("bar");
+	barWidth = bar.offsetWidth;
+	barHeight = bar.offsetHeight;
+	timer = setInterval(moveBar, 50);
+}
+function moveLeft() {
+	var shipX = ship.offsetLeft;
+	var nextX = shipX - distance; //다음 이동 X축 값
+	if (nextX < 0) {
+		nextX = shipX;
+	}
+	ship.style.left = nextX + "px";
+}
+function moveUp() {
+	var shipY = ship.offsetTop;		
+	var nextY = shipY - distance; //다음 이동 Y축 값
+	if (nextY < 0) {
+		nextY = shipY;
+	}
+	ship.style.top = nextY + "px";
+}
+function moveDown() {
+	var shipY = ship.offsetTop;
+	var nextY = shipY + distance; //다음 이동 Y축 값
+	if (nextY > (spaceHeight - shipHeight)) {
+		nextY = shipY;
+	}
+	ship.style.top = nextY + "px";	
+}
+function moveRight() {
+	var shipX = ship.offsetLeft;
+	var nextX = shipX + distance; //다음 이동 X축 값
+	if (nextX > (spaceWidth - shipWidth)) {
+		nextX = shipX;
+	}
+	ship.style.left = nextX + "px";	
+}
+
+window.onkeydown = function(event) {
+	var code = event.keyCode;
+	switch (code) {
+	case 37: //좌
+		moveLeft();
+		break;
+	case 38: //위
+		moveUp();
+		break;
+	case 39: //우
+		moveRight();
+		break;
+	case 40: //아래
+		moveDown();
+		break;
+	}
+}
+
+function moveBar() {
+	var barX = bar.offsetLeft;
+	var nextX = barX - 2;
+	bar.style.left = nextX + "px";
+	if (nextX < 0) {
+		resetBar();
+	}
+}
+function resetBar() {
+	clearInterval(timer);
+	
+	//bar 위치 재설정
+	bar.style.top = 0 + "px";
+	bar.style.left = 400 + "px";
+	
+	timer = setInterval(moveBar, 50);
+}
+	
+</script>
+</head>
+<body onload="start()">
+	<div id="space"></div>
+	<div id="ship"></div>
+	<div id="bar"></div>
+</body>
+</html>

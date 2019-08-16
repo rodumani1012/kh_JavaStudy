@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+}
+input[type=button] {
+	width : 15%;
+	background-color: green;
+	font-size: 20px;
+	color : white;
+}
+#myDiv{
+	font-size: 40px;
+}
+</style>
+<script>
+function workH1() {
+	var obj = document.getElementById("myHeader");
+	
+	//obj.innerHTML = "World"; //기존에 있던 값이 날라가고 World가 들어감.
+	obj.innerHTML = "World<br>Welcome !!!"; //태그 인식도 가능하다.
+}
+function workDiv() {
+	var obj = document.getElementById("myDiv");
+	obj.innerHTML = "반갑습니다";
+}
+function init() {
+	var obj1 = document.getElementById("myHeader");
+	var obj2 = document.getElementById("myDiv");
+	obj1.innerHTML = "Hello";
+	obj2.innerHTML = "안녕하세요";
+}
+</script>
+</head>
+<body>
+	<h1 id="myHeader">Hello</h1>
+	<div id="myDiv">안녕하세요</div>
+	<input type="button" value="H1 변경" onclick="workH1()">
+	<input type="button" value="Div 변경" onclick="workDiv()">
+	<input type="button" value="초기화" onclick="init()">
+</body>
+</html>

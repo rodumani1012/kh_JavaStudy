@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Spring07_HelloMVC</display-name>
+
+	<!-- 
+	param-name의 이름을 param-value의 값으로 초기화 해준다.
+	해당 context(webapp)는 프로젝트 전체에서 사용 가능 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+
+	<!-- TODO : 02.listener -->
+	<!-- url을 읽어서 어떤 xml로 갈건지 판단해주는 역할을 함. -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- TODO : 03.hello-servlet.xml -->
+	<!-- 
+	web.xml에서 같은 폴더에 (servlet-name).xml 로 만들면 
+	init-param을 지정하지 않아도 자동으로 연결해줌 -->
+	<servlet>
+		<servlet-name>hello</servlet-name>
+		<!-- 서블릿 컨테이너 역할. 
+		어떤 컨트롤러한테 해당 요청을 전달할 건지를 수행해주는 역할 -->
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>	
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>*.ho</url-pattern>
+	</servlet-mapping>
+</web-app>

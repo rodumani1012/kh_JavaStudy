@@ -1,0 +1,19 @@
+package io.buffered.run;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class BufferedPractice {
+	
+	public static void main(String[] args) {
+		try(BufferedReader bw = new BufferedReader(new FileReader("input.txt"));) {
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

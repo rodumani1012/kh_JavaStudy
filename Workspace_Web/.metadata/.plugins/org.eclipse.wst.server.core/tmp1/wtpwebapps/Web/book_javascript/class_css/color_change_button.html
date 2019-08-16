@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+}
+#title {
+	color: black;
+	background-color: gold;
+	font-family: "나눔명조";
+	font-size: 30px;
+	font-weight: bold;
+}
+</style>
+<script>
+	function changeTitle() {
+		var obj = document.getElementById("title");
+		obj.style.color = "white";
+		obj.style.backgroundColor = "red";
+		obj.style.fontSize = "30px;"
+	}
+	function returnTitle() {
+		var obj = document.getElementById("title");
+		obj.style.color = "black";
+		obj.style.backgroundColor = "gold";
+		obj.style.fontSize = "30px;"
+	}
+</script>
+</head>
+<body>
+<div id="title">제목입니다.</div>
+<br>
+<br>
+<input type="button" value="속성 변경" onclick="changeTitle()">
+<input type="button" value="속성 복원" onclick="returnTitle()">
+</body>
+</html>

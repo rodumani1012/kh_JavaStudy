@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\rodum\OneDrive\문서\카카오톡 받은 파일\지도\MapTest3"/>
+			<item value=""/>
+			<item value="C:\Users\rodum\Desktop\git\Template"/>
+			<item value="C:\Users\rodum\Desktop\git"/>
+			<item value="C:\Users\rodum\Downloads\C\SpringMVC02"/>
+			<item value="C:\Users\rodum\Downloads\C\Template"/>
+			<item value="C:\Users\rodum\Downloads\C\SpringMVC05"/>
+			<item value="C:\Users\rodum\Downloads\C\SpringMVC04_fileUpload"/>
+			<item value="C:\Users\rodum\Downloads\C\SpringMVC03_upgrade_login_tran"/>
+			<item value="C:\Users\rodum\Downloads\C\SpringMVC03_upgrade_login"/>
+			<item value="C:\Users\rodum\Downloads\C\SpringMVC03_upgrade"/>
+			<item value="C:\Users\rodum\Downloads\C\SpringMVC03"/>
+			<item value="C:\Users\rodum\Downloads\C\SpringMVC01_Hello"/>
+			<item value="C:\Users\rodum\Downloads\C\SpringMVC00_Hello"/>
+			<item value="C:\Users\rodum\Downloads\C\Spring07_HelloMVC"/>
+			<item value="C:\Users\rodum\Downloads\C\Spring06_AOP"/>
+			<item value="C:\Users\rodum\Downloads\C\Spring05_Annotation"/>
+			<item value="C:\Users\rodum\Downloads\C\Spring04"/>
+			<item value="C:\Users\rodum\Downloads\C\Spring03"/>
+			<item value="C:\Users\rodum\Downloads\C\Spring02_Bean"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+			<item value="C:\Users\rodum\OneDrive\문서\카카오톡 받은 파일\지도.zip"/>
+			<item value="C:\Work\Workspace_Spring\SpringMVC03_upgrade_login_tran\src\main\webapp\WEB-INF\spring\appServlet\servlet-context.xml"/>
+		</list>
+	</section>
+	<section name="CleanDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="657"/>
+		<item key="DIALOG_Y_ORIGIN" value="222"/>
+		<item key="DIALOG_WIDTH" value="581"/>
+		<item key="DIALOG_HEIGHT" value="452"/>
+		<item key="TOGGLE_SELECTED" value="false"/>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="530"/>
+		<item key="DIALOG_Y_ORIGIN" value="243"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+</section>

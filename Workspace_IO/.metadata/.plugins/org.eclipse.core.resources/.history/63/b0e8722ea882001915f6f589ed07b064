@@ -1,0 +1,30 @@
+package io.buffered.model.dao;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class BufferedTest {
+	public BufferedTest() {}
+	
+	// BufferedWriter 보조스트림 
+	// FileWriter 기반스트림
+	// 외부자원 sample2.txt
+	
+	public void output() {
+		
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter("sample2.txt"));){
+			// 한줄로 쭉 쓸때
+			bw.write("안녕하세요 여러분");
+			bw.write(" 홍길동입니다.");
+			bw.write("언제나 항상 여러분들을 응원합니다.");
+			bw.write("화이팅!!!");
+			
+			// 엔터 칠때 :  1) \n 
+			//				2) newLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+}

@@ -1,0 +1,54 @@
+package io.object.model.dao;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+import io.object.model.vo.Member;
+
+public class ObjectIoTest {
+	public ObjectIoTest() {}
+	
+	// 보조 스트림 (객체를 1byte 단위로 읽어오는 스트림)
+	// ObjectInput/OutputStream
+	// 객체단위 => 바이트단위 : 직렬화(Serializable)
+	// 바이트단위 => 객체단위 : 역직렬화(non-serializable)
+	
+	public void fileSave() {
+		Member m1 = new Member("제임스", 20, 'M', 160.2);
+		Member m2 = new Member("엘리스", 26, 'F', 143.7);
+		
+		try (ObjectOutputStream objout = new ObjectOutputStream(new FileOutputStream("memberobject.txt"));) {
+			
+			objout.writeObject(m1);
+			objout.writeObject(m2);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void fileRead() {
+		
+		try (ObjectInputStream objin = new ObjectInputStream(new FileInputStream("memberobject.txt"));) {
+			
+			// 읽어온 객체를 담을 변수.
+			Member m1 = (Member) objin.readObject();
+			Member m2 = (Member) objin.readObject();
+			
+			System.out.println(m1);
+			System.out.println(m2);
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+}

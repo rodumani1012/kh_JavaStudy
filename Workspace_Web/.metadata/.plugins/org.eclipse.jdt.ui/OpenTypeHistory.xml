@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=Jsp08_MVC02/src&lt;com.mvc.biz{MyMVCBiz.java[MyMVCBiz" modifiers="513" timestamp="1557806221879"/>
+<typeInfo handle="=Jsp08_MVC02/src&lt;com.mvc.dao{MyMVCDao.java[MyMVCDao" modifiers="513" timestamp="1557883539024"/>
+<typeInfo handle="=Jsp08_MVC02/src&lt;com.mvc.biz{MyLoginBiz.java[MyLoginBiz" modifiers="513" timestamp="1557897952955"/>
+<typeInfo handle="=Jsp08_MVC02/src&lt;com.mvc.dao{MyLoginDao.java[MyLoginDao" modifiers="513" timestamp="1557897968767"/>
+<typeInfo handle="=Jsp09_AnswerBoard/src&lt;com.answer.dao{AnswerDao.java[AnswerDao" modifiers="513" timestamp="1557984621213"/>
+<typeInfo handle="=Jsp09_AnswerBoard/src&lt;com.answer.biz{AnswerBiz.java[AnswerBiz" modifiers="513" timestamp="1557971313986"/>
+<typeInfo handle="=Jsp09_AnswerBoard_del/src&lt;com.answer.dao{AnswerDao.java[AnswerDao" modifiers="513" timestamp="1558073893365"/>
+<typeInfo handle="=Jsp09_AnswerBoard_del/src&lt;com.answer.biz{AnswerBiz.java[AnswerBiz" modifiers="513" timestamp="1558058713622"/>
+<typeInfo handle="=Jsp08_MVC02_Mybatis/src&lt;com.mvc.dao{MyMVCDao.java[MyMVCDao" modifiers="513" timestamp="1557883539024"/>
+</typeInfoHistroy>

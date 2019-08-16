@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#box {
+	width : 200px;
+	height: 120px;
+	background-color: orange;
+	margin: 0 auto;
+}
+input[type=button] {
+	width : 15%;
+	font-size: 20px;
+	color : black;
+}
+</style>
+<script>
+	var boxObj;			//대상
+	var boxObjWidth;	//대상 길이
+	var boxObjHeight;	//대상 높이
+function alertInfo() {
+	boxObj = document.getElementById("box");
+	boxObjWidth = boxObj.offsetWidth;
+	boxObjHeight = boxObj.offsetHeight;
+	
+	var info = "width = " + boxObjWidth + " / " + "height = " + boxObjHeight
+	alert(info);
+}
+</script>
+</head>
+<body>
+	<div id="box"></div>
+	<br>
+	<input type="button" value="크기 정보 확인" onclick="alertInfo()">
+</body>
+</html>

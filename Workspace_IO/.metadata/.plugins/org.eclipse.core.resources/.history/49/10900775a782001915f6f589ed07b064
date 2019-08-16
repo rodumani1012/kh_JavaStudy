@@ -1,0 +1,14 @@
+package io.buffered.model.dao;
+
+public class BufferedTest {
+	public BufferedTest() {}
+	
+	// BufferedWriter 보조스트림 
+	// FileWriter 기반스트림
+	// 외부자원 sample2.txt
+	
+	public void output() {
+		
+	}
+	
+}

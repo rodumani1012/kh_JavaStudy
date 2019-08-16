@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	font-size: 30px;
+	font-weight: bold;
+}
+</style>
+<script>
+var math = Number(window.prompt("수학 점수를 입력하세요"));
+var music = Number(window.prompt("음악 점수를 입력하세요"));
+var total = math + music;
+var avg = total/2;
+document.write("총점=" + total + ", 평균=" + avg);
+document.write("<br>");
+var grade;
+if (avg >= 95) {
+	grade = "A+";
+} else if (avg >= 90) {
+	grade = "A";
+} else if (avg >= 80) {
+	grade = "B";
+} else if (avg >= 70) {
+	grade = "C";
+} else if (avg >= 60) {
+	grade = "D";
+} else {
+	grade = "F";
+}
+document.write("총점=" + total + ", 평균=" + avg + ", 학점=" + grade);
+</script>
+</head>
+<body>
+
+</body>
+</html>

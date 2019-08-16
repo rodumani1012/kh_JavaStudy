@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mvc.mapper"> <!-- 내가 원하는 이름 아무거나. -->
+
+	<resultMap type="MyMVCDto" id="dtoMap">
+		<result column="SEQ" property="seq"/>
+		<result column="WRITER" property="writer"/>
+		<result column="TITLE" property="title"/>
+		<result column="CONTENT" property="content"/>
+		<result column="REGDATE" property="regdate"/>
+	</resultMap>
+
+	<select id="selectList" resultType="com.mvc.dto.MyMVCDto"> <!-- resultType에 결과를 담아서 리턴. -->
+		SELECT * FROM MYMVCBOARD
+	</select>
+	
+	<select id="selectOne" parameterType="map" resultMap="dtoMap">
+		SELECT * FROM MYMVCBOARD WHERE SEQ = #{seq}
+	</select>
+</mapper>

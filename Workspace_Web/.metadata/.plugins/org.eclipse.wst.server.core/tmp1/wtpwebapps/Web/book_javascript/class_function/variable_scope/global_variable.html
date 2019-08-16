@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var count = 0;										//* 함수 안에서 var 선언
+function work() {									//지역변수(local variable)
+	count = count + 1;								//유효범위 : 함수
+	window.alert("work()::count=" + count)
+}													//* 함수 안에서 var 선언
+</script>										   <!-- 전역변수(global variable) -->
+</head>								     		   <!-- //유효범위 : html 문서	 -->
+<body>
+<input type="button" value="변수값 증가" onclick="work()">
+</body>
+</html>

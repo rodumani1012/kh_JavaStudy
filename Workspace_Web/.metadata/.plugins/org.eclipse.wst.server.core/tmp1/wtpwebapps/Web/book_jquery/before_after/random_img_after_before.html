@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+}
+</style>
+<script src="//code.jquery.com/jquery-3.3.1.min.js">
+</script>
+<script>
+	$(document).ready(function(){
+		// 이전 추가
+		$("#btn01").click(function() {
+			$("#schoolfood").before("<img src=' " + getImage() + " ' > ");
+		});
+		// 이후 추가
+		$("#btn02").click(function() {
+			$("#schoolfood").after("<img src=' " + getImage() + " ' > ");
+		});		
+		// 제거
+		$("#btn03").click(function(){
+			$("img:not([id=schoolfood])").remove();
+		});
+	});
+	
+	//랜덤으로 이미지 주소 생성
+	function getImage() {
+		var imageArray = [
+			"/image/02_beericon.JPG",
+			"/image/03_burger.JPG",
+			"/image/04_chicken.JPG",
+			"/image/05_cupcake.JPG",
+			"/image/06_doughnut.JPG",
+			"/image/07_egg.JPG",
+			"/image/08_fish.JPG",
+			"/image/09_icecream.JPG",
+			"/image/10_pizza.JPG",
+			"/image/11_spaghetti.JPG"
+		];
+		var index = Math.floor(Math.random() * imageArray.length);
+		var src = imageArray[index];
+		return src;
+
+	}
+</script>
+</head>
+<body>
+	<h1>오늘의 학식</h1>
+	<img src="/image/01_dish.JPG" id="schoolfood">
+	<br>
+	<br>
+	<input type="button" id="btn01" value="메인">
+	<input type="button" id="btn02" value="반찬">
+	<br>
+	<input type="button" id="btn03" value="다시요">
+</body>
+</html>

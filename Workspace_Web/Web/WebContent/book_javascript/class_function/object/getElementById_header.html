@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function change() {
+	var header = document.getElementById("myheader");
+	header.style.color = "white";
+	header.style.backgroundColor = "blue";	
+}
+function cancle() {
+	var header = document.getElementById("myheader");
+	header.style.color = "black";
+	header.style.backgroundColor = "white";		
+}
+</script>
+</head>
+<body>
+<h1 id="myheader">헤더</h1>
+<input type="button" onclick="change()" value="변경">
+<input type="button" onclick="cancle()" value="취소">
+</body>
+</html>

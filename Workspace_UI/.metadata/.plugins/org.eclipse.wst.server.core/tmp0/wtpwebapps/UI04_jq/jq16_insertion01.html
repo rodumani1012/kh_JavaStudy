@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<style type="text/css">
+    
+    div{border: 1px solid red;}
+    .prepend{border: 1px dotted blue;}
+    .append{border: 1px dotted green;}
+
+</style>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+
+        var cnt = 0;
+
+        $("button:eq(0)").click(function(){
+            $("div").prepend($("<p>").addClass("prepend").text("prepend"+(cnt++)));
+                            // $("<p>") : p태그 만들기. == document.createElement("div")
+                            // $().prepend() : 자식요소 앞에 만들기
+        });
+
+        $("button:eq(1)").click(function(){
+            $("div").append($("<p>").addClass("append").text("append"+ (cnt++)));
+                            // $().append() : 자식요소 뒤에 만들기
+        });
+
+        $("button:eq(2)").click(function(){
+            $("div").html("<b>html 요소를 바꾼다.</b>");
+                        // .html() : 태그를 인식한다.
+        })
+        
+        $("button:eq(3)").click(function(){
+            $("div").text("<b>text 요소를 바꾼다.</b>");
+                        // .text() : 태그도 문자로 인식한다.
+        })
+    });
+</script>
+</head>
+<body>
+
+    <button>prepend 하기</button>
+    <button>append 하기</button>
+    <button>html 하기</button>
+    <button>text 하기</button>
+
+    <div>
+        <p>내부 삽입하기 1</p>
+        <p>내부 삽입하기 2</p>
+    </div>
+
+
+</body>
+</html>

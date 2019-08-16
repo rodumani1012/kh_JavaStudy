@@ -1,0 +1,4 @@
+subject = ['java', 'db', 'ui', 'web', 'spring', 'python']
+
+for i in subject:
+    print(i)

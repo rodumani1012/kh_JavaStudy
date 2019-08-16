@@ -1,0 +1,31 @@
+package io.object.model.dao;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+import io.object.model.vo.Member;
+
+public class ObjectIoTest {
+	public ObjectIoTest() {}
+	
+	// 보조 스트림
+	// ObjectInput/OutputStream
+	// 객체단위 => 바이트단위 : 직렬화
+	// 바이트단위 => 객체단위 : 역직렬화
+	
+	public void fileSave() {
+		Member m1 = new Member("제임스", 20, 'M', 160.2);
+		Member m2 = new Member("엘리스", 26, 'F', 143.7);
+		
+		try (ObjectOutputStream objout = new ObjectOutputStream(new FileOutputStream("memberobject.txt"));) {
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

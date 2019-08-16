@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="home.mapper">
+
+	<select id="login_chk" parameterType="map"
+		resultType="user_info_dto">
+		SELECT * FROM USER_INFO WHERE USER_ID = #{user_id} AND
+		USER_PW = #{user_pw}
+	</select>
+	<select id="id_chk" parameterType="map" resultType="user_info_dto">
+		SELECT * FROM USER_INFO WHERE USER_ID = #{user_id}
+	</select>
+	<select id="nick_chk" parameterType="map" resultType="user_info_dto">
+		SELECT * FROM USER_INFO WHERE USER_NICKNAME = #{user_nickname}
+	</select>
+	
+	<insert id="signup" parameterType="user_info_dto">
+		INSERT INTO USER_INFO VALUES(USERSEQ.NEXTVAL ,#{user_id}, #{user_pw}, #{user_name}, #{user_email}, #{user_nickname}, 'N', 'USER', SYSDATE, NULL)
+	</insert>
+	
+	<select id="login_chk_sns" parameterType="map" resultType="user_info_dto">
+		SELECT * FROM USER_INFO WHERE USER_ID = #{user_id}
+	</select>
+
+	<!-- 
+	<select id="selectList" parameterType="map"
+		resultType="normal_board_dto">
+		SELECT * FROM
+		( SELECT ROWNUM AS RNUM, N.*
+		FROM NORMAL_BOARD N
+		WHERE NORMAL_CATEGORY = #{normal_category}
+		<if test="txt_search != null">
+			AND upper(NORMAL_CONTENT) like '%' || upper(#{txt_search}) || '%'
+		</if>
+		ORDER BY CASE WHEN NORMAL_PREMIUM IN ('Y') THEN NORMAL_PREMIUM END , NORMAL_NUM DESC
+		)
+		WHERE RNUM BETWEEN #{firstIndex} +1 AND #{firstIndex} +
+		#{recordCountPerPage}
+	</select>
+	 -->
+	<select id="selectList" parameterType="map"
+		resultType="normal_board_dto">
+		SELECT * FROM
+		( SELECT ROWNUM AS RNUM, N.*
+		FROM NORMAL_BOARD N
+		WHERE NORMAL_CATEGORY = #{normal_category}
+		<if test="txt_search != null">
+			AND
+			(
+				(upper(NORMAL_CONTENT) like '%' || upper(#{txt_search}) || '%') or
+				(upper(NORMAL_TITLE) like '%' || upper(#{txt_search}) || '%') or
+				(upper(USER_NICKNAME) like '%' || upper(#{txt_search}) || '%')
+			)
+		</if>
+		/* ORDER BY NORMAL_NUM */
+		)
+		WHERE RNUM BETWEEN #{firstIndex} +1 AND #{firstIndex} +
+		#{recordCountPerPage}
+	</select>
+
+	<select id="selectOne" parameterType="Integer"
+		resultType="normal_board_dto">
+		SELECT * FROM NORMAL_BOARD WHERE NORMAL_NUM = #{normal_num}
+	</select>
+
+	<insert id="insertSql" parameterType="map">
+		INSERT INTO
+		NORMAL_BOARD
+		VALUES(BOARDSEQ.NEXTVAL, #{user_num}, #{user_nickname},
+		#{normal_title}, #{normal_content}, #{normal_category}, 1, SYSDATE,
+		NULL, 'N')
+	</insert>
+
+	<update id="updateSql" parameterType="normal_board_dto">
+		UPDATE NORMAL_BOARD SET
+		NORMAL_TITLE = #{normal_title}, NORMAL_CONTENT = #{normal_content}
+		WHERE NORMAL_NUM = #{normal_num}
+	</update>
+
+	<delete id="deleteSql" parameterType="normal_board_dto">
+		DELETE FROM NORMAL_BOARD
+		WHERE NORMAL_NUM = #{normal_num}
+	</delete>
+
+	<!-- 조회수 증가 처리 -->
+	<update id="plusReadCount" parameterType="normal_board_dto">
+		UPDATE NORMAL_BOARD SET
+		NORMAL_COUNT = NORMAL_COUNT+1 WHERE NORMAL_NUM = #{NORMAL_NUM}
+	</update>
+
+	<!-- 댓글 보여주기 -->
+	<select id="comment_list" parameterType="Integer"
+		resultType="comment_board_dto">
+		SELECT * FROM COMMENT_BOARD WHERE NORMAL_NUM =
+		#{normal_num} ORDER BY COMMENT_GROUPNO DESC, COMMENT_GROUPSQ
+	</select>
+	
+	<select id="regist_chk" parameterType="map" resultType="user_info_dto">
+		SELECT * FROM USER_INFO WHERE USER_ID = #{user_id}
+	</select>
+	
+	<insert id="regist_sns" parameterType="user_info_dto">
+		INSERT INTO USER_INFO(USER_NUM, USER_ID, USER_NAME, USER_EMAIL, USER_NICKNAME, USER_ENABLED, USER_GRADE, USER_DATE_CREATE, USER_DATE_UPDATE)
+		 VALUES(USERSEQ.NEXTVAL, #{user_id}, #{user_name},	#{user_email}, #{user_nickname}, 'N', 'USER', SYSDATE,	NULL)
+	</insert>
+	<update id="update_user_info" parameterType="user_info_dto">
+		UPDATE USER_INFO SET USER_NICKNAME = #{user_nickname}, USER_EMAIL = #{user_email}
+		WHERE USER_ID = #{user_id}
+	</update>
+	<update id="update_user_pw" parameterType="user_info_dto">
+		UPDATE USER_INFO SET USER_PW = #{user_pw}
+		WHERE USER_ID = #{user_id}
+	</update>
+	<delete id="member_withdraw" parameterType="user_info_dto">
+		DELETE FROM USER_INFO WHERE USER_ID = #{user_id}
+	</delete>
+
+	<!-- 댓글 쓰기 -->
+	<insert id="comment_insert" parameterType="map">
+		INSERT INTO
+		COMMENT_BOARD VALUES (COMMENTSEQ.NEXTVAL, #{normal_num}, #{user_num},
+		#{user_nickname}, #{comment_content}, GROUPNOSEQ.NEXTVAL, 1, 0, 'N' )
+	</insert>
+
+	<!-- 댓글에 댓글달기 -->
+	<insert id="comment_comment" parameterType="map">
+		INSERT INTO
+		COMMENT_BOARD VALUES(COMMENTSEQ.NEXTVAL,
+		#{normal_num}, #{user_num},
+		#{user_nickname}, #{comment_comment},
+		(SELECT COMMENT_GROUPNO FROM
+		COMMENT_BOARD WHERE COMMENT_NUM =
+		#{comment_num}),
+		(SELECT
+		COMMENT_GROUPSQ FROM COMMENT_BOARD WHERE COMMENT_NUM =
+		#{comment_num})+1,
+		(SELECT COMMENT_TITLETAB FROM COMMENT_BOARD WHERE
+		COMMENT_NUM =
+		#{comment_num})+1,
+		'N')
+	</insert>
+
+	<delete id="comment_delete" parameterType="Integer">
+		DELETE FROM
+		COMMENT_BOARD WHERE COMMENT_NUM = #{comment_num}
+	</delete>
+
+	<select id="selectTotalCount" parameterType="map"
+		resultType="Integer">
+		SELECT count(*)
+		FROM NORMAL_BOARD
+		WHERE NORMAL_CATEGORY = #{normal_category}
+		<if test="txt_search != null">
+			AND upper(NORMAL_CONTENT) like '%' || upper(#{txt_search}) || '%'
+		</if>
+	</select>
+	
+	<!-- 메인페이지_자유게시판,인원모집,질문게시판 보여주기 -->
+	<select id="small_selectList" parameterType="map" resultType="normal_board_dto">
+		SELECT *
+		FROM (SELECT * FROM NORMAL_BOARD WHERE NORMAL_CATEGORY = #{normal_category} ORDER BY NORMAL_DATE_CREATE DESC)
+		<!-- 아래는 부등호를 TAG로 인식해 CDATA를 통해 감싸줌 -->
+		<![CDATA[WHERE ROWNUM <= 5]]>
+	</select>
+	<!-- 메인페이지_프로젝트 보여주기 -->
+	<select id="small_prj_selectList" parameterType="map" resultType="prj_info_dto">
+		SELECT *
+		FROM (SELECT * FROM PRJ_INFO ORDER BY PRJ_NUM DESC)
+		<!-- 아래는 부등호를 TAG로 인식해 CDATA를 통해 감싸줌 -->
+		<![CDATA[WHERE ROWNUM <= 5]]>
+	</select>
+	<!-- 이름으로 이메일 가져오기(아이디) -->
+	<select id="bring_byname" parameterType="map" resultType="user_info_dto">
+		SELECT * FROM USER_INFO WHERE USER_NAME = #{user_name} AND USER_NICKNAME = #{user_nickname}
+	</select>
+	<!-- 이름으로 이메일 가져오기(패스워드) -->
+	<select id="bring_byid" parameterType="map" resultType="user_info_dto">
+		SELECT * FROM USER_INFO WHERE USER_NAME = #{user_name} AND USER_ID = #{user_id}
+	</select>
+	<!-- 임시비밀번호로 바꾸기 -->
+	<update id="change_pw" parameterType="user_info_dto">
+		UPDATE USER_INFO SET USER_PW = #{user_password} WHERE USER_ID = #{user_id}
+	</update>
+
+	<update id="kakaopay" parameterType="normal_board_dto">
+		UPDATE NORMAL_BOARD SET
+		NORMAL_PREMIUM = 'Y'
+		WHERE NORMAL_NUM = #{normal_num}
+	</update>
+</mapper>

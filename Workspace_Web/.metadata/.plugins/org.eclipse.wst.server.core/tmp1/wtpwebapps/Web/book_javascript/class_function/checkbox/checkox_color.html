@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+input[type=button] {
+	width : 15%;
+	background-color: green;
+	font-size: 20px;
+	color : white;
+}
+</style>
+<script>
+function viewInfo() {
+	var obj = document.getElementsByName("color");
+	
+	//체크박스 개수
+	var objLength = obj.length;
+	alert("체크박스 개수 : " + objLength);
+	
+	//체크박스 정보
+	for (var i = 0; i < objLength; i++) {
+		var value = obj[i].value;
+		alert("index : " + i + ", value : " + value);
+	}
+	
+	//선택 대상 정보
+	for (var i = 0; i < objLength; i++) {
+		var value = obj[i].value;
+		var checked = obj[i].checked; //true, false
+		if (checked == true) {
+			alert("[Checked Info] index : " + i + ", value : " + value);
+		}
+	}
+}
+</script>
+</head>
+<body>
+<h1>좋아하는 색깔은?</h1>
+<input type="checkbox" name="color" value="white" checked>White
+<input type="checkbox" name="color" value="black">Black
+<input type="checkbox" name="color" value="gray">gray
+<input type="checkbox" name="color" value="red">red
+<input type="checkbox" name="color" value="pink">pink
+<input type="checkbox" name="color" value="blue">blue
+<br><br>
+<input type="button" value="viewinfo" onclick="viewInfo()">
+</body>
+</html>

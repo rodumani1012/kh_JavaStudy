@@ -1,0 +1,8 @@
+package com.test01;
+
+public class SubakSubak {
+  public String solution(int n) {
+      String answer = "";
+      return answer;
+  }
+}

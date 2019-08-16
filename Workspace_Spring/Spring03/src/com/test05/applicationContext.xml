@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:component-scan base-package="com.test05"></context:component-scan>
+
+	<!-- c: constructor-arg -->
+	<bean id="emp_kang" class="com.test05.Emp"
+		c:name="강호동" c:salary="2000000"></bean>
+	<bean id="kangDept" class="java.lang.String" c:value="기술1팀"></bean>
+<!-- 	<bean id="kang" class="com.test05.Engineer" -->
+<!-- 		c:dept="기술 1팀" c:emp-ref="emp_kang"></bean> -->
+
+	<!-- p: property -->
+	<bean id="emp_yu" class="com.test05.Emp"
+		p:name="유재석" p:salary="2500000"></bean>
+	<bean id="yuDept" class="java.lang.String" c:value="개발1팀"></bean>
+<!-- 	<bean id="yu" class="com.test05.Developer" -->
+<!-- 		p:dept="개발 1팀" p:emp-ref="emp_yu"></bean> -->
+
+</beans>

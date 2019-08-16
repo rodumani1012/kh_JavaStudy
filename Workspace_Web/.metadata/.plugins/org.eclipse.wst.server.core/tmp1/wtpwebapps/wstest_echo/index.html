@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function echoTest() {
+		websocket = new WebSocket("ws://localhost:8787/wstest_echo/echo");
+
+		websocket.onopen=function(event){
+			var inputText = document.getElementById("inputText");
+			document.getElementById("result").innerHTML += 
+			">> : " + inputText.value + "<br/>";
+
+			websocket.send(inputText.value);
+			inputText.value = "";
+		}
+
+		websocket.onmessage=function(event){
+			document.getElementById("result").innerHTML += event.data + "<br/>";
+
+			websocket.close();
+		}
+
+		websocket.onclose=function(event){
+			document.getElementById("result").innerHTML += "close <br/>";
+		}
+	}
+
+	function enter() {
+		if(event.keyCode == 13) {
+			echoTest();
+		}	
+	}
+
+</script>
+</head>
+<body>
+
+	<input type="text" id="inputText" onkeydown="enter();">
+	<input type="button" id="sendBtn" value="send" onclick="echoTest();">
+	<br>
+	<div id="result"></div>
+
+</body>
+</html>

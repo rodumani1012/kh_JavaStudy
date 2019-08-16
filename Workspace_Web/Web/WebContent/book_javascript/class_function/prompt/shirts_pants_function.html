@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function work(shirtsColor, shirtsSize, pantsColor, pantsSize) {
+	var shirtsSizeName = getShirtsSizeName(shirtsSize);
+	var pantsSizeName = getPantsSizeName(pantsSize);
+	var message1 = "셔츠 : " + shirtsColor + "(" + shirtsSize + ", " + shirtsSizeName + ")";
+	var message2 = "바지 : " + pantsColor + "(" + pantsSize + ", " + pantsSizeName + ")";
+	var message = message1 + "\n" + message2;
+	window.alert(message);
+}
+function getShirtsSizeName(shirtsSize) {
+	var result;
+	if (shirtsSize >= 110) {
+		result = "Big";
+	} else if (shirtsSize >= 100) {
+		result = "Large";
+	} else if (shirtsSize >= 90) {
+		result = "Medium";
+	} else if (shirtsSize >= 80) {
+		result = "Small";
+	} else {
+		result = "Tiny";
+	}
+	return result;
+}
+function getPantsSizeName(pantsSize) {
+	var result;
+	if (pantsSize >= 34) {
+		result = "Big";
+	} else if (pantsSize >= 32) {
+		result = "Large";
+	} else if (pantsSize >= 30) {
+		result = "Medium";
+	} else if (pantsSize >= 28) {
+		result = "Small";
+	} else {
+		result = "Tiny";
+	}
+	return result;
+}
+</script>
+</head>
+<body onload = "work('red', 100, 'black', 95)">
+
+</body>
+</html>

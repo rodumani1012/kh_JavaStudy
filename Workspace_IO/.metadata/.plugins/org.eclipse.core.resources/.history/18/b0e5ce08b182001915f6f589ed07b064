@@ -1,0 +1,8 @@
+package io.data.model.dao;
+
+public class DataIoTest {
+
+	public DataIoTest() {}
+	
+	// DataInput/OutputStream 
+}

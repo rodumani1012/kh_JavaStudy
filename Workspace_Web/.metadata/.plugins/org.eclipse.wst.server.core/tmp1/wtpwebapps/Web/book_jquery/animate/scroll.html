@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="//code.jquery.com/jquery-3.3.1.min.js">
+</script>
+<script>
+	$(document).ready(function(){
+		$("#btn01").click(function() {
+			$("html, body").animate({
+				scrollTop : 600 // 위에서 아래로 600px 지점으로 이동
+			}, 1000);
+		});
+		$("#btn02").click(function() {
+			$("html, body").animate({
+				scrollTop : 0 // 위에서 아래로 0px 지점으로 이동
+			}, 1000);
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>여기가 TOP</h1>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+	<img src="/image/ma.jpg">
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<input type="button" id="btn01" value="약간 위로 이동">
+	<input type="button" id="btn02" value="맨위로 이동">
+</body>
+</html>

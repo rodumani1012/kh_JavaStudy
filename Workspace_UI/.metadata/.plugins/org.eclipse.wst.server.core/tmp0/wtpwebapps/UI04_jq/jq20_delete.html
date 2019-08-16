@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<style type="text/css">
+    div{border: 2px solid red; width: 200px; padding: 10px 10px;}
+    p{background: yellow;}
+    h1{border: 1px solid blue;}
+
+</style>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("p:eq(0)").click(function(){
+            $(this).remove(); // 자기 자신을 지워라
+        });
+
+        $("p:eq(1)").click(function(){
+            $(this).parent().empty(); //부모(div)의 내용물을 비워라
+        });
+
+        $("p:eq(2)").click(function(){
+            var ele = $(this).detach(); // 잘라내기
+
+            $("h1").append(ele); // 잘라진거 h1에 붙이기
+        })
+    });
+</script>
+</head>
+<body>
+
+    <h1>엘리먼트 제거하기</h1>
+
+    <div>
+        <p>remove(삭제하기)</p>
+        <p>empty(비우기)</p>
+        <p>detach(잘라내기)</p>
+    </div>
+
+    
+</body>
+</html>

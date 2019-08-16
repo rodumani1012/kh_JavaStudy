@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 7 packages to &apos;Q1Bank/src&apos;&#x0D;&#x0A;- Original project: &apos;뱅킹시스템&apos;&#x0D;&#x0A;- Destination element: &apos;Q1Bank/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     뱅킹시스템/src/common&#x0D;&#x0A;     뱅킹시스템/src/RoundButton&#x0D;&#x0A;     뱅킹시스템/src/com.dto&#x0D;&#x0A;     뱅킹시스템/src/com.biz&#x0D;&#x0A;     뱅킹시스템/src/com.view&#x0D;&#x0A;     뱅킹시스템/src/com.dao&#x0D;&#x0A;     뱅킹시스템/src/com.sql" description="Copy packages" destination="=Q1Bank/src" element1="/src&lt;common" element2="/src&lt;RoundButton" element3="/src&lt;com.dto" element4="/src&lt;com.biz" element5="/src&lt;com.view" element6="/src&lt;com.dao" element7="/src&lt;com.sql" flags="589830" fragments="7" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1557188067657" version="1.0"/>
+</session>

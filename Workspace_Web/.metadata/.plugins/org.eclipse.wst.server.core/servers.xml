@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server at localhost" name="Tomcat v9.0 Server at localhost" runtime-id="Apache Tomcat v9.0" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="94">
+    <list key="modules" value0="Jsp08_MVC02_Mybatis_req::org.eclipse.jst.jee.server:Jsp08_MVC02_Mybatis_req::jst.web::4.0" value1="paging::org.eclipse.jst.jee.server:paging::jst.web::4.0" value2="AfterNinety::org.eclipse.jst.jee.server:AfterNinety::jst.web::4.0" value3="wstest_echo::org.eclipse.jst.jee.server:wstest_echo::jst.web::4.0" value4="Web::org.eclipse.jst.jee.server:Web::jst.web::3.0" value5="Paging_Toy::org.eclipse.jst.jee.server:Paging_Toy::jst.web::4.0" value6="Jsp10_Ajax02::org.eclipse.jst.jee.server:Jsp10_Ajax02::jst.web::4.0" value7="Jsp11_SeoulBike::org.eclipse.jst.jee.server:Jsp11_SeoulBike::jst.web::4.0" value8="zezePaging::org.eclipse.jst.jee.server:zezePaging::jst.web::4.0"/>
+  </server>
+</servers>
