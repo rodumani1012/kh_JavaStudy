@@ -1,0 +1,139 @@
+[]스프링 프레임워크의 특징 및 자세한 설명
+- POJO, 제어반전, 관점지향프로그래밍, 데이터 엑세스 통합, 배치 프레임워크, MVC
+POJO(Plain Old Java Object) : 자바 기본 기술(getter, setter메소드로 이루어진 value object성 bean)이다.
+제어반전 : IOC(Inversion of Control). 기존 객체 생성 방식(필요한곳에서 객체 생성)이 아닌 Spring에서 객체를 생성하여 필요한 곳에서 쓰는 것을 말한다. 즉, 객체를 생성하는 곳과 사용하는 곳을 나누는 것.
+관점지향프로그래밍 : AOP(Aspect Oriented Programming). 문제를 해결하기 위한 핵심관심사항과 전체에 적용되는 공통관심사항을 기준으로 프로그래밍함으로써 공통모듈을 여러 코드에 쉽게 적용할 수 있도록 지원하는 기술.
+	CC(Core Concern) : 주 관심사항.(공통적이지 않은 사항.)
+	CCC(Cross Cutting Concern) : 공통 관심사항. (공통적인것을 빼내서 모듈화하여 필요한 곳에 적용시키자)
+데이터 엑세스 통합(DataAccess/Intergration) : JDBC 추상화계층제공, 트랜잭션관리등.
+배치 프레임워크 : 특정 시간대에 실행하거나 대용량의 자료를 처리하는데 쓰이는 일괄 처리(Batch Processing)을 지원하는 것
+MVC : Model, View, Controller 로 구분하여 영역별 결합도를 줄인 디자인 패턴.
+	model : 데이터, 비즈니스로직을 수행하는 영역.
+	view : 클라이언트 요청에 따른 응답페이지
+	controller : 클라이언트의 요청을 받아 데이터를 호출하고 수행된 로직(연산)의 결과를 응답하여 반환하는 역할.
+
+
+[]Mybatis 동적 SQL 에러를 찾아 고쳐라
+<select id="findActiveBlogLike" resultType="Blog">
+  SELECT * FROM BLOG WHERE
+  <if test="state != null">
+    state = #{state}
+  </if>
+  <if test="title != null">
+    AND title like #{title}
+  </if>
+  <if test="author != null and author.name != null">
+    AND author_name like #{author.name}
+  </if>
+</select>
+--------------------------------------------------	
+<select id="findActiveBlogLike" resultType="Blog">
+  SELECT * FROM BLOG
+  <where>
+    <if test="state != null">
+      state = #{state}
+    </if>
+    <if test="title != null">
+      AND title like #{title}
+    </if>
+    <if test="author != null and author.name != null">
+      AND author_name like #{author.name}
+    </if>
+  </where>
+</select>
+
+[]스프링을 통해 사용자의 요청 정보 처리할 때 사용되는 객체 및 역할 설명
+- DispatcherServlet, HandlerMapping, Handler Mapping, Controller, ModelAndView, ViewResolver, View
+- Dispatcher Servlet : 클라이언트 요청을 전달받아 요청에 맞는 컨트롤러가 리턴한 결과값을 View에 전달하여 알맞은 응답을 생성 
+- Handler Mapping : 클라이언트의 요청 URL을 어떤 컨트롤러가 처리할지 결정
+- Controller : 클라리언트 요청을 처리한 뒤 결과를 Dispatcher Servlet에게 리턴
+- ModelAndView : 컨트롤러가 처리한 결과 정보 및 뷰 선택에 필요한 정보를 담음
+- ViewResolver : 컨트롤러의 처리 결과를 생성할 뷰를 결정
+- View : 컨트롤러의 처리 결과 화면을 생성, JSP 또는 Velocity 템플릿 파일 등을 뷰로 사용
+
+[]Mybatis 다음 조건을 만족하는 동적 SQL 작성(1,2,3,4 채우기)
+(블랙리스트에 등록된 회원이 아니면서 남자이고, 19세 이상이며 기간이 90일을 초과하는 회원)
+① : !=
+② : <when test="age >= 19">
+③ : <when test="gender == 'man'">
+④ : <when test="period > 90">
+<select id="searchAdultMan" 
+     resultType="HEALTHCLUB">
+  SELECT * FROM HEALTHCLUB WHERE BLACKLIST ①!= ‘ACTIVE’
+  <choose>
+    <②when test="age >= 19">
+      AND AGE >= #{age}?
+    </when>
+    <③when test="gender == 'man'">
+      AND GENDER == #{gender}?
+    </when>
+    <④when test="period > 90">
+      AND PERIOD  > #{period}?  
+    </④when>
+  </choose>
+</select>
+
+[]포인트컷 설정방법 설명.
+- @Pointcut 을 사용하며, 하나의 어드바이스 클래스 안에 여러 개의 포인트컷을 선언할 수 있다.
+- 여러 포인트컷을 식별하기 위한 식별자가 필요한데, 이때 참조 메소드를 이용한다.
+- 참조 메소드는 메소드 몸체가 비어있는, 즉 구현 로직이 없는 메소드이다.
+
+[]spring core container 모듈
+- Core 모듈과 Beans 모듈은 프레임워크의 기반이 되는 가장 핵심부분으로 Ioc와 DI 기능을 제공한다.
+- Context 모듈은 스프링 프레임워크 IoC 컨테이너의 기반이 되며, 국제화된 메시지, Application 생명주기 이벤트, 유효성 검증 등을 지원한다.
+- expression 모듈은 스프링 표현 언어(SpEL) 을 지원한다.
+
+[]spring framework의 특징
+1. 경량 컨테이너로 자바 객체를 직접 관리 
+   각각의 객체 생성, 소멸과 같은 라이프 사이클을 관리하고 스프링으로부터 필요한 객체를 얻어올 수 있음 
+2. POJO(Plain Old Java Object)방식의 프레임워크 
+   기존에 존재하는 라이브러리 등을 지원에 용이 
+3. 제어 반전 지원
+   필요에 따라 스프링에서 사용자의 코드를 호출
+4. 의존성 주입 지원
+   각각의 계층이나 서비스들 간에 의존성이 존재할 경우 프레임워크가 서로 연결 
+5. 관점 지향 프로그래밍
+   트랜잭션, 로깅, 보안과 같은 여러모듈에서 공통적으로 사용하는 기능의 경우 해당 기능을 분리하여 관리 
+6. 영속성과 관련된 다양한 서비스 지원
+   ex) ibatis, Hibernate 등 데이터베이스 처리 라이브러리와 연결할 수 있는 인터페이스 제공
+
+[]aop - aspect(advisor), advisor 동작 시점, 
+Aspect는 AOP의 중심단위, Advice와 Pointcut을 합친 것이다.(Advisor)
+1. 대상: Target
+2. 적용할 기능: advice
+3. 대상의 어디에서 적용할지 구체적인 명시:pointcut
+
+[]mybatis - 틀린 부분 고치기, resultmap 속성, 동적 sql
+-resultmap 속성-
+(1) property
+result map의 property 속성은 mapping statement에 의해 반환되는 result 객체의 자바빈즈 프로퍼티(get메소드) 이름
+(2) column
+column 속성 값은 결과 쿼리 결과 ResultSet 내의 칼럼의 이름
+(3) columnIndex
+옵션값으로서 columnIndex 는 ResultSet 내의 컬럼의 인덱스
+(4) jdbcType
+jdbcType 속성은 ResultSet 컬럼의 데이터베이스 컬럼 타입을 명시적으로 정의하는데 사용
+(5) javaType
+javaType 속성은 객체에 셋팅되는 변수 타입을 명시적으로 정의하기 위해 사용
+(6) nullValue
+nullValue 속성은 데이터베이스의 NULL 값 반환을 대신하여 사용하기 위해 값을 정의
+(7) select
+select 속성은 객체 사이의 관계를 서술하고 자동적으로 복합 프로퍼티 타입을 로드하는데 사용
+
+-동적 sql-
+if
+choose (when, otherwise)
+trim (where, set)
+foreach
+
+
+
+
+
+
+
+
+
+
+
+
