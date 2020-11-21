@@ -1,0 +1,8 @@
+web server : 정적 데이터를 응답해줌(html, image, file..)
+was(Web Application Server) : 동적 데이터를 응답해줌(jsp/servlet,jsp...)
+
+Model : 각각 기능을 나눔
+View : 보이는 것
+Controller : 요청 받아서 요청에 맞는 화면을 리턴해줌(커맨드 값을 읽어서 값에 따른 뷰를 보여준다)
+
+MVC pattern 1 : 현재 화면에서 바로 DB에 접근하는 것
