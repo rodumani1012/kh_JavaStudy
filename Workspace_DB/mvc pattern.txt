@@ -1,0 +1,4 @@
+MVC pattern
+Model : 계산(연산) Business Logic(Biz), DB연결 DAO(Data Access Object), DTO(Data Transfer Object)
+View : 화면, getMenu();
+Controller : 화면 선택  (1. 전체출력 2. 수정 3. 삭제 4. 종료 ...)

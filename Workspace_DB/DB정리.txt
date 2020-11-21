@@ -1,0 +1,123 @@
+책 11페이지에 SQL DEVELOPER 또는 DBEAVER 설치하면 CMD보다 사용하기 좋음.
+
+DataBase
+-> Oracle (rdb)
+관계(relation) : 엔티티들의 관계를 테이블로 정리하겠다.
+ENTITY -> TABLE, ATTRIBUTE -> COLUMN, TUPLE -> ROW 로 저장.
+table(entity)/column(attribute)/row(tuple, record)
+
+SQL(Strunctured Query Language)
+- DDL, DML, DCL
+- DDL(데이터 정의어) : CREATE, ALTER, DROP
+
+>CREATE TABLE 테이블이름(
+	컬럼이름 TYPE(SIZE) 제약조건,...
+	CONSTRAINT 제약조건명, 제약조건,... 
+	...
+);
+
+>ALTER TABLE 테이블이름 ADD/MODIFY/DROP 컬럼...
+
+>DROP TABLE 테이블이름 (PURGE);   *PURGE를 쓰면 테이블을 완전삭제함.
+				   안쓰면 휴지통에 들어감.
+
+- DML(데이터 조작어) : SELECT, INSERT, UPDATE, DELETE
+>SELECT 컬럼,
+FROM 테이블
+WHERE 조건;
+
+>INSERT INTO 테이블명(컬럼명, ...)
+VALUES(값, ...);
+
+>INSERT INTO 테이블명
+VALUES(해당테이블의 전체 값들..);
+
+>UPDATE 테이블
+SET 컬럼 = 값,....
+WHERE 조건;
+
+>DELETE FROM 테이블명
+WHERE 조건
+
+- DCL(데이터 제어어) : 
+ COMMIT/ROLLBACK : transaction 저장/취소 (TCL 이라고도 부름)
+		※ transaction : 최소한의 작업단위
+ GRANT/REVOKE : 권한(ROLL) 부여/취소
+	
+SQL >   SELECT
+	FROM
+	WHERE
+
+> CREATE SEQUENCE 시퀀스명(
+  INCREAMENT BY 정수 (기본값 1)		-- 정수값 만큼 증감
+  START WITH 정수			-- 시작 번호
+  MAXVALUE 정수				-- 최대값 지정
+  MINVALUE 정수				-- 최소값 지정
+  CYCLE || NOCYCLE			-- 반복 여부
+  CACHE 정수 || NOCACHE			-- 정수값 만큼 미리 생성
+);
+> CREATE SEQUENCE SEQ_EMPID01
+START WITH 300
+INCREMENT BY 5
+NOCYCLE
+NOCACHE;
+
+SELECT SEQ_EMPID01.NEXTVAL FROM DUAL;
+NEXTVAL : 시퀀스의 다음 값 / CURRVAL : 시퀀스의 현재 값
+
+제약조건(CONSTRAINT)
+- NOT NULL (컬럼 만들때만 사용 가능)
+- UNIQUE (컬럼, 테이블에서 사용가능)
+- PRIMARY KEY (= NOT NULL + UNIQUE) ( ;; )
+  기본키, 유일하게 식별
+- CHECK ( ;; )
+- REFERENCES ( ;; )
+
+
+ROLLUP/CUBE
+
+ROLLUP(A,B) : 
+A B 집계
+A 집계
+총 집계
+
+CUBE(A,B) :
+총 집계
+B 집계
+A 집계
+A B 집계
+
+JOIN ON : 컬럼의 이름이 다르고 (M테이블의 M1컬럼과 S테이블의 S1컬럼)
+	컬럼 내부의 값이 같은 경우 (M1컬럼의 A,B   S1컬럼의 A,B)
+JOIN USING : 컬럼의 이름도 같은 경우(EMP테이블의 DEPTNO컬럼과 DEPT테이블의 DEPT 컬럼)
+
+PL/SQL
+
+JDBC
+
+//드라이버 연결
+Class.forName("oracle.jdbc.driver.OracleDriver");
+
+//계정 연결
+Connection con = DriverManager.getConnection(url, id, pw);
+
+// query 준비
+-1. Statement
+String sql = "SELECT * FROM EMP WHERE ENAME = " + " ' " + ename + " ' ";
+
+-2. PreparedStatement -> ?, ?, ?, ?  해당 값을 ?로 넣을 수 있다.
+"SELECT * FROM EMP WHERE ENAME = ?";
+
+// query 실행, 리턴
+-1. select
+.executeQuery()
+ResultSet rs
+
+-2. update, delete, insert
+.executeUpdate()
+int n
+
+// db 종료
+rs.close();
+stmt.close();
+con.close();

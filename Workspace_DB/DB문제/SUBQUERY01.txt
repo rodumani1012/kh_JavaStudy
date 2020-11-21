@@ -1,0 +1,66 @@
+--01. 부서번호가 10번인 사원들과 같은 월급을 받는 사원의 이름과 월급을 출력하자.
+	SELECT ENAME, SAL
+	FROM EMP
+	WHERE SAL IN (SELECT SAL
+			FROM EMP
+			WHERE DEPTNO = 10);
+
+
+--02. 직업이 'CLERK'인 사원과 같은 부서에서 근무하는 사원의 이름과 월급, 부서번호를 출력하자.
+	SELECT ENAME, SAL, DEPTNO
+	FROM EMP
+	WHERE DEPTNO IN (SELECT DEPTNO
+			FROM EMP
+			WHERE JOB = 'CLERK');
+
+
+--03. 'CHICAGO'에서 근무하는 사원들과 같은 부서에서 근무하는 사원의 이름과 월급을 출력하자.
+	SELECT ENAME, SAL
+	FROM EMP
+	WHERE DEPTNO IN (SELECT DEPTNO
+			FROM DEPT
+			WHERE LOC = 'CHICAGO');
+
+
+--04. 부하직원이 있는 사원의 사원번호와 이름을 출력하자. (자기 자신이 다른 사원의 관리자인 사원)
+	SELECT EMPNO, ENAME
+	FROM EMP
+	WHERE EMPNO IN (SELECT MGR
+			FROM EMP);
+
+
+--05. 부하직원이 없는 사원의 사원번호와 이름을 출력하자.
+	SELECT EMPNO, ENAME
+	FROM EMP
+	WHERE EMPNO NOT IN (SELECT NVL(MGR,0)
+			FROM EMP);
+
+
+--06. 'KING'에게 보고하는 사원의 이름과 월급을 출력하자. (관리자가 'KING'인 사원)
+	SELECT ENAME, SAL
+	FROM EMP
+	WHERE MGR = (SELECT EMPNO
+			FROM EMP
+			WHERE ENAME = 'KING');
+
+
+--07. 20번 부서의 사원 중 가장 많은 월급을 받는 사원보다 더 많은 월급을 받는 사원들의 이름과 월급을 출력하자.
+	SELECT ENAME, SAL
+	FROM EMP
+	WHERE SAL > (SELECT MAX(SAL)
+		FROM EMP
+		WHERE DEPTNO = 20);
+
+
+
+--08. 직업이 'SALESMAN' 인 사원중 가장 큰 월급을 받는 사원보다 더 많은 월급을 받는 사원들의 이름과 월급을 출력하자.
+--단, MAX함수를 사용하지 말자.(ANY, ALL 연산자)
+ALL은 전체보다 커야됨(최대값보다 커야됨)
+ANY는 제일 작은 애보다 최소값보다 커야됨
+	SELECT ENAME, SAL
+	FROM EMP
+	WHERE SAL > ALL(SELECT SAL
+			FROM EMP
+			WHERE JOB = 'SALESMAN');
+
+

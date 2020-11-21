@@ -1,0 +1,112 @@
+--Q1) 사원테이블과 부서테이블에서 사원들의 이름, 부서번호, 부서이름을 출력하자.
+	SELECT ENAME, DEPTNO, DNAME
+	FROM EMP JOIN DEPT USING(DEPTNO);
+
+	SELECT E.ENAME, E.DEPTNO, D.DNAME
+	FROM EMP E, DEPT D
+	WHERE E.DEPTNO = D.DEPTNO;
+
+--Q2) 사원테이블과 부서테이블에서 'DALLAS'에서 근무하는 사원의 이름, 직업, 부서번호, 부서이름을 출력하자.
+	SELECT ENAME, JOB, DEPTNO, DNAME
+	FROM EMP JOIN DEPT USING(DEPTNO)
+	WHERE LOC = 'DALLAS';
+
+	SELECT E.ENAME, E.JOB, E.DEPTNO, D.DNAME
+	FROM EMP E, DEPT D
+	WHERE E.DEPTNO = D.DEPTNO
+		AND D.LOC = 'DALLAS';
+
+	
+
+--Q3) 사원테이블과 부서테이블에서 이름에 'A'가 들어가는 사원들의 이름과 부서이름을 출력하자.
+	SELECT ENAME, DNAME
+	FROM EMP JOIN DEPT USING(DEPTNO)
+	WHERE ENAME LIKE '%A%';
+
+	SELECT E.ENAME, D.DNAME
+	FROM EMP E, DEPT D
+	WHERE E.DEPTNO = D.DEPTNO
+		AND E.ENAME LIKE '%A%';
+
+--Q4) 사원테이블과 부서테이블에서 사원이름과 그 사원이 속한 부서의 부서명, 월급을 출력하자.
+--단 월급이 3000 이상인 사원들을 출력하자.
+	SELECT ENAME, DNAME, SAL
+	FROM EMP JOIN DEPT USING(DEPTNO)
+	WHERE SAL >= 3000;
+
+	SELECT E.ENAME, D.DNAME, E.SAL
+	FROM EMP E, DEPT D
+	WHERE E.DEPTNO = D.DEPTNO
+		AND E.SAL >= 3000;
+
+--Q5) 사원테이블과 부서테이블에서 직업이 'SALESMAN'인 사원들의 직업과 사원이름, 속한 부서이름을 출력하자.
+	SELECT JOB, ENAME, DNAME
+	FROM EMP JOIN DEPT USING(DEPTNO)   또는  FROM EMP JOIN DEPT ON(EMP.DEPTNO = DEPT.DEPTNO)
+	WHERE JOB = 'SALESMAN';
+
+	SELECT E.JOB, E.ENAME, D.DNAME
+	FROM EMP E, DEPT D
+	WHERE E.DEPTNO = D.DEPTNO
+		AND E.JOB = 'SALESMAN';
+
+--Q6) 사원테이블과 급여테이블(SALGRADE)에서 커미션이 책정된 사원들의 사원번호, 이름, 연봉, 연봉+커미션, 급여등급을 출력하자.
+--단, 각각의 컬럼명을 '사원번호', '사원이름', '연봉', '실급여', '급여등급'으로 출력하자.
+	SELECT EMPNO "사원번호", ENAME "사원이름", SAL*12 "연봉", SAL*12+COMM "실급여", GRADE "급여등급"
+	FROM EMP JOIN SALGRADE ON (SAL BETWEEN LOSAL AND HISAL)
+	WHERE COMM IS NOT NULL;
+
+	SELECT E.EMPNO "사원번호", E.ENAME "사원이름", E.SAL*12 "연봉", E.SAL*12+E.COMM "실급여", S.GRADE "급여등급"
+	FROM EMP E, SALGRADE S
+	WHERE E.SAL BETWEEN S.LOSAL AND S.HISAL
+		AND COMM IS NOT NULL;
+
+--Q7) 사원테이블과 부서테이블, 급여테이블에서 부서번호가 10번인 사원들의 부서번호, 부서이름, 사원이름, 월급, 급여등급을 출력하자.
+	SELECT DEPTNO, DNAME, ENAME, SAL, GRADE
+	FROM EMP JOIN DEPT USING(DEPTNO)
+		JOIN SALGRADE ON (SAL BETWEEN LOSAL AND HISAL)
+	WHERE DEPTNO = 10;
+
+	SELECT E.DEPTNO, D.DNAME, E.ENAME, E.SAL, S.GRADE
+	FROM EMP E, DEPT D, SALGRADE S
+	WHERE E.DEPTNO = D.DEPTNO
+	AND E.SAL BETWEEN S.LOSAL AND S.HISAL 
+	AND E.DEPTNO = 10;
+
+--Q8) 사원테이블과 부서테이블, 급여테이블에서 부서번호가 10번이거나 20번인 사원들의 부서번호, 부서이름, 사원이름, 월급, 급여등급을 출력하자.
+--단, 부서번호가 낮은 순으로(오름차순), 월급이 높은 순으로(내림차순) 출력하자.
+	SELECT DEPTNO, DNAME, ENAME, SAL, GRADE
+	FROM EMP JOIN DEPT USING(DEPTNO)
+	JOIN SALGRADE ON (SAL BETWEEN LOSAL AND HISAL)
+	WHERE DEPTNO = 10 OR DEPTNO = 20
+	ORDER BY DEPTNO, SAL DESC;
+
+	SELECT E.DEPTNO, D.DNAME, E.ENAME, E.SAL, S.GRADE
+	FROM EMP E, DEPT D, SALGRADE S
+	WHERE E.DEPTNO = D.DEPTNO
+		AND E.SAL BETWEEN S.LOSAL AND S.HISAL
+			AND (E.DEPTNO = 10 OR E.DEPTNO = 20)
+	ORDER BY DEPTNO ASC, SAL DESC;
+
+--Q9) 사원테이블에서 사원번호와 사원이름, 그리고 그 사원을 관리하는 관리자의 사원번호와 사원이름을 출력하자.
+--단, 각각의 컬렴명을 '사원번호', '사원이름', '관리자번호', '관리자이름'으로 출력하자.
+	SELECT E.EMPNO "사원번호", E.ENAME "사원이름", M.EMPNO "관리자번호", M.ENAME "관리자이름"
+	FROM EMP E JOIN EMP M ON (E.MGR = M.EMPNO);
+	
+	KING도 나오게 하려면
+	SELECT E.EMPNO "사원번호", E.ENAME "사원이름", M.EMPNO "관리자번호", M.ENAME "관리자이름"
+	FROM EMP E LEFT OUTER JOIN EMP M ON (E.MGR = M.EMPNO);
+
+	SELECT E.EMPNO "사원번호", E.ENAME "사원이름", M.EMPNO "관리자번호", M.ENAME "관리자이름"
+	FROM EMP E, EMP M
+	WHERE E.MGR = M.EMPNO;
+
+--Q10) 사원테이블과 부서테이블에서 해당 부서의 모든 사원에 대한 부서이름, 위치, 사원 수 및 평균 급여를 출력하자.
+--단, 각각의 컬럼명을 DNAME, LOC, NUMBER OF PEOPLE, SALARY 로 출력하자.
+	SELECT DNAME "DNAME", LOC "LOC", COUNT(*) "NUMBER OF PEOPLE", AVG(SAL) "SALARY"
+	FROM EMP JOIN DEPT USING(DEPTNO)
+	GROUP BY DNAME, LOC;
+
+	SELECT D.DNAME "DNAME", D.LOC "LOC", COUNT(*) "NUMBER OF PEOPLE", AVG(SAL) "SALARY"
+	FROM EMP E, DEPT D
+	WHERE E.DEPTNO = D.DEPTNO
+	GROUP BY D.DNAME, D.LOC;

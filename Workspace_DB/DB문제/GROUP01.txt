@@ -1,0 +1,53 @@
+
+--Q1) 사원테이블에서 평균 월급을 출력하자.
+	SELECT AVG(SAL)
+	FROM EMP;
+
+--Q2) 사원테이블에서 부서번호가 10인 부서에 근무하고 있는 사원들의 부서번호와 평균 월급을 출력하자.
+	SELECT DEPTNO, AVG(SAL)
+	FROM EMP
+	WHERE DEPTNO = 10
+	GROUP BY DEPTNO;
+
+--Q3) 사원테이블에서 직업이 'SALESMAN'인 사원들의 평균 월급을 출력하자.
+	SELECT JOB, AVG(SAL)
+	FROM EMP
+	WHERE JOB = 'SALESMAN'
+	GROUP BY JOB;
+
+--Q4) 사원테이블에서 부서별 평균 월급을 출력하자.
+	SELECT DEPTNO, AVG(SAL)
+	FROM EMP
+	GROUP BY DEPTNO;
+
+--Q5) 사원테이블에서 직업별 평균 월급을 내림차순으로 출력하자.
+	SELECT JOB, AVG(SAL)
+	FROM EMP
+	GROUP BY JOB
+	ORDER BY 2 DESC;  //2번째 컬럼을 기준으로. 1일경우 JOB
+
+--Q6) 사원 테이블에서 평균 커미션(COMM)을 출력하자.
+	SELECT AVG(COMM)
+	FROM EMP;
+
+--Q7) 사원테이블에서 10번 부서의 최대 월급을 출력하자.
+	SELECT DEPTNO, MAX(SAL)
+	FROM EMP
+	WHERE DEPTNO = 10
+	GROUP BY DEPTNO;
+
+--Q8) 사원테이블에서 부서별 최대 월급을 출력하자.
+	SELECT DEPTNO, MAX(SAL)
+	FROM EMP
+	GROUP BY DEPTNO;
+
+--Q9) 사원테이블에서 직업별 최대 월급을 출력하자.
+	SELECT JOB, MAX(SAL)
+	FROM EMP
+	GROUP BY JOB;
+
+--Q10) 사원테이블에서 직업이 'SALESMAN'인 사원들 중 최대월급을 출력하자.
+	SELECT JOB, MAX(SAL)
+	FROM EMP
+	WHERE JOB = 'SALESMAN'
+	GROUP BY JOB;

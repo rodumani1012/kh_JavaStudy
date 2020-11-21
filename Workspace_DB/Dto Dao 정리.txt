@@ -1,0 +1,254 @@
+#sql 테이블 생성
+
+
+#jdbc 템플릿
+public static Connection getConnection() 생성       //
+class.forName("드라이버");  				//드라이버이름
+
+String url,id pw //해당 url,접속하고 싶은 id,pw 	
+
+
+Connection con=null;
+
+con=DriverManager.getConnection(url,id,pw);   // 계정연결
+con.setAutoCommit(false); 원하는 것만 close 시키기 위해
+close(Connction con) 연결close
+close(Statement stmt) sql문을 받을수 잇는 객체 close
+close(ResultSet rs) 결과 테이블을 받을 수 있는 객체 close
+
+
+
+#Dto(그릇) 
+1. db에서 사용된 변수들을 필드로 선언
+2.기본생성자,파라미터가 여러개인 생성자
+3.get set toString
+
+#Dao Interface(db와 연결) interface
+1.String 으로 sql문 선언
+2.기능별 함수 선언
+	전체출력 컬렉션list로 
+	선택출력 원하는 번호에 대해 모든것 출력 =파라미터 int
+	삽입	dto의 객체를 인수로 받음
+	수정	dto의 객체를 인수로 받음
+	삭제	원하는 번호에 대해 삭제 파라미터 int 
+
+  
+#Dao extends jdbctemplate implement (daointerface)  class
+1.기능별함수 구현(override)
+
+전체출력
+	PreparedStatement pstm=null //??? 쓰기위해
+	ResultSet rs=null	//결과테이블을 받기위해
+	Connection con=getConnection()	//계정연결
+	List<dto> res= new Array<dto>();	//전체출력이기 때문에 dto를 리스트에 담아놓는다
+	
+	pstm=con.prepareStatement(원하는 String sql문)
+	rs=pstm.executeQuery();	//select 문은 executeQuery sql문 실행한 테이블을 rs에 담는다
+	while(rs.next())	//rs가 끝날때까지 읽는다
+	DTO temp =new DTO //DTO를 호출하기 위한 변수생성 
+	temp.set변수이름(dto에 있는)(rs.get타입(1));	//rs에 남긴 첫번째컬럼 dto에 접근할수잇는 temp에 set
+	
+	res.add(temp);	//res는 dto를 list로 선언햇기때문에 1로우2로우3로우..rs.next()끝날때까지 담아서 res에add한다
+
+	try catch 문 마지막에 finally close(rs,pstm,con)		결과테이블 pstm con을 닫아준다
+	return res; 다담아놓은 res로 리턴
+
+선택출력
+	
+	PreparedStatement pstm=null //??? 쓰기위해
+	ResultSet rs=null	//결과테이블을 받기위해 select문이기때문에
+	Connection con=getConnection()	//계정연결
+	DTO res=new DTO(); //dto에 접근하기 위한 res생성
+
+	pstm=con.prepareStatement(원하는 String sql문)
+	pstm.set타입(몇번째 물음표,넣고싶은 변수)
+	rs=pstm.executeQuery();	//select 문은 executeQuery sql문 실행한 테이블을 rs에 담는다
+	while(rs.next()) //rs가 끝날때까지 읽는다 
+	res.set변수이름(dto에 있는)(rs.get타입(1)); 첫벗째 컬럼 2번째 3번쨰 읽어옴
+	이렇게 되면 res는 원하는 것의 튜플이 담겨있다
+	
+	try catch 문 마지막에 finally close(rs,pstm,con)		결과테이블 pstm con을 닫아준다
+	return res; 다담아놓은 res로 리턴
+
+insert (파라미터는 dto)
+
+	int res=0;	// 몇 rows selected 라는 결과문에서 몇을 res로 지정
+	Connection con=getConnection()	//계정연결
+	PreparedStatement pstm=null //??? 쓰기위해
+
+	pstm=con.prepareStatement(원하는 String sql문)
+	pstm.set타입(몇번째 ?,dto.get변수(dto의 담겨져있는것을))	//dto에 있는것을 sql?에 순차적으로 넣는다
+	res=pstm.executeUpdate();	//실행이 된다면 res는 무조건 1이상
+	if(res>0) commit(con) finally close(pstm) close(con) 
+	return res;
+
+update (파라미터는 dto)
+
+	int res=0;	// 몇 rows selected 라는 결과문에서 몇을 res로 지정
+	Connection con=getConnection()	//계정연결
+	PreparedStatement pstm=null //??? 쓰기위해
+
+	pstm=con.prepareStatement(원하는 String sql문)
+	pstm.set타입(몇번째 ?,dto.get변수(dto의 담겨져있는것을))	//dto에 있는것을 sql?에 순차적으로 넣는다
+	res=pstm.executeUpdate();	//실행이 된다면 res는 무조건 1이상
+	if(res>0) commit(con) finally close(pstm) close(con) 
+	return res;
+
+delete (파라미터 int 변수)//원하는 것에 대한 삭제
+
+	int res=0;	// 몇 rows selected 라는 결과문에서 몇을 res로 지정
+	Connection con=getConnection()	//계정연결
+	PreparedStatement pstm=null //??? 쓰기위해
+
+	pstm=con.prepareStatement(원하는 String sql문)
+	pstm.set타입(몇번째 ?,변수값)
+	res = pstm.executeUpdate();
+	return res;
+
+
+
+#Biz(Interface)
+
+	기능별함수 선언
+
+#Biz(class)implemetns Biz(Interface)
+
+	private Dao dao =new DaoImpl();
+
+
+public List<ScoreDto> selectList() {//전체출력 리스트에 담아놧으니
+	   
+      
+      return dao.selectList();// dao의 daoimpl의 리턴값을 을 리턴받음 
+   }
+public ScoreDto selectOne(int sno) { //선택출력 
+      
+  
+      
+      return dao.selectOne(sno);
+   }
+
+   @Override
+   public int insert(ScoreDto dto) {
+	   
+      return dao.insert(dto);
+   }
+
+   @Override
+   public int update(ScoreDto dto) {
+	
+	   
+      
+      return dao.update(dto);
+   }
+
+   @Override
+   public int delete(int sno) {
+	   //int res=dao.delete(m_no);
+      
+      return dao.delete(sno);
+   }
+
+
+
+#view(main문)
+	static Scanner sc = new Scanner(System.in);	//입력하기위한 sc생성
+	public static int getMenu() 메뉴 메소드 구현
+	StringBuffer 로 생성 후 변수.append 로 메뉴 생성
+	return 입력한 숫자=select;
+
+main()문
+
+	컬럼에 들어가있는 속성값 변수로 선언 int=0으로 String은 " " 으로
+	int select(메뉴선택한숫자)=0; 초기화
+
+	Biz biz=new BizImpl //biz접근 
+
+	while (select != 7) {
+         select = getMenu();
+
+         switch (select) {
+         case 1:
+
+전체출력
+	
+	List<Dto> list=biz.selectList(); bizimple 의 전체출력메소드에 접근 하여 list인 dto에 접근
+	for(Dto dto : list){
+
+	System.out.println(dto);
+	}	//list를 모두 dto 에 담아 모든dto 출력
+	
+
+선택출력
+
+	int selectOne=원하는 번호를 입력받음
+	Dto selectdto = biz.selectOne(selectOne);
+
+	System.out.println(selectDto);	
+
+삽입
+
+	속성값을 모두 입력받고
+	Dto dto=new Dto(dto클래스에 여러개 파라미터받는 생성자 내가 입력받은 속성값을 넣는다 없는 값은 int는 0 String은 "")
+	int 변수=biz.insert(dto) //위에서 담아놓은 dto를 biz의 insert로 보낸후 ?row selected 값을받음
+	if(변수>0)성공 else 실패
+
+삭제
+
+	삭제할 번호를 입력받는다
+	int 변수(row selected 값을받음)=biz.delete(삭제할번호)
+	if(변수>0)성공 else 실패
+
+수정
+	수정할값들 입력받는다
+	Dto 객체 =new Dto(dto클래스에 여러개 파라미터받는 생성자 내가 입력받은 속성값을 넣는다)
+	int 변수(row selected 값을받음)=biz.update(객체)
+	if(변수>0)성공 else 실패
+
+메인문->biz->bizimpl(return dao.기능별())->dao(sql문 들고)->daoimpl(연산 값 return)->bizimple(전단계리턴값들고)
+->메인문출력
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+
+

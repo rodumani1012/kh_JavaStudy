@@ -1,0 +1,42 @@
+Get Started With Oracle Database 11g Express Edition 실행
+Application Express 클릭
+Id : system  pw : admin1234
+kh kh kh kh 입력 후 인터넷창 종료
+
+cmd 실행 
+sqlplus 입력
+Enter user-name : kh
+Enter password : kh
+
+설치폴더(C:\oraclexe\app\oracle\product\11.2.0\server\rdbms\admin)에서 scott.sql 바탕화면에 복사후 메모장 실행
+
+Rem Copyright (c) 1990 by Oracle Corporation
+Rem NAME
+REM    UTLSAMPL.SQL
+Rem  FUNCTION
+Rem  NOTES
+Rem  MODIFIED
+Rem	gdudey	   06/28/95 -  Modified for desktop seed database
+Rem	glumpkin   10/21/92 -  Renamed from SQLBLD.SQL
+Rem	blinden   07/27/92 -  Added primary and foreign keys to EMP and DEPT
+Rem	rlim	   04/29/91 -	      change char to varchar2
+Rem	mmoore	   04/08/91 -	      use unlimited tablespace priv
+Rem	pritto	   04/04/91 -	      change SYSDATE to 13-JUL-87
+Rem   Mendels	 12/07/90 - bug 30123;add to_date calls so language independent
+Rem
+rem
+rem $Header: utlsampl.sql 7020100.1 94/09/23 22:14:24 cli Generic<base> $ sqlbld.sql
+rem
+SET TERMOUT OFF
+SET ECHO OFF
+
+rem CONGDON    Invoked in RDBMS at build time.	 29-DEC-1988
+rem OATES:     Created: 16-Feb-83
+
+GRANT CONNECT,RESOURCE,UNLIMITED TABLESPACE TO SCOTT IDENTIFIED BY TIGER;
+ALTER USER SCOTT DEFAULT TABLESPACE USERS;
+ALTER USER SCOTT TEMPORARY TABLESPACE TEMP;
+CONNECT SCOTT/TIGER
+
+위 내용들(REM부터 TIGER까지) 다 지우고 나머지 복사에서 cmd에 붙여넣기
+

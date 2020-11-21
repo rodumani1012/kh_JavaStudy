@@ -1,0 +1,49 @@
+--Q1) 사원테이블에서 사원번호가 '7844' 인 사원의 사원번호, 이름, 월급을 출력하자.
+	SELECT EMPNO "사원번호", ENAME "이름", SAL "월급"
+	FROM EMP
+	WHERE EMPNO = 7844;
+
+--Q2) 사원테이블에서 'SMITH'의 사원번호, 이름, 월급을 출력하자.
+	SELECT EMPNO, ENAME, SAL
+	FROM EMP
+	WHERE ENAME = 'SMITH';
+
+--Q3) 사원테이블에서 입사일이 1980년 12월 17일인 사원의 모든 데이터를 출력하자.
+	SELECT *
+	FROM EMP
+	WHERE HIREDATE = '80/12/17';
+	WHERE HIREDATE = '1980/12/17';
+	WHERE HIREDATE = '1980-12-17';
+	WHERE HIREDATE = '80/12/17';
+	WHERE HIREDATE = '19801217';
+	WHERE HIREDATE = '801217';	
+
+--Q4) 1980년도에서 1982년도 사이에 입사한 사원의 이름과 입사일을 출력하자.
+	SELECT ENAME, HIREDATE
+	FROM EMP
+	WHERE HIREDATE >= '800101' 
+		AND HIREDATE <= '811231';
+	WHERE HIREDATE BETWEEN '800101' 
+		AND '811231';
+
+--Q5) 월급이 2000 이하인 사원의 이름과 월급을 출력하자.	
+	SELECT ENAME, SAL
+	FROM EMP
+	WHERE SAL<=2000;
+
+--Q6) 월급이 1000에서 2000 사이인 사원의 이름과 월급을 출력하자.
+	SELECT ENAME, SAL
+	FROM EMP
+	WHERE SAL>=1000 
+		AND SAL<=2000;
+	WHERE SAL BETWEEN 1000 AND 2000;
+
+--Q7) 사원번호가 7369, 7499, 7521인 사원들의 이름과 월급을 출력하자.
+	SELECT ENAME, SAL
+	FROM EMP
+	WHERE EMPNO IN(7369, 7499, 7521);
+	WHERE EMPNO = 7369
+		OR EMPNO = 7499
+		OR EMPNO = 7521;
+	
+
