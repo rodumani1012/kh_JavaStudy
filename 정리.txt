@@ -1,0 +1,385 @@
+◈ Type
+변수 선언 방법
+Type 변수 = 값;
+메모리에 값을 할당하는 것.
+값 자체를 literal 이라고 한다.
+java의 Type는 기본타입과 참조타입으로 나뉜다.
+
+- 기본타입 : 정수형, 실수형, 문자형, 논리형
+
+기본 : 값 자체 - call by Value;
+
+	- 정수형 : byte(1), short(2), int(4), long(8)
+
+	- 실수형 : float(4), double(8) - 소수점을 포함한 수
+
+	- 문자형 : char(2)
+
+	- 논리형 : boolean(1)
+
+- 참조타입 : 문자열(String)
+
+참조 : 주소값 call by REference;
+
+object 형이라고도 한다.
+
+메모리에 할당된 주소를 참조한 값을 사용한다.
+
+*모든 클래스는 object를 상속받는다.
+
+◈ Wrapper Class
+
+	기본타입		참조타입	
+
+	1.byte		->	Byte		- Byte.MIN_VALUE
+
+	2.short		->	Short		- Short.MIN_VALUE
+
+	3.int		->	Integer		- Integer.MIN_VALUE
+
+	4.long		->	Long		- Long.MIN_VALUE
+
+	5.float		->	Float		- Float.MIN_VALUE
+
+	6.double	->	Double		- Double.MIN_VALUE
+
+	7.char		->	Character	- character.SIZE
+
+	8.boolean	->	Boolean		- Boolean.MIN_VALUE
+
+◈ 형변환
+
+작->큰 : 묵시적 형변환 : upCasting, promotion
+
+큰->작 : 명시적 형변환 : downCasting, casting
+
+int/char => ascii code()
+
+기본	<-> wr apper class
+
+	=> (Boxing)
+
+	<= (unBoxing)
+
+◈ 진수
+
+-2진수 0b를 붙이면 2진수로 인식
+
+-8진수 00를 붙이면 8진수로 인식
+
+-16진수 0x를 붙이면 16진수로 인식
+
+◈ 접근제한자 메모리영역 리턴타입 이름(파라미터) {}
+
+접근제한자 : 접근 범위 지정
+ public : 아무데서나
+ protected : 상속 여부에 따라
+ (default) : 같은 패키지 내에서 (무조건 생략해서 써야함)
+ private : 같은 클래스 내에서
+
+메모리영역 static : class.method();
+	   non-static : class 변수 = new class();
+			변수.method();
+
+리턴타입 : 리턴하는 결과값의 타입
+ void, 그외 나머지
+
+파라미터 : 메소드 밖에서 전달되는 값을 받아서 메소드 내부에서 사용하기 위한 변수
+ 아규먼트 : 메소드 밖에서 전달되는 값
+
+◈ 연산자 : 
+ 우선순위 알아둘 것.
+
+◈ 삼항연산자 :
+ (조건) ? 참 : 거짓;
+
+
+◈ 조건문 : if, switch
+ if (조건) {
+} else if (조건) {
+} else {
+}
+
+ switch (값(문자열,문자형,정수형) 또는 식) {
+	case 값:
+	   명령;
+	   break;
+	case 값:
+	   명령;
+	   break;
+	default:
+	   break; 
+}
+
+◈ 반복문 : while, for
+ 초기값;
+ while (조건) { 
+ 명령;
+ 증감식;
+}
+
+ do { 
+ 명령;
+} while (조건);
+
+ for(초기값; 조건식; 증감식;) {
+  명령;
+}
+
+◈ 배열 : 같은 타입의 값들을 효과적으로 관리하기 위한 객체
+type[] 변수;		//선언
+변수 = new type[크기]	//정의
+변수[i] = 값;		//초기화
+
+//선언 정의 초기화
+type[] 변수 = new type[] {값....}
+
+//선언 초기화
+type[] 변수 = {값.....}
+
+====> 배열은 고정크기(크기를 한번 정하면 바꿀 수 없음)
+
+배열 값을 가져올 때 : index를 사용
+(0 ~ 배열.length-1)
+
+
+◈ 2차원 배열
+//1.
+type[][] 변수 = new type[큰 배열 크기][작은 배열 크기]
+변수[i][j]=값;
+
+//2.
+type[][] 변수 = new type[큰 배열 크기][];
+변수[i] = new type[작은 배열 크기];
+
+//3.
+type[][] 변수 = new type[][]{ {,,,},{,,,}, ...};
+
+//4.
+type[][] 변수 = { {, ...}, ...};
+
+◈ 배열 복사
+=> shallow copy : 주소값 복사
+=> deep copy : 값 복사
+
+◈ String
+-heep 영역에 있는 string pool에 리터럴을 생성한다. 따라서 참조타입이지만 기본타입의 특징을 갖는다.
+-값이 변하면 새로운 객체를 생성한다.(hash코드가 변한다.)
+-String은 변하지 않는다.(immutable)
+String a = "abc";
+String b = "abc";
+String c = new String("abc");
+syso(a==b);		// true
+syso(a==c);		// false
+syso(a.equals(b));	// true
+syso(a.equals(c));	// true
+
+◈ StringBuffer/StringBuilder
+- mutable (대입하지 않아도 값이 변한다.)
+- 값을 변경해도 hash 코드는 변하지 않는다.
+- 공통점 : crud(쓰기, 읽기, 수정하기, 삭제하기) create read uppend delete
+- 차이점 :
+  - StringBuilder는 단일 스레드에서 안정성만을 보장한다.
+  - StringBuffer 클래스는 스레드에서 안전하다.(ThreadSafe)
+
+◈ Class
+java 란? OPP(Object Oriented Programming) : 객체를 기능별로 나눈다.
+
+※ 객체지향의 특징
+ - 추상화(abstraction) : 여러 객체들을 하나의 추상적인 큰 개념으로 묶는다. ex) 동물(먹고, 짖고, 자고, 눈 2개, 코 1개..)이라는 추상적인 큰 개념을 만들어 놓고 고양이와 강아지 등을 동물이라는 큰 개념으로 묶는다.
+ - 캡슐화(encapsulation) : 객체의 기능을 사용한다. (코드는 은닉)  ex) Math.random() 에서 random()이란 기능을 사용하지만 random()에 무슨 코드가 적혀 있는지 모른다.
+ - 상속(inheritance) : 상위 개념을 하위 객체가 물려받는다. ex) 동물이라는 개념은 고양이와 강아지 등이 물려받는다.
+ - 다형성(polymorphism) : 같은 이름의 기능이지만, 다른행위를 하는 것. 
+	 1. 부모의 타입으로 자식 객체를 생성
+	 Parent p = new Child();
+ 
+	 2. 부모의 이름으로 자식 대입
+	 Child c = new Child();
+	 Parent p = c;
+	 
+	 3. 부모의 메소드를 가지고 자식의 메소드 호출
+	 
+	 ※ 같은 부모를 가진 자식 클래스들은 
+	 컴파일 시에는 형 변환이 가능하지만 (손으로 	그냥 쳤을때 문법상 오류가 없지만.)
+	 런타임시 시에는 ClassCastException을 발생. 	(실행했을땐 오류가 발생)
+
+ex) 객체 : 게임기, 사람(플레이어)
+ - 게임기의 기능(입력받고 상황을 출력하고 등등..)
+ - 사람의 기능(돈 넣고 캐릭터 컨트롤 하고...)
+ex) rpg게임의 객체 : 캐릭터, 지도, 몬스터, npc ...
+
+생성자(constructor)
+ 1. 멤버변수 초기화, 객체 생성
+class { 
+	class 변수
+	instance 변수 - 객체 하나에만
+    method(기능)
+	명령문's 집합
+  접근제한자 메모리영역        리턴타입 이름(파라미터){}
+  public     static/non-static void     이름(파라미터 : 메소드에 전달된 값을 메소드 내부에서 사용하기위한 변수)
+  protected  class.메소드      그외	     (아규먼트 : 메소드 외부에서 전달된 값)
+  default    레퍼런스.메소드
+  private
+
+ 2. 클래스 이름과 동일하되, 리턴타입 없고, 객체 생성시 접근 제한자는 public이다.
+ 
+ class MyTest{
+ 	public MyTest() {
+ 	}
+ }
+ 
+ 3. 생성자는 객체 생성을 하는 new 연산자와 함께 사용되며 생성시 단 한번만 자동 호출 된다.
+ 
+ MyTest t01 = new MyTest();
+ 
+ 4. 생성자는 메소드처럼 호출할 수 없다.
+ 
+ t01.MyTest();   (X)
+ 
+ 5. 생성자는 overload 할 수 있다.
+ class MyTest{
+ 	int a;
+ 	int b;
+ 	public MyTest() {}				// default constructor(기본생성자)
+ 	public MyTest(int a) {}
+ 	pbblic MyTest(int a, int b) {}
+ }
+ 
+ 6. 생성자를 명시하지 않으면 자동으로 기본 생성자가 제공되어 멤버변수(field)를 초기화 하고,
+ 	명시된 생성자만 선언하게 되면 명시 생성자만 호출이 가능하고 기본 생성자는 제공되지 않는다.
+ 	
+ class AA {
+ }				// new AA();  라고 쓸 수 있다.
+ 
+ class BB {
+ 	public BB() {}
+ }				// new BB(); 라고 쓸 수 있다.
+ 
+ class CC {
+ 	public CC(int c) {}
+ }				// new CC();  불가능  -> new CC(10);  가능
+  
+  
+ 7. 생성자는 상속되지 않는다.
+ 
+ 8. 생성자는 내부호출 할 수 있다. 키워드는 this()
+ 
+ 9. 생성자의 목적은 객체 생성 및 멤버변수 초기화 이다.
+
+
+◈ final이 붙으면 해당 클래스는 더이상 상속되지 않는다.
+
+◈ 추상클래스(abstract class) 
+- 상속받을 때 extends를 쓴다.
+- 추상 메소드를 하나 이상 포함하고 있는 클래스. (클래스 내에 abstract method 가 한 개 이상 있으면 반드시 abstract class가 되어야 한다.)
+- 상속 강요. 자식 클래스에게 메소드를 강제구현 시킴.
+- new 연산자 사용 불가.
+- 클래스 상속은 1개만 가능. class extends class { }
+- super 사용 가능
+- 바디 {}를 붙이지 않는다.
+
+◈ 인터페이스 클래스(interface class)
+- 모든 메소드가 추상 메소드- 상속 받을 때 implements 를 쓴다.
+- 변수는 자동으로 상수화된다.
+- private, protected 사용 불가 (public 또는 default 사용)
+- 인터페이스 상속은 다중 상속 가능. class implements interface1,2,3.. { }
+- interface 끼리 상속 시 interface1 extends interface2
+- new 연산자 사용 불가.
+- 바디{}를 붙이지 않는다.
+- super 사용 불가
+
+◈ 컬렉션(Collection)
+- 자료(데이터, 객체)를 보다 쉽게 관리하기 위한 클래스
+	collection, array의 차이점 : generic(type 관리), capacity(가변 용량)
+
+
+◈ java.lang.NullPointerException : 아무것도 없는 애를 기능이나 참조하려 하면 NullPointerException 에러 발생한다.
+
+
+◈ Iterator
+- 표준화
+Iterator<T> 변수명 = collection.iterator();
+hasNext() : 다음이 있는지 없는지 확인하여 true,false 반환
+next() : 해당 요소를 반환하고 다음으로 넘어감.
+
+◈ generic -> type 강제
+
+◈ Exception(예외)
+- error는 기본적으로 jvm에서.. (=우리가 건드릴 수 없다.)
+- 의도치 않은 상황에서 프로그램이 종료되지 않도록 하는 것
+- exception 은 예측 가능할때 처리하는 것.
+  ex) int 받는 스캐너에 문자를 넣을 수도 있는 경우, 이에 대해 '숫자만 넣어야합니다'라고 예외처리하는 문구를 넣어주는 것.
+
+  - checked exception : 컴파일(compile) 시 (java -> .class)Unhandled exception type IOException 이라고 뜨는 에러. 꼭 처리해야 함
+  - runtime exception : 실행단계에서 확인. 프로그래머가 일으키는 흔한 오류
+
+Scanner~~~
+int i = sc.nextInt();
+[컴파일창에서 'a' 를 입력 한 경우]
+
+◈ try catch 구문
+try { 
+ "예외"가 발생할 수 있는 명령들 ;
+} catch( "예외"  ) {
+ "예외"가 발생했을 때 처리할 명령들;
+}
+
+ try {
+	res = inputNum() / inputNum(); // 에러가 날거 같은 곳을 묶어둠
+	System.out.println(res);
+
+	break;
+
+} catch (InputMismatchException e) { // InputMismatchException 에러 발생시
+//	System.out.println(e);	//처리할 명령
+	e.printStackTrace(); // 스택에 쌓인 것을 출력해주는 메소드.
+
+} catch (Exception e) { // 그외 Exception 에러 발생시 (Exception은 모든 예외의 조상)
+									// 정확한 에러를 집어주지 않고 Exception만 쓰면 실행속도가 느려질 수 있음.
+	System.out.println(e); // 처리할 명령
+}
+
+this(); 내 생성자 호출.
+
+◈ InputStream & Output Stream
+- 연속적인 데이터의 흐름
+- 전용 단위는 byte
+
+input : read(); //출력
+output : write(); //입력
+~stream : 연속적인 데이터의 흐름(byte)
+
+◈ Process Program Thread
+
+Process : 응용프로그램(.exe) 단위로 실행되는 모듈
+Runnable(Thread) : 하나의 Process에 여러개의 메소드 단위로 실행되는 모듈
+
+Process : T, T, T, ... (os에서 제어할 수 있는 가장 작은 단위)
+		 (T : Thread)
+
+* 자바에서 메소드 단위로 프로그램을 실행하는 방법 2가지
+1) Runnable을 implements
+2) Thread를 extends : 스레드 간 양보, 스레드 죽이기, 현재 스레드 실행 등(read, join, sleep,...)
+	-> 기능이 여러개가 필요할 땐 2번,
+		단순히 thread화가 필요할 땐 1번
+** run() -> thread.start()가 자동 호출된다.
+
+----------------------------------------------------------------------------------------------
+
+program : 실행할 수 있는 파일(.exe)   		ex)메모장
+process : 실행되고 있는 상태				ex)열린 메모장
+											ex)메모장 2개 열면 program은 1개, process는 2개 실행된 상태.
+thread : 내부에서 실행되는 작업단위			ex) 메모장에서 작업(쓰기, 지우기..)중인 것들											  
+◈ Network
+TCP : data를 packet으로 쪼개서, 받았다는 응답을 받을 때 까지 보낸다.
+UDP : data block을 보낸다. 응답하지 않기에 빠르다.
+
+ - tcp server : 소켓 생성, 연결 기다림, 응답
+   tcp client : 소켓 생성, 연결
+
+ - udp server : 소켓 생성, 데이터 송수신
+   udp client : 소켓 생성, 데이터 송수신
+
+URI = URL + URN;
+tcp : 요청 -> 응답 -> 요청 -> 응답 ...
+udp : 요청 -> 요청 -> 요청 -> 요청 ... ※응답은 없음
